@@ -1,0 +1,41 @@
+@import "root.css"; 
+@import "util.css"; 
+body { background-color:var(--white-three); font-family: Verdana,Arial,sans-serif;; letter-spacing:-0.4px; font-size: 0.86rem; overflow-x: hidden;} 
+
+nav .title-name { font-size:30px; cursor:pointer; font-weight:600; } 
+
+
+/*------------------ NAV LOGIN------------------------*/
+
+.nav-login { width: 100vw } 
+.nav-login ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; border: 1px solid #e7e7e7; background-color: #f3f3f3; border-bottom: 1px solid #ddd; } 
+.nav-login li { float: left; margin-right: 20px; } 
+.nav-login li a { display: block; color: #666; text-align: center; padding: 14px 16px; text-decoration: none; } 
+.nav-login li a:hover:not(.active) { background-color: #ddd; border-radius: 23px; } 
+/* .nav-login li a.active { color: white; background-color: #4CAF50; } */
+.nav-login li a.active { color: white; cursor: default; background-color: #4CAF50; border: 1px solid #ddd; border-radius: 23px; text-decoration: none; } 
+
+
+/* .modal-login .modal-content .modal-header { border-bottom: 0px; } */
+/*---------------- END NAV LOGIN------------------------*/
+
+/* ----------------- HEADER STYLE ------------------- */
+.navbar { border-radius: 4px; } 
+.navbar .nav-link:focus,.navbar .nav-link:active { outline: none !important; box-shadow: none; } 
+/* .navbar.navbar-one { margin-bottom: 5px; } 
+.navbar.navbar-two { margin-bottom: 5px; } */
+
+/* --------------- END HEADER STYLE ------------------- */
+
+/* ----------------- FOOTER STYLE -------------------- */
+.content-footer { /*margin-top: 30px;*/ padding-top: 20px; border-radius: 4px; background-color: #C6CDCA; display: table; text-align: center;} 
+.content-footer .footer-col { } 
+.content-footer .footer-col h2 { font-size: 1rem; font-weight: 600; } 
+.content-footer .footer-col .li-footer { display: block; padding: 0px; } 
+.content-footer .address { text-align: center; width: 100%; } 
+.content-footer .address p { margin: 0px; font-size: 13px; } 
+/* --------------- END FOOTER STYLE -------------------- */
+
+/* .nav-login>li.active>a, .nav-login>li.active>a:focus, .nav-login>li.active>a:hover { color: #555; cursor: default; background-color: #fff; border: 1px solid #ddd; border-bottom-color: transparent; } */
+
+
