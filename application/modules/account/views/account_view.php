@@ -20,7 +20,7 @@
           <input type="text" class="form-control" id="user_id" placeholder="Enter email" name="user_id">
         </div>
         <div class="form-group">
-          <label for="email">Email:</label>
+          <label for="email">Email:</label>  
           <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
         </div>
         <div class="form-group">
