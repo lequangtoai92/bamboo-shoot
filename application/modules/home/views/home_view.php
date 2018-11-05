@@ -41,7 +41,7 @@
             </table>
         </div>
         <div class="content-sub col-3">
-            <p><img src="<?= base_url(); ?>html/images/image.jpg" height="310" width="255" alt="thẻ img" /></p>
+            <p><img src="<?= base_url(); ?>images/image.jpg" height="310" width="255" alt="thẻ img" /></p>
         </div>
            
     </div>

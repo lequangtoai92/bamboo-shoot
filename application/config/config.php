@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'https://docsach.000webhostapp.com/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ $config['index_page'] = 'index.php';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol']	= 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ $config['uri_protocol']	= 'REQUEST_URI';
 |
 | https://codeigniter.com/user_guide/general/urls.html
 */
-$config['url_suffix'] = '';
+$config['url_suffix'] = '.html';
 
 /*
 |--------------------------------------------------------------------------
@@ -182,6 +182,7 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
+$config['allow_get_array'] = TRUE;
 $config['enable_query_strings'] = FALSE;
 $config['controller_trigger'] = 'c';
 $config['function_trigger'] = 'm';
@@ -223,7 +224,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4;
 
 /*
 |--------------------------------------------------------------------------
@@ -234,7 +235,8 @@ $config['log_threshold'] = 0;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '';
+// $config['log_path'] = 'http://spsvn01/var/www/html/RAIDLOG/application/logs/';
+$config['log_path'] = '/storage/ssd5/294/7296294/application/logs/';
 
 /*
 |--------------------------------------------------------------------------

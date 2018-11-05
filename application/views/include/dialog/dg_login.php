@@ -19,11 +19,11 @@
               <div class="col-6">
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input type="email" class="form-control" id="email_login" placeholder="Enter email" name="email">
                 </div>
                 <div class="form-group">
                   <label for="email">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                  <input type="password" class="form-control" id="pwd_login" placeholder="Enter password" name="pwd">
                 </div>
               </div>
             </div>
@@ -40,37 +40,37 @@
               <div class="col-6">
                 <div class="form-group">
                   <label for="user_name">Họ và tên:</label>
-                  <input type="text" class="form-control" id="user_name" placeholder="Enter email" name="user_name">
+                  <input type="text" class="form-control" id="user_name_register" placeholder="Enter email" name="user_name">
                 </div>
                 <div class="form-group">
                   <label for="user_id">Tên đăng nhập:</label>
-                  <input type="text" class="form-control" id="user_id" placeholder="Enter email" name="user_id">
+                  <input type="text" class="form-control" id="user_id_register" placeholder="Enter email" name="user_id">
                 </div>
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input type="email" class="form-control" id="email_register" placeholder="Enter email" name="email">
                 </div>
                 <div class="form-group">
                   <label for="pwd">Mật khẩu:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                  <input type="password" class="form-control" id="pwd_register" placeholder="Enter password" name="pwd">
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group">
                   <label for="address">Địa chỉ:</label>
-                  <input type="text" class="form-control" id="address" placeholder="Enter email" name="address">
+                  <input type="text" class="form-control" id="address_register" placeholder="Enter email" name="address">
                 </div>
                 <div class="form-group">
                   <label for="sex">Giới tính:</label>
-                  <input type="text" class="form-control" id="sex" placeholder="Enter email" name="sex">
+                  <input type="text" class="form-control" id="sex_register" placeholder="Enter email" name="sex">
                 </div>
                 <div class="form-group">
                   <label for="telephone">Số điện thoại:</label>
-                  <input type="text" class="form-control" id="telephone" placeholder="Enter email" name="telephone">
+                  <input type="text" class="form-control" id="telephone_register" placeholder="Enter email" name="telephone">
                 </div>
                 <div class="form-group">
                   <label for="nickname">Biệt danh:</label>
-                  <input type="text" class="form-control" id="nickname" placeholder="Enter password" name="nickname">
+                  <input type="text" class="form-control" id="nickname_register" placeholder="Enter password" name="nickname">
                 </div>
               </div>
             </div>
@@ -87,11 +87,11 @@
               <div class="col-6">
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input type="email" class="form-control" id="email_quick_register" placeholder="Enter email" name="email">
                 </div>
                 <div class="form-group">
                   <label for="email">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                  <input type="password" class="form-control" id="pwd_quick_register" placeholder="Enter password" name="pwd">
                 </div>
               </div>
             </div>

@@ -28,7 +28,7 @@ nav .title-name { font-size:30px; cursor:pointer; font-weight:600; }
 /* --------------- END HEADER STYLE ------------------- */
 
 /* ----------------- FOOTER STYLE -------------------- */
-.content-footer { /*margin-top: 30px;*/ padding-top: 20px; border-radius: 4px; background-color: #C6CDCA; display: table; text-align: center;} 
+.content-footer { /*margin-top: 30px;*/ padding-top: 20px; border-radius: 4px; background-color: #C6CDCA; display: table; text-align: center; width: 100%;} 
 .content-footer .footer-col { } 
 .content-footer .footer-col h2 { font-size: 1rem; font-weight: 600; } 
 .content-footer .footer-col .li-footer { display: block; padding: 0px; } 
