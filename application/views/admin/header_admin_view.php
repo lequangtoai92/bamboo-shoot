@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= isset($title) ? $title : 'Facilio'; ?></title>
-    <link rel="stylesheet" href="<?= base_url(); ?>dist/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>css/style.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>html/css/style.css" />
     <?php
       if (isset($stylesheet))
-        echo '<link rel="stylesheet" href="' . base_url() . 'css/' . $stylesheet . '.css" />'
+        echo '<link rel="stylesheet" href="' . base_url() . 'html/css/' . $stylesheet . '.css" />'
     ?>
 </head>
 
