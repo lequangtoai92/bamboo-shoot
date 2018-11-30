@@ -5,42 +5,43 @@
 <meta http-equiv="Content-Type" charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($title) ? $title : 'Facilio'; ?></title>
-    <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>html/css/style.css" />
+    <title><?=isset($title) ? $title : 'Facilio';?></title>
+    <link rel="stylesheet" href="<?=base_url();?>html/dist/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?=base_url();?>html/css/style.css" />
     <?php
-      if (isset($stylesheet))
-        echo '<link rel="stylesheet" href="' . base_url() . 'html/css/' . $stylesheet . '.css" />'
-    ?>
+if (isset($stylesheet)) {
+    echo '<link rel="stylesheet" href="' . base_url() . 'html/css/' . $stylesheet . '.css" />'
+    ;
+}
+?>
 </head>
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đăng nhập</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đăng ký</a>
-                    </li>
-
-                </ul>
-            </div>
-        </nav>
-        <nav class="navbar navbar-light justify-content-between" style="background-color: #e3f2fd;">
-            <a class="navbar-brand">VIẾT TRUYỆN</a>
+        <nav class="navbar navbar-light justify-content-between navbar-one" style="background-color: #e3f2fd;">
+            <a class="navbar-brand title-name" href="<?php echo base_url() . 'home' ?>">MĂNG NON</a>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuInfo" data-toggle="dropdown" aria-haspopup="true" >
+                            <?php echo ($this->session->userdata('B_LOGIN')['AL150']); ?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuInfo">
+                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông tin</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Bài viết</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Tin nhắn</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông báo</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
+                            <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
+                        </div>
+                    </li>
+                </div>
             </form>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-two">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown3" aria-controls="navbarNavDropdown"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,43 +50,38 @@
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
-                            Thể loại
+                            Giáo dục
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Truyện tình cảm</a>
-                            <a class="dropdown-item" href="#">Ngôn tình</a>
-                            <a class="dropdown-item" href="#">Truyện phưu lưu</a>
-                            <a class="dropdown-item" href="#">Truyện trinh thám</a>
-                            <a class="dropdown-item" href="#">Nhật ký</a>
-                            <a class="dropdown-item" href="#">Truyện kinh dị</a>
-                            <a class="dropdown-item" href="#">Truyện xã hội</a>
-                            <a class="dropdown-item" href="#">ký sự</a>
-                            <a class="dropdown-item" href="#">Truyện cổ tích</a>
-                            <a class="dropdown-item" href="#">Truyện thiếu nhi</a>
-                            <a class="dropdown-item" href="#">Truyện theo chủ đề</a>
-                            <a class="dropdown-item" href="#">Thể loại khác</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'man' ?>">Mầm</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'choi' ?>">Chồi</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'la' ?>">Lá</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'mang_non' ?>">Măng non</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tâm sự</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cotich_vietnam' ?>">Cổ tích Việt Nam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Song ngữ</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cotich_nhatban' ?>">Cổ tích Nhật Bản</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Truyện cười</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'truyenco_grimm' ?>">Truyện cổ Grimm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Status</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'thanthoai_hilap' ?>">Thần thoại Hi Lạp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Funfact</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Thơ</a>
+                        <a class="nav-link" href="<?php echo base_url() . 've' ?>">Vè</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tin mới</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'truyencuoi' ?>">Truyện cười</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url() . 'feedback' ?>">Góp ý</a>
                     </li>
                 </ul>
             </div>
@@ -93,6 +89,5 @@
     </div>
     <!--  End Nav  -->
 
-    
 
-    
+

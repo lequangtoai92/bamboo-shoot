@@ -52,4 +52,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'History';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['logout'] = 'Hacilio/logout';
+
+$route['logout'] = 'history/logout';
+
+$route['man'] = 'home/man';
+$route['choi'] = 'home/choi';
+$route['la'] = 'home/la';
+$route['mang_non'] = 'home/mang_non';
+
+$route['cotich_vietnam'] = 'home/sagavn';
+$route['cotich_nhatban'] = 'home/saganb';
+$route['truyenco_grimm'] = 'home/grimm';
+$route['thanthoai_hilap'] = 'home/greek_mythology';
+$route['cagiao_tucngu'] = 'home/folk_proverb';
+$route['ve'] = 'home/crambo';
+$route['truyencuoi'] = 'home/funny';

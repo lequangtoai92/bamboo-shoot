@@ -23,6 +23,6 @@ class Account extends History {
         $modules = array( 'module.account');
         $stylesheet = 'account';
         $data['title'] = 'Hello world';
-        $this->loadTemplate('Tài khoản', 'account_view', $stylesheet, $modules, $data);
+        $this->renderTemplate('Tài khoản', 'account_view', $stylesheet, $modules, $data);
   }
 }

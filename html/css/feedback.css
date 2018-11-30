@@ -1,0 +1,3 @@
+#id_feedback {margin-top: 10px}
+.content-feedback-result { background-color: var(--pale-grey-four); border-radius: 5px; padding: 10px;margin-bottom: 5px } 
+.content-feedback-result .daytime { text-align: right; font-weight:normal; font-style: italic} 

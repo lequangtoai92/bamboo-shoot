@@ -31,21 +31,23 @@ $(document).ready(function () {
         var form = document.forms.namedItem("frm_save_content");
         var oData = new FormData(form);
           console.log(oData);
-        // $.ajax({
-        //   type: "POST",
-        //   url: frm_save_cookie_setting.action,
-        //   data: data,
-        //   contentType: false,
-        //   processData: false,
-        //   dataType: 'json',
-        //   success: function (response) {
-        //     if (response.status === "success")
-        //       swalSuccess();
-        //     else swalError();
-        //   },
-        //   error: function () { swalError(); },
-        //   complete: function () { actionLoading('hide'); }
-        // });
+        $.ajax({
+          type: "POST",
+          url: "creat/creat_new",
+          data: data,
+          contentType: false,
+          processData: false,
+          dataType: 'json',
+          success: function (response) {
+           
+          },
+          error: function () { 
+            
+          },
+          complete: function () { 
+            
+           }
+        });
   
       },
       txtEditor: function () {

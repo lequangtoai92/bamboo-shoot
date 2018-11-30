@@ -16,69 +16,67 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đăng nhập</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Đăng ký</a>
-                    </li>
-
-                </ul>
-            </div>
-        </nav>
-        <nav class="navbar navbar-light justify-content-between" style="background-color: #e3f2fd;">
-            <a class="navbar-brand">VIẾT TRUYỆN</a>
+        <nav class="navbar navbar-light justify-content-between navbar-one" style="background-color: #e3f2fd;">
+            <a class="navbar-brand title-name" href="<?php echo base_url() . 'home' ?>">MĂNG NON</a>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuInfo" data-toggle="dropdown" aria-haspopup="true" >
+                            <?php echo ($this->session->userdata('B_LOGIN')['AL150']); ?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuInfo">
+                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông tin</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Bài viết</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Tin nhắn</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'admin' ?>">Quản lý</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
+                            <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
+                        </div>
+                    </li>
+                </div>
             </form>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-two">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown3" aria-controls="navbarNavDropdown"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown3">
                 <ul class="navbar-nav">
-                <li class="nav-item">
-                        <a class="nav-link" href="#">Tất cả</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
+                            Giáo dục
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="<?php echo base_url() . 'man' ?>">Mầm</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'choi' ?>">Chồi</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'la' ?>">Lá</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'mang_non' ?>">Măng non</a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cổ Đại</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cotich_vietnam' ?>">Cổ tích Việt Nam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Trung đại</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cotich_nhatban' ?>">Cổ tích Nhật Bản</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hiện đại</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'truyenco_grimm' ?>">Truyện cổ Grimm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Triều đại</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'thanthoai_hilap' ?>">Thần thoại Hi Lạp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Vua-chúa</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Anh hùng</a>
+                        <a class="nav-link" href="<?php echo base_url() . 've' ?>">Vè</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Điển tích</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Truyện cười</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Event</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Viết bài</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'truyencuoi' ?>">Truyện cười</a>
                     </li>
                 </ul>
             </div>

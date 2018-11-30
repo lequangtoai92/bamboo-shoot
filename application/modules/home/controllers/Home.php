@@ -13,6 +13,7 @@ class Home extends History {
   public function __construct() {
     parent::__construct();
     $this->lang->load('history');
+    $this->load->database();
   }
 
   /*   * **************************************************************** */
@@ -23,17 +24,50 @@ class Home extends History {
         $modules = array( 'module.home');
         $stylesheet = 'home';
         $data['title'] = 'Hello world';
-        $this->loadTemplate('Trang chủ', 'home_view', $stylesheet, $modules, $data);
+        $this->renderTemplate('Trang chủ', 'home_view', $stylesheet, $modules, $data);
+        // if(!isset($this->session->userdata('B_LOGIN')['AL101'])){
+        //   $this->loadTemplate('Trang chủ', 'home_view', $stylesheet, $modules, $data);
+        // } else if ($this->session->userdata('B_LOGIN')['AL101'] == 0){
+        //   $this->loadTemplateAdmin('Trang chủ', 'home_view', $stylesheet, $modules, $data);
+        // } else if ($this->session->userdata('B_LOGIN')['AL101'] == 1){
+        //   $this->loadTemplateUser('Trang chủ', 'home_view', $stylesheet, $modules, $data);
+        // } 
+        echo json_encode($this->session->userdata('B_USER'));
+        echo json_encode($this->session->userdata('B_LOGIN'));
   }
 
-  /**
-   * @Input: void
-   * @Output: boolean
-   * @Diescription: call at any module required login, check login state from session -> true | false
-   */
-  // private function _checkLogin() {
-  //   $ss = $this->session->userdata(F_USER);
-  //   return isset($ss) && !empty($ss);
-  // }
+  public function man(){
 
+  }
+  public function choi(){
+    
+  }
+  public function la(){
+    
+  }
+  public function mang_non(){
+    
+  }
+
+  public function sagavn(){
+    
+  }
+  public function saganb(){
+    
+  }
+  public function grimm(){
+    
+  }
+  public function greek_mythology(){
+    
+  }
+  public function folk_proverb(){
+    
+  }
+  public function crambo(){
+    
+  }
+  public function funny(){
+    
+  }
 }

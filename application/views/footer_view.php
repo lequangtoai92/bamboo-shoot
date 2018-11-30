@@ -19,7 +19,7 @@
             <div class="col-3 footer-col footer-three">
                 <h2>Liên hệ</h2>
                 <ul class="list-group">
-                    <li class="li-footer">01634538492</li>
+                    <li class="li-footer">0927628492</li>
                     <li class="li-footer">toailq92@gmail.com</li>
                 </ul>
             </div>
@@ -43,11 +43,19 @@
     <script type="text/javascript" src="<?= base_url();?>html/dist/jquery/jquery-ui-1.12.1.min.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/dist/bootstrap/js/bootstrap.min.js" ></script>
     
+    <!-- <script src="https://fb.me/react-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.3.min.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
     <script type="text/javascript" src="<?= base_url();?>html/dist/bootstrap/js/popper.min.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/dist/knockoutjs/knockout-3.4.2.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/dist/md5/md5.js"></script>
     <script type="text/javascript" src="<?= base_url();?>html/js/default.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/js/module.menu.js" ></script>
+    <script type="text/javascript" src="<?= base_url();?>html/js/module.login.js" ></script>
+    <!-- <script type="text/javascript" src="<?= base_url();?>html/js/module.home.vue" ></script> -->
     
     <?php
     if(isset($script)){

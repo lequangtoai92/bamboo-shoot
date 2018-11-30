@@ -12,6 +12,7 @@
       if (isset($stylesheet))
         echo '<link rel="stylesheet" href="' . base_url() . 'html/css/' . $stylesheet . '.css" />'
     ?>
+
 </head>
 
 <body>
@@ -34,7 +35,7 @@
             </div>
         </nav> -->
         <nav class="navbar navbar-light justify-content-between navbar-one" style="background-color: #e3f2fd;">
-            <a class="navbar-brand title-name">MĂNG NON</a>
+            <a class="navbar-brand title-name" href="<?php echo base_url() . 'home' ?>">MĂNG NON</a>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -43,6 +44,7 @@
                 </div>
             </form>
         </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-two">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-two">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown3" aria-controls="navbarNavDropdown"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -55,32 +57,35 @@
                             Giáo dục
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Mầm</a>
-                            <a class="dropdown-item" href="#">Chồi</a>
-                            <a class="dropdown-item" href="#">Lá</a>
-                            <a class="dropdown-item" href="#">Măng non</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'man' ?>">Mầm</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'choi' ?>">Chồi</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'la' ?>">Lá</a>
+                            <a class="dropdown-item" href="<?php echo base_url() . 'mang_non' ?>">Măng non</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cổ tích Việt Nam</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cotich_vietnam' ?>">Cổ tích Việt Nam</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cổ tích Nhật Bản</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cotich_nhatban' ?>">Cổ tích Nhật Bản</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Truyện cổ Grimm</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'truyenco_grimm' ?>">Truyện cổ Grimm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Thần thoại Hi Lạp</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'thanthoai_hilap' ?>">Thần thoại Hi Lạp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ca dao - tục ngữ</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Vè</a>
+                        <a class="nav-link" href="<?php echo base_url() . 've' ?>">Vè</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Truyện cười</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'truyencuoi' ?>">Truyện cười</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url() . 'feedback' ?>">Góp ý</a>
                     </li>
                 </ul>
             </div>

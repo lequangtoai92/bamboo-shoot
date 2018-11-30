@@ -25,6 +25,7 @@ class History extends MX_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->library('session');
+        // $this->testConnectDatabase();
     }
 
     /*     * **************************************************************** */
@@ -32,7 +33,12 @@ class History extends MX_Controller {
     /*     * **************************************************************** */
 
     public function index() {
-        redirect('/home');
+        if($this->_checkLogin()){
+            redirect('/creat');
+        } else {
+            redirect('/home');
+        }
+        $this->load->database('default');
     }
 
     public function logout() {
@@ -56,6 +62,30 @@ class History extends MX_Controller {
      * 
      */
 
+    public function renderTemplate($title, $page, $stylesheet = '', $modules = array(), $data = array(), $wrapperClass = ''){
+			// $response['administrator_view'] = 'administrator_view';
+			$response['title'] = $title;
+			if (!empty($stylesheet))
+					$response['stylesheet'] = $stylesheet;
+			$response['wrapperClass'] = $wrapperClass;
+			if (!empty($modules))
+					$response['script'] = $modules;
+			$response['page_view'] = $page;
+			$response['data'] = $data;
+			// $this->load->view('administrator_view', $response);
+        
+      if(!isset($this->session->userdata('B_LOGIN')['AL101'])){
+				$response['common_view'] = 'common_view';
+				$this->load->view('common_view', $response);
+        } else if ($this->session->userdata('B_LOGIN')['AL101'] == 0){
+          $response['administrator_view'] = 'administrator_view';
+					$this->load->view('administrator_view', $response);
+        } else if ($this->session->userdata('B_LOGIN')['AL101'] == 1){
+          $response['user_view'] = 'user_view';
+					$this->load->view('user_view', $response);
+        } 
+    }
+
     protected function loadTemplateAdmin($title, $page, $stylesheet = '', $modules = array(), $data = array(), $wrapperClass = '') {
         $response['administrator_view'] = 'administrator_view';
         $response['title'] = $title;
@@ -69,8 +99,8 @@ class History extends MX_Controller {
         $this->load->view('administrator_view', $response);
     }
 
-    protected function loadTemplateUser($title, $page, $modules = array(), $data = array(), $wrapperClass = '') {
-        $response['common_view'] = 'common_view';
+    protected function loadTemplateUser($title, $page, $stylesheet = '', $modules = array(), $data = array(), $wrapperClass = '') {
+        $response['user_view'] = 'user_view';
         $response['title'] = $title;
         $response['wrapperClass'] = $wrapperClass;
         if (!empty($modules))
@@ -93,14 +123,13 @@ class History extends MX_Controller {
         $this->load->view('common_view', $response);
     }
 
-
     /**
      * @Input: void
      * @Output: boolean
      * @Description: call at any module required login, check login state from session -> true | false
      */
     protected function _checkLogin() {
-        $ss = $this->session->userdata(F_USER);
+        $ss = $this->session->userdata('B_USER');
         return isset($ss) && !empty($ss);
     }
 

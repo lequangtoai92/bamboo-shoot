@@ -13,37 +13,37 @@
       <div class="col-6">
         <div class="form-group">
           <label for="user_name">Họ và tên:</label>
-          <input type="text" class="form-control" id="user_name" placeholder="Enter email" name="user_name">
+          <input type="text" class="form-control" id="user_name" placeholder="Họ và tên" name="user_name">
         </div>
         <div class="form-group">
           <label for="user_id">Tên đăng nhập:</label>
-          <input type="text" class="form-control" id="user_id" placeholder="Enter email" name="user_id">
+          <input type="text" class="form-control" id="user_id" placeholder="Tên đăng nhập" name="user_id" disalbe>
         </div>
         <div class="form-group">
           <label for="email">Email:</label>  
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          <input type="email" class="form-control" id="email" placeholder="Email" name="email">
         </div>
         <div class="form-group">
-          <label for="pwd">Mật khẩu:</label>
+          <label for="pwd">Giới tính:</label>
           <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
         </div>
       </div>
       <div class="col-6">
         <div class="form-group">
           <label for="address">Địa chỉ:</label>
-          <input type="text" class="form-control" id="address" placeholder="Enter email" name="address">
+          <input type="text" class="form-control" id="address" placeholder="Địa chỉ" name="address">
         </div>
         <div class="form-group">
           <label for="sex">Giới tính:</label>
-          <input type="text" class="form-control" id="sex" placeholder="Enter email" name="sex">
+          <input type="text" class="form-control" id="sex" placeholder="Giới tính" name="sex">
         </div>
         <div class="form-group">
           <label for="telephone">Số điện thoại:</label>
-          <input type="text" class="form-control" id="telephone" placeholder="Enter email" name="telephone">
+          <input type="text" class="form-control" id="telephone" placeholder="Số điện thoại" name="telephone">
         </div>
         <div class="form-group">
           <label for="nickname">Biệt danh:</label>
-          <input type="text" class="form-control" id="nickname" placeholder="Enter password" name="nickname">
+          <input type="text" class="form-control" id="nickname" placeholder="Biệt danh" name="nickname">
         </div>
       </div>
     </div>
