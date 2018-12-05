@@ -38,10 +38,11 @@
         </div>
     </div>
     <?php echo $this->load->view('include/dialog/dg_login'); ?>
-    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+    <!-- <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> -->
     <script type="text/javascript" src="<?= base_url();?>html/dist/jquery/jquery-3.2.1.min.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/dist/jquery/jquery-ui-1.12.1.min.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/dist/bootstrap/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="<?= base_url();?>html/dist/tinymce/js/tinymce/tinymce.min.js" ></script>
     
     <!-- <script src="https://fb.me/react-0.14.3.min.js"></script>
     <script src="https://fb.me/react-with-addons-0.14.3.min.js"></script>

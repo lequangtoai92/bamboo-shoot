@@ -66,9 +66,10 @@ class Login extends CI_Controller
                 );
                 // Add user data in session
                 $this->session->set_userdata('B_USER', $session_data);
-                echo json_encode($session_data);
+                // echo json_encode($session_data);
                 // die;
             }
+            header("Refresh:0");
         } else {
             $data = array(
                 'error_message' => 'Invalid Username or Password',
@@ -76,6 +77,7 @@ class Login extends CI_Controller
             echo json_encode($data);
             // die;
         }
+        
     }
 
     public function user_register() {

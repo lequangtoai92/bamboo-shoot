@@ -65,5 +65,5 @@ $route['cotich_nhatban'] = 'home/saganb';
 $route['truyenco_grimm'] = 'home/grimm';
 $route['thanthoai_hilap'] = 'home/greek_mythology';
 $route['cagiao_tucngu'] = 'home/folk_proverb';
-$route['ve'] = 'home/crambo';
+$route['chamngon'] = 'home/gnomic';
 $route['truyencuoi'] = 'home/funny';

@@ -34,7 +34,7 @@ class History extends MX_Controller {
 
     public function index() {
         if($this->_checkLogin()){
-            redirect('/creat');
+            redirect('/home');
         } else {
             redirect('/home');
         }

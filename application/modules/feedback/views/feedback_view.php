@@ -8,10 +8,10 @@
         </div>
     </div>
     <hr>
-    <div  v-for="itemr in itemrs" class="content-feedback-result">
-        <p>{{itemr.content}}</p>
+    <div  v-for="item in items" class="content-feedback-result">
+        <p>{{item.FC150}}</p>
         <div class="daytime">
-            <span>{{itemr.data}}</span>
+            <span>{{item.FD151}}</span>
         </div>
     </div>
 

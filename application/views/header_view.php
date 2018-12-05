@@ -79,7 +79,7 @@
                         <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 've' ?>">Vè</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'gnomic' ?>">Vè</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url() . 'truyencuoi' ?>">Truyện cười</a>

@@ -23,6 +23,6 @@ class Content extends History {
         $modules = array( 'module.content');
         $stylesheet = 'content';
         $data['title'] = 'Hello world';
-        $this->loadTemplate('Nội dung', 'content_view', $stylesheet, $modules, $data);
+        $this->renderTemplate('Nội dung', 'content_view', $stylesheet, $modules, $data);
   }
 }
