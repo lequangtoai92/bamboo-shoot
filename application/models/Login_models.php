@@ -18,7 +18,6 @@ class Login_models extends CI_Model {
 
     // Insert registration data in database
     public function registration_insert($data){
-        // Query to check whether username already exist or not
         $condition = "AL150 =" . "'" . $data['AL150'] . "'";
         $this->db->select('*');
         $this->db->from('A150');
@@ -26,7 +25,6 @@ class Login_models extends CI_Model {
         $this->db->limit(1);
         $query = $this->db->get();
         if ($query->num_rows() == 0) {
-            // Query to insert data in database
             $this->db->insert('A150', $data);
             if ($this->db->affected_rows() > 0) {
                 return true;
@@ -37,8 +35,6 @@ class Login_models extends CI_Model {
     }
 
     public function registration_insert_infoUser($data){
-        // Query to check whether username already exist or not
-        // Query to insert data in database
         $this->db->insert('A100', $data);
         if ($this->db->affected_rows() > 0) {
             return true;

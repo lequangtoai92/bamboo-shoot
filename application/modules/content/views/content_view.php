@@ -13,8 +13,7 @@
             </div>
             <div class=row>
             <div class="btn-to-fb col-6">
-                <button class="btn btn-primary">like</button>
-                <button class="btn btn-primary">Chia sẻ</button>
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
             </div>
             <div class="btn-to-img col-6">
                 <button class="btn btn-success">Hay</button>

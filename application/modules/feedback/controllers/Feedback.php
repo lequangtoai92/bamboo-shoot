@@ -40,7 +40,7 @@ class Feedback extends History {
     $post = $_POST;
     $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
     $arrayRS = $this->sendFeedback($post);
-    if (count($arrayRS) > 0) {
+    if ($arrayRS > 0) {
         $res['status'] = 'success';
         $res['data'] = $arrayRS;
         $res['message'] = 'Cám ơn bạn đã góp ý cho chúng tôi!';
@@ -61,8 +61,8 @@ class Feedback extends History {
   }
 
   /*     * **************************************************************** */
-    /*     * ****************************[PRIVATE]*************************** */
-    /*     * **************************************************************** */
+  /*     * ****************************[PRIVATE]*************************** */
+  /*     * **************************************************************** */
 
   private function sendFeedback($post)/*     * : array */ {
     $data = array(

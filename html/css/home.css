@@ -1,2 +1,21 @@
-.td-hover{cursor:pointer;}
-.for-age{color:var(--scarlet);}
+.td-hover {
+    cursor: pointer;
+}
+
+.for-age {
+    color: var(--scarlet);
+}
+
+.content-body .content-sup .item {
+    display: inline-flex;
+}
+
+.content-body .content-sup .item a img {
+    width: 37px;
+    height: 37px;
+    border-radius: 18px;
+}
+
+.content-body .content-sup .item .info .meta-info{
+    display: inline-flex;
+}

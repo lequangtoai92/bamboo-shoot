@@ -12,11 +12,7 @@ var firstTable = new Vue({
 
   methods: {
     goToContent: function (data) {
-      // var router = new VueRouter() ;
-      // this.$router.push('/dashboard')
-      // this.$route.router.go({ name: 'content', params: { userId: 123 }})
       document.location.href = '/content?userId=123'
-      // console.log(data);
     }
   }
 });

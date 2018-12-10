@@ -18,18 +18,18 @@ class B100_models extends CI_Model {
     public function f2018_insert_bambo($data){
         $this->db->insert('B100', $data);
         if ($this->db->affected_rows() > 0) {
-            return true;
+            return 1;
         }else{
-            return false;
+            return -1;
         }
     }
 
     public function f2018_insert_content($data){
         $this->db->insert('C100', $data);
         if ($this->db->affected_rows() > 0) {
-            return true;
+            return 1;
         }else{
-            return false;
+            return -1;
         }
     }
 // $this->db->order_by("FD151", "DESC");

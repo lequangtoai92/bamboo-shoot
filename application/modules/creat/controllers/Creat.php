@@ -30,14 +30,53 @@ class Creat extends History {
     } else {
         redirect('/home');
     }
-       
   }
 
   public function creat_bambo() {
     $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
+    $arrayRS = $this->creatBambo($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Cám ơn bạn đã đóng góp cho chúng tôi!';
+    };
+    echo json_encode($res);
+  }
+
+  // public function creat_bambo() {
+  //   $post = $_POST;
+  //   $data = array(
+  //       'FN150' => isset($post['title_name']) ? $post['title_name'] : '',//tên
+        
+  //       // 'FA151' => isset($post['passWord']) ? md5($post['passWord']) : '',//do tuoi
+  //       'FB152' => isset($post['compact']) ? ($post['compact']) : '', //tom tat
+  //       'FV153' => isset($post['passWord']) ? ($post['passWord']) : '',//duc tinh
+  //       // 'FT154' => isset($post['passWord']) ? md5($post['passWord']) : '',//chu de
+  //       'FS155' => isset($post['source']) ? ($post['source']) : '',//nguon
+  //       'FA156' => $this->session->userdata('B_LOGIN')['AI100'],//id nguoi tao
+  //       'FA157' => $this->session->userdata('B_LOGIN')['AL150']//ten nguoi tao
+  //   );
+  //   $dataContent = array (
+  //     'CC150' => isset($post['content_main']) ? $post['content_main'] : '',//noi dung
+  //   );
+   
+  //   $resultBambo = $this->B100_MODELS->f2018_insert_bambo($data);
+  //   $resultContent = $this->B100_MODELS->f2018_insert_content($dataContent);
+  //   if ($result == true) {
+  //     $data['message_display'] = 'Registration Info Successfully !';
+  //   } else {
+  //     $data['message_display'] = 'Username already exist!';
+  //   }
+  // }
+
+  /*     * **************************************************************** */
+  /*     * ****************************[PRIVATE]*************************** */
+  /*     * **************************************************************** */
+
+  public function creatBambo($post) {
     $data = array(
         'FN150' => isset($post['title_name']) ? $post['title_name'] : '',//tên
-        
         // 'FA151' => isset($post['passWord']) ? md5($post['passWord']) : '',//do tuoi
         'FB152' => isset($post['compact']) ? ($post['compact']) : '', //tom tat
         'FV153' => isset($post['passWord']) ? ($post['passWord']) : '',//duc tinh
@@ -52,10 +91,15 @@ class Creat extends History {
    
     $resultBambo = $this->B100_MODELS->f2018_insert_bambo($data);
     $resultContent = $this->B100_MODELS->f2018_insert_content($dataContent);
-    if ($result == true) {
-      $data['message_display'] = 'Registration Info Successfully !';
-    } else {
-      $data['message_display'] = 'Username already exist!';
-    }
+
+    return $resultBambo * $resultContent;
+    // if ($result == true) {
+    //   $data['message_display'] = 'Registration Info Successfully !';
+    // } else {
+    //   $data['message_display'] = 'Username already exist!';
+    // }
   }
+
+
+
 }
