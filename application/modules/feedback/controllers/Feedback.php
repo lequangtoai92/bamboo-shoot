@@ -73,7 +73,7 @@ class Feedback extends History {
 
   private function getFeedback($get) {
     $data = array(
-      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
+      'LIMIT' => isset($get['limit']) ? $get['limit'] : 50,
       'START' => isset($get['start']) ? $get['start'] : 1,
     );
     return $this->F100_MODELS->f2018_get_feedback($data);
