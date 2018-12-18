@@ -45,12 +45,13 @@ class Login_models extends CI_Model {
 
     // Read data using username and password
     public function login($data){
-        $condition = "AL150 =" . "'" . $data['AL150'] . "' AND " . "AL200 =" . "'" . $data['AL200'] . "'";
-        $this->db->select('*');
-        $this->db->from('A150');
-        $this->db->where($condition);
-        $this->db->limit(1);
-        $query = $this->db->get();
+        // $condition = "AL150 =" . "'" . $data['AL150'] . "' AND " . "AL200 =" . "'" . $data['AL200'] . "'";
+        // $this->db->select('*');
+        // $this->db->from('A150');
+        // $this->db->where($condition);
+        // $this->db->limit(1);
+        $sql = "SELECT * FROM LI100 WHERE LI150=" . $data['LI150'] . "AND " . " LIMIT 1";
+        $query = $this->db->query($sql);
 
         if ($query->num_rows() == 1) {
             return $query->result();
