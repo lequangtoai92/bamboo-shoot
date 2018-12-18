@@ -50,6 +50,7 @@ class B100_models extends CI_Model {
         $this->db->query($sql_creat_censor);
     }
 
+    //lay tat ca truyen
     public function b2018_listOfTabBV100($data){
         $slq = "SELECT * FROM BV100 ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
@@ -61,7 +62,20 @@ class B100_models extends CI_Model {
         }
     }
 
+    // lay noi dung truyen
     public function n2018_get_bambo($data){
+        $slq = "SELECT * FROM BV100 WHERE BV100=" . $data['BV100'];
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    // lay noi dung truyen
+    public function n2018_get_content($data){
         $slq = "SELECT * FROM ND100 WHERE BV100=" . $data['BV100'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
@@ -98,6 +112,17 @@ class B100_models extends CI_Model {
             return 1;
         }else{
             return -1;
+        }
+    }
+    // lay danh sach theo ca nha
+    public function b2018_listOfAcount($data){
+        $slq = "SELECT * FROM BV100 WHERE TK100=" . $data['TK100'] . "ORDER BY BV155 DESC Orders LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        } else {
+            return false;
         }
     }
 
