@@ -35,10 +35,10 @@ class Login_models extends CI_Model
         // } else {
         //     return false;
         // }
-        $slq_check_account = "SELECT * FROM LI100 WHERE LI150=" . $data['LI150'] . " Orders LIMIT 1";
-        $query = $this->db->query($sql);
+        $sql_check_account = "SELECT * FROM LI100 WHERE LI150=" . $data['LI150'] . " Orders LIMIT 1";
+        $query = $this->db->query($sql_check_account);
         if ($query->num_rows() == 0) {
-            $slq_insert = "INSERT INTO LI100 (LI150, LI151, LI152) VALUES (" . $data['LI150'] . "," . $data['LI151'] . "," . $data['LI152'] . ")";
+            $sql = "INSERT INTO LI100 (LI150, LI151, LI152) VALUES (" . $data['LI150'] . "," . $data['LI151'] . "," . $data['LI152'] . ")";
             if ($this->db->query($sql) === true) {
                 return 1;
             }
@@ -55,7 +55,7 @@ class Login_models extends CI_Model
         // }else{
         //     return false;
         // }
-        $slq = "INSERT INTO TK100 (TK151, TK152, TK153, TK154, TK155, TK156, TK157, TK159)
+        $sql = "INSERT INTO TK100 (TK151, TK152, TK153, TK154, TK155, TK156, TK157, TK159)
         VALUES (" . $data['TK151'] . "," . $data['TK152'] . "," . $data['TK153'] . "," . $data['TK154'] .
             "," . $data['TK155'] . "," . $data['TK156'] . "," . $data['TK157'] . "," . $data['TK159'] . ")";
         if ($this->db->query($sql) === true) {
@@ -80,7 +80,7 @@ class Login_models extends CI_Model
         // } else {
         //     return false;
         // }
-        $slq = "SELECT * FROM LI100 WHERE LI150=" . $data['LI150'] . " AND LI151=" . $data['LI151'] . " Orders LIMIT 1";
+        $sql = "SELECT * FROM LI100 WHERE LI150=" . $data['LI150'] . " AND LI151=" . $data['LI151'] . " Orders LIMIT 1";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -106,7 +106,7 @@ class Login_models extends CI_Model
         //     return false;
         // }
 
-        $slq = "SELECT * FROM TK100 WHERE TK100=" . $data['TK100'] . " Orders LIMIT 1";
+        $sql = "SELECT * FROM TK100 WHERE TK100=" . $data['TK100'] . " Orders LIMIT 1";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

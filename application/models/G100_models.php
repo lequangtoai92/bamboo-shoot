@@ -16,10 +16,9 @@ class G100_models extends CI_Model {
 
     // Insert registration data in database
     public function f2018_insert_feedback($data){
-        // $this->db->insert('DG100', $data);
         $sql = "INSERT INTO GY100 (TK100, GY150, GY152, GY153, GY154, GY155, GY156) 
-        VALUES (" . $data['TK100'] . "," . $data['GY150'] . "," . $data['GY152'] . "," . $data['GY153'] . 
-        "," . $data['GY154'] . "," . $data['GY155'] . "," . $data['GY156'] . ")";
+        VALUES (" . $data["TK100"] . ",'" . $data["GY150"] . "'," . $data["GY152"] . ",'" . $data["GY153"] . 
+        "','" . $data["GY154"] . "','" . $data["GY155"] . "','" . $data["GY156"] . "')";
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{
@@ -33,7 +32,7 @@ class G100_models extends CI_Model {
         // $this->db->order_by("GY151", "DESC");
         // $this->db->limit($data['LIMIT'], $data['START']);
         // $query = $this->db->get();
-        $slq =  "SELECT * FROM GY100 ORDER BY GY151 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql =  "SELECT * FROM GY100 ORDER BY GY151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -45,7 +44,7 @@ class G100_models extends CI_Model {
     }
 
     private function G2018_update_feedback($data) {
-        $sql = "UPDATE GY100 SET GY152 =" . $data['GY152'] . "WHERE GY100 =" . $data['GY100'];
+        $sql = "UPDATE `GY100` SET `GY152` =" . $data['GY152'] . "WHERE `GY100` =" . $data['GY100'];
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{

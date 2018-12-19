@@ -12,6 +12,7 @@ var feedback = new Vue({
       dataType: 'json',
       success: function (result) {
         self.items = result.data;
+        
       },
       error: function (error) {
         console.log(error);
@@ -21,7 +22,11 @@ var feedback = new Vue({
 
   methods: {
     sendFeedBack: function () {
-      var self = this;
+      $(".save-content").attr("disabled", "disabled");
+      if($('#content_feedback').val().trim() == ""){
+        $(".save-content").removeAttr("disabled");
+        return;
+      }
       var dataPost = {
         contentFeedback: $('#content_feedback').val()
       }
@@ -32,10 +37,14 @@ var feedback = new Vue({
         dataType: 'json',
         success: function (result) {
           console.log('success', result);
+          setTimeout(function(){
+            $(".save-content").removeAttr("disabled"); 
+          }, 15000);
+          $('#content_feedback').val("");
           // self.items.push(dataPost);
           // console.log(self.items);
         },
-        error: function (result) {console.log('error', result)},
+        error: function (result) {console.log('error', result);$(".save-content").removeAttr("disabled");},
         complete: function () {
 
         }

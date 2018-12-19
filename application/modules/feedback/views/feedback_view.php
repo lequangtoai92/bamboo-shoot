@@ -14,9 +14,9 @@
 	</div>
 	<hr>
 	<div v-for="item in items" class="content-feedback-result">
-		<p>{{item.FC150}}</p>
+		<p>{{item.GY150}}</p>
 		<div class="daytime">
-			<span>{{item.FD151}}</span>
+			<span>{{item.GY151}}</span>
 		</div>
 	</div>
 
