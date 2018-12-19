@@ -25,8 +25,6 @@ public function login_user($email,$pass){
   else{
     return false;
   }
- 
- 
 }
 public function email_check($email){
  

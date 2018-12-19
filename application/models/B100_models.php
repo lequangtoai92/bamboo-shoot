@@ -22,7 +22,7 @@ class B100_models extends CI_Model {
         // }else{
         //     return -1;
         // }
-        $slq = "INSERT INTO BV100 (TK100, BV150, BV151, BV152, BV153, BV154, BV156, BV157, BV158) 
+        $sql = "INSERT INTO BV100 (TK100, BV150, BV151, BV152, BV153, BV154, BV156, BV157, BV158) 
                 VALUES (" . $data['TK100'] . "," . $data['BV150'] . "," . $data['BV151'] . "," . $data['BV152'] .
             "," . $data['BV153'] ."," . $data['BV154'] ."," . $data['BV156'] . "," . $data['BV157'] .
             "," . $data['BV158'] .")";
@@ -34,7 +34,7 @@ class B100_models extends CI_Model {
     }
 
     private function n2018_insert_content($data){
-        $slq = "INSERT INTO ND100 (ND150) VALUES (" . $data['ND150'] . ")";
+        $sql = "INSERT INTO ND100 (ND150) VALUES (" . $data['ND150'] . ")";
         if ($this->db->query($sql) === TRUE) {
             d2018_creat_table();
             return 1;
@@ -52,7 +52,7 @@ class B100_models extends CI_Model {
 
     //lay tat ca truyen
     public function b2018_listOfTabBV100($data){
-        $slq = "SELECT * FROM BV100 ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * FROM BV100 ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -62,9 +62,9 @@ class B100_models extends CI_Model {
         }
     }
 
-    // lay noi dung truyen
+    // lay truyen
     public function n2018_get_bambo($data){
-        $slq = "SELECT * FROM BV100 WHERE BV100=" . $data['BV100'];
+        $sql = "SELECT * FROM BV100 WHERE BV100=" . $data['BV100'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -76,7 +76,7 @@ class B100_models extends CI_Model {
 
     // lay noi dung truyen
     public function n2018_get_content($data){
-        $slq = "SELECT * FROM ND100 WHERE BV100=" . $data['BV100'];
+        $sql = "SELECT * FROM ND100 WHERE BV100=" . $data['BV100'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -114,9 +114,9 @@ class B100_models extends CI_Model {
             return -1;
         }
     }
-    // lay danh sach theo ca nha
+    // lay danh sach theo ca nhan
     public function b2018_listOfAcount($data){
-        $slq = "SELECT * FROM BV100 WHERE TK100=" . $data['TK100'] . "ORDER BY BV155 DESC Orders LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * FROM BV100 WHERE TK100=" . $data['TK100'] . "ORDER BY BV155 DESC Orders LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -124,6 +124,33 @@ class B100_models extends CI_Model {
         } else {
             return false;
         }
+    }
+
+    public function b2018_listOfTabSaga(){
+        $sql = "SELECT * FROM CT100 ORDER BY CT156 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function b2018_listOfTabTopic(){
+        $sql = "SELECT * FROM BV100 WHERE BV151 =" . $data['BV151'] . " ORDER BY BV155 DESC Orders LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function b2018_listAll(){
+        $sql = "SELECT * FROM BV100 , ND100, GY100
+            ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
     }
 
 }
