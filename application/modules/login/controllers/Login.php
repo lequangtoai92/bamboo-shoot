@@ -13,72 +13,100 @@ class Login extends CI_Controller
         $this->load->helper('url');
         // Load form helper library
         $this->load->helper('form');
-
         // Load form validation library
         $this->load->library('form_validation');
-
         // Load session library
         $this->load->library('session');
-
         // Load database
-        // $this->load->model('Login_models', 'login_database');
-
         $this->load->model('Login_models', 'LOGIN_MODELS');
         
     }
-    // Logout from admin page
-    public function logout()
-    {
+    
+  /*   * **************************************************************** */
+  /*   * **************************[PUBLIC]****************************** */
+  /*   * **************************************************************** */
 
-        // Removing session data
-        $sess_array = array(
-            'username' => '',
-        );
-        $this->session->unset_userdata('logged_in', $sess_array);
-        $data['message_display'] = 'Successfully Logout';
-        $this->load->view('login_form', $data);
-    }
+  public function user_login() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Đăng nhập thất bại');
+    $arrayRS = $this->userLogin($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Đăng nhập thành công!';
+    };
+    echo json_encode($res);
+  }
 
-    public function user_login() {
-        $post = $_POST;
+  public function user_register() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Đăng ký thất bại');
+    $arrayRS = $this->userRegister($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Đăng ký thành công!';
+    };
+    echo json_encode($res);
+  }
+
+   // Logout from admin page
+   public function logout()
+   {
+       // Removing session data
+       $sess_array = array(
+           'username' => '',
+       );
+       $this->session->unset_userdata('logged_in', $sess_array);
+       $data['message_display'] = 'Successfully Logout';
+       $this->load->view('login_form', $data);
+   }
+
+
+
+  /*     * **************************************************************** */
+  /*     * ****************************[PRIVATE]*************************** */
+  /*     * **************************************************************** */
+
+
+   
+    private function userLogin($post) {
         $data = array(
             'LI150' => isset($post['userName']) ? $post['userName'] : '',
             'LI151' => isset($post['passWord']) ? md5($post['passWord']) : '',
         );
         $result = $this->LOGIN_MODELS->login($data);
-        $session_login = array(
-            'LI150' => $result[0]->LI150,
-            'LI151' => $result[0]->LI151,
-            'LI152' => $result[0]->LI152,
-            'LI100' => $result[0]->LI100,
-        );
-        $_SESSION['B_LOGIN'] = $session_login;
         if ($result !== false) {
-            $result = $this->LOGIN_MODELS->get_infor_user($result[0]->AL100);
+            $session_login = array(
+                'LI150' => $result[0]['LI150'],
+                'LI151' => $result[0]['LI151'],
+                'LI152' => $result[0]['LI152'],
+                'TK100' => $result[0]['TK100'],
+                // 'LI150' => $result[0]->LI150,
+                // 'LI151' => $result[0]->LI151,
+                // 'LI152' => $result[0]->LI152,
+                // 'LI100' => $result[0]->LI100,
+            );
+            $_SESSION['B_LOGIN'] = $session_login;
+            $result = $this->LOGIN_MODELS->get_infor_user($result[0]['TK100']);
             if ($result != false) {
                 $session_data = array(
-                    'name' => $result[0]->TK151,
-                    'email' => $result[0]->TK156,
-                    'address' => $result[0]->TK154,
-                    'sex' => $result[0]->TK153,
-                    'telephone' => $result[0]->TK155,
-                    'nickname' => $result[0]->TK157,
-                    'author' => $result[0]->TK159,
+                    'name'      => $result[0]['TK151'],
+                    'email'     => $result[0]['TK156'],
+                    'address'   => $result[0]['TK154'],
+                    'sex'       => $result[0]['TK153'],
+                    'telephone' => $result[0]['TK155'],
+                    'nickname'  => $result[0]['TK157'],
+                    'author'    => $result[0]['TK159'],
                 );
-                // Add user data in session
                 $this->session->set_userdata('B_USER', $session_data);
-                // echo json_encode($session_data);
-                // die;
+                return 1;
+            } else {
+                return -1;
             }
-            header("Refresh:0");
         } else {
-            $data = array(
-                'error_message' => 'Invalid Username or Password',
-            );
-            echo json_encode($data);
-            // die;
+            return -1;
         }
-        
     }
 
     public function user_register_v1() {
@@ -111,8 +139,7 @@ class Login extends CI_Controller
         
     }
 
-    public function user_register() {
-        $post = $_POST;
+    private function userRegister($post) {
         $data = array(
             'LI150' => isset($post['userName']) ? $post['userName'] : '',
             'LI151' => isset($post['passWord']) ? md5($post['passWord']) : '',
@@ -132,13 +159,13 @@ class Login extends CI_Controller
         if ($result == true) {
             $resultInfo = $this->LOGIN_MODELS->registration_insert_infoUser($dataInfoUser);
             if($resultInfo){
-                $data['message_display'] = 'Registration Info Successfully !';
+                return 1;
             } else {
-                $data['message_display'] = 'FALL';
+                return -1;
             }
             
         } else {
-            $data['message_display'] = 'Username already exist!';
+            return -1;
         }
         
     }

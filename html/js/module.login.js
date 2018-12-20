@@ -45,12 +45,13 @@ $(document).ready(function () {
 				dataType: 'json',
 				success: function (response) {
 					console.log('success', response);
+					location.reload();
 				},
 				error: function (response) {
 					console.log('error', response);
 				},
 				complete: function () {
-					console.log('complete');
+					// console.log('complete');
 					// actionLoading('hide');
 				}
 			});
@@ -75,6 +76,7 @@ $(document).ready(function () {
 				dataType: 'json',
 				success: function (response) {
 					console.log('success', response);
+					location.reload();
 				},
 				error: function (response) {
 					console.log('error', response);

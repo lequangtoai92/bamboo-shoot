@@ -74,13 +74,13 @@ class History extends MX_Controller {
 			$response['data'] = $data;
 			// $this->load->view('administrator_view', $response);
         
-      if(!isset($this->session->userdata('B_LOGIN')['AL101'])){
+      if(!isset($this->session->userdata('B_LOGIN')['LI152'])){
 				$response['common_view'] = 'common_view';
 				$this->load->view('common_view', $response);
-        } else if ($this->session->userdata('B_LOGIN')['AL101'] == 0){
+        } else if ($this->session->userdata('B_LOGIN')['LI152'] == 0){
           $response['administrator_view'] = 'administrator_view';
 					$this->load->view('administrator_view', $response);
-        } else if ($this->session->userdata('B_LOGIN')['AL101'] == 1){
+        } else if ($this->session->userdata('B_LOGIN')['LI152'] == 1){
           $response['user_view'] = 'user_view';
 					$this->load->view('user_view', $response);
         } 

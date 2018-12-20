@@ -32,7 +32,7 @@
                 <div>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuInfo" data-toggle="dropdown" aria-haspopup="true" >
-                            <?php echo ($this->session->userdata('B_LOGIN')['AL150']); ?>
+                            <?php echo ($this->session->userdata('B_LOGIN')['LI150']); ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuInfo">
                             <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông tin</a>
