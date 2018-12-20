@@ -23,9 +23,9 @@ class B100_models extends CI_Model {
         //     return -1;
         // }
         $sql = "INSERT INTO BV100 (TK100, BV150, BV151, BV152, BV153, BV154, BV156, BV157, BV158) 
-                VALUES (" . $data['TK100'] . "," . $data['BV150'] . "," . $data['BV151'] . "," . $data['BV152'] .
-            "," . $data['BV153'] ."," . $data['BV154'] ."," . $data['BV156'] . "," . $data['BV157'] .
-            "," . $data['BV158'] .")";
+                VALUES ('" . $data["TK100"] . "','" . $data["BV150"] . "','" . $data["BV151"] . "','" . $data["BV152"] .
+            "','" . $data["BV153"] . "','" . $data["BV154"] . "','" . $data["BV156"] . "','" . $data["BV157"] .
+            "','" . $data["BV158"] ."')";
         if ($this->db->query($sql) === TRUE) {
             return n2018_insert_content($data);
         }else{
@@ -34,7 +34,7 @@ class B100_models extends CI_Model {
     }
 
     private function n2018_insert_content($data){
-        $sql = "INSERT INTO ND100 (ND150) VALUES (" . $data['ND150'] . ")";
+        $sql = "INSERT INTO ND100 (ND150) VALUES ('" . $data["ND150"] . "')";
         if ($this->db->query($sql) === TRUE) {
             d2018_creat_table();
             return 1;
@@ -98,7 +98,8 @@ class B100_models extends CI_Model {
                     "BV158 =" . $data['BV158'] .
                 "WHERE BV100 =" . $data['BV100'];
         if ($this->db->query($sql) === TRUE) {
-            return n2018_update_content($data);
+            return 1;
+            // return n2018_update_content($data);
         }else{
             return -1;
         }

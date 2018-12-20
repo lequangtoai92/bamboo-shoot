@@ -94,7 +94,7 @@ $(document).ready(function () {
 			console.log('data', data);
 			$.ajax({
 				type: "POST",
-				url: '/login/user_quick_register',
+				url: '/login/user_register',
 				data: data,
 				dataType: 'json',
 				success: function (response) {

@@ -42,27 +42,28 @@ class Login extends CI_Controller
     public function user_login() {
         $post = $_POST;
         $data = array(
-            'AL150' => isset($post['userName']) ? $post['userName'] : '',
-            'AL200' => isset($post['passWord']) ? md5($post['passWord']) : '',
+            'LI150' => isset($post['userName']) ? $post['userName'] : '',
+            'LI151' => isset($post['passWord']) ? md5($post['passWord']) : '',
         );
         $result = $this->LOGIN_MODELS->login($data);
         $session_login = array(
-            'AI100' => $result[0]->AL100,
-            'AL150' => $result[0]->AL150,
-            'AL101' => $result[0]->AL101,
+            'LI150' => $result[0]->LI150,
+            'LI151' => $result[0]->LI151,
+            'LI152' => $result[0]->LI152,
+            'LI100' => $result[0]->LI100,
         );
         $_SESSION['B_LOGIN'] = $session_login;
         if ($result !== false) {
             $result = $this->LOGIN_MODELS->get_infor_user($result[0]->AL100);
             if ($result != false) {
                 $session_data = array(
-                    'name' => $result[0]->AN100,
-                    'email' => $result[0]->AE100,
-                    'address' => $result[0]->AA100,
-                    'sex' => $result[0]->AS100,
-                    'telephone' => $result[0]->AT100,
-                    'nickname' => $result[0]->AN150,
-                    'author' => $result[0]->AU150,
+                    'name' => $result[0]->TK151,
+                    'email' => $result[0]->TK156,
+                    'address' => $result[0]->TK154,
+                    'sex' => $result[0]->TK153,
+                    'telephone' => $result[0]->TK155,
+                    'nickname' => $result[0]->TK157,
+                    'author' => $result[0]->TK159,
                 );
                 // Add user data in session
                 $this->session->set_userdata('B_USER', $session_data);
@@ -80,7 +81,7 @@ class Login extends CI_Controller
         
     }
 
-    public function user_register() {
+    public function user_register_v1() {
         $post = $_POST;
         $data = array(
             'AL150' => isset($post['userName']) ? $post['userName'] : '',
@@ -110,20 +111,22 @@ class Login extends CI_Controller
         
     }
 
-    public function user_quick_register() {
+    public function user_register() {
         $post = $_POST;
         $data = array(
-            'AL150' => isset($post['userName']) ? $post['userName'] : '',
-            'AL200' => isset($post['passWord']) ? md5($post['passWord']) : '',
+            'LI150' => isset($post['userName']) ? $post['userName'] : '',
+            'LI151' => isset($post['passWord']) ? md5($post['passWord']) : '',
+            'LI152' => '0',
         );
         $dataInfoUser = array(
-            'AN100' => isset($post['name']) ? $post['name'] : '',
-            'AE100' => isset($post['email']) ? $post['email'] : '',
-            'AA100' => isset($post['address']) ? $post['address'] : '',
-            'AS100' => isset($post['sex']) ? $post['sex'] : '',
-            'AT100' => isset($post['phone']) ? $post['phone'] : '',
-            'AN150' => isset($post['nickname']) ? $post['nickname'] : '',
-            'AU150' => isset($post['']) ? $post[''] : '0',
+            'TK151' => isset($post['name']) ? $post['name'] : '',
+            'TK152' => isset($post['birthday']) ? $post['birthday'] : '',
+            'TK153' => isset($post['sex']) ? $post['sex'] : '',
+            'TK154' => isset($post['address']) ? $post['address'] : '',
+            'TK155' => isset($post['phone']) ? $post['phone'] : '',
+            'TK156' => isset($post['email']) ? $post['email'] : '',
+            'TK157' => isset($post['nickname']) ? $post['nickname'] : '',
+            'TK159' => isset($post['']) ? $post[''] : '0',
         );
         $result = $this->LOGIN_MODELS->registration_insert($data);
         if ($result == true) {
