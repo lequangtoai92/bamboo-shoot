@@ -5,7 +5,8 @@ var creatBamboo = new Vue({
     title_name: '',
     virtues: '',
     source: '',
-    checkedAge: ''
+    author: '',
+    checkedAge: []
   },
 
   mounted: function () {
@@ -27,26 +28,34 @@ var creatBamboo = new Vue({
   methods: {
     saveContent: function () {
       var self = this;
+      if (!checkNull(self.compact)){return $(".field-important-compact").css("color", "red");}
+      if (!checkNull(self.virtues)){return $(".field-important-virtues").css("color", "red");}
+      if (self.checkedAge.length == 0){return $(".field-important-age").css("color", "red");}
+      if (!checkNull(self.title_name)){return $(".field-important-titlename").css("color", "red");}
+      if (!checkNull(tinymce.editors['content_main'].getContent())){return $(".field-important-maincontent").css("color", "red");}
       var data_post = {
         compact: self.compact,
         title_name: self.title_name,
         virtues: self.virtues,
         source: self.source,
+        age : self.checkedAge,
+        name_author : self.author,
         content_main: tinymce.editors['content_main'].getContent()
       }
       console.log(data_post);
-      // $.ajax({
-      //   type: "POST",
-      //   url: '/creat/creat_bambo',
-      //   data: data_post,
-      //   dataType: 'json',
-      //   success: function (result) {
-      //   },
-      //   error: function () {},
-      //   complete: function () {
+      $.ajax({
+        type: "POST",
+        url: '/creat/creat_bambo',
+        data: data_post,
+        dataType: 'json',
+        success: function (result) {
+          console.log(result);
+        },
+        error: function (result) {console.log(result);},
+        complete: function () {
 
-      //   }
-      // });
+        }
+      });
     }
   }
 });

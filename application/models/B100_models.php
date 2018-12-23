@@ -26,8 +26,10 @@ class B100_models extends CI_Model {
                 VALUES ('" . $data["TK100"] . "','" . $data["BV150"] . "','" . $data["BV151"] . "','" . $data["BV152"] .
             "','" . $data["BV153"] . "','" . $data["BV154"] . "','" . $data["BV156"] . "','" . $data["BV157"] .
             "','" . $data["BV158"] ."')";
+            // die(json_encode($sql));
         if ($this->db->query($sql) === TRUE) {
-            return n2018_insert_content($data);
+            // $this->n2018_insert_content($data);
+            return $this->n2018_insert_content($data);
         }else{
             return -1;
         }
@@ -36,7 +38,7 @@ class B100_models extends CI_Model {
     private function n2018_insert_content($data){
         $sql = "INSERT INTO ND100 (ND150) VALUES ('" . $data["ND150"] . "')";
         if ($this->db->query($sql) === TRUE) {
-            d2018_creat_table();
+            $this->d2018_creat_table();
             return 1;
         }else{
             return -1;

@@ -32,20 +32,18 @@ if (isset($stylesheet)) {
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 <div>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuInfo" data-toggle="dropdown" aria-haspopup="true" >
-                            <?php echo ($this->session->userdata('B_LOGIN')['LI150']); ?>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuInfo">
-                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông tin</a>
-                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Bài viết</a>
-                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Tin nhắn</a>
-                            <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông báo</a>
-                            <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
-                            <a class="dropdown-item" href="#">Đổi mật khẩu</a>
-                            <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
-                        </div>
-                    </li>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuInfo" data-toggle="dropdown" aria-haspopup="true" >
+                        <?php echo ($this->session->userdata('B_LOGIN')['LI150']); ?>
+                    </a>
+                    <div class="dropdown-menu menu_name" aria-labelledby="navbarDropdownMenuInfo">
+                        <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông tin</a>
+                        <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Bài viết</a>
+                        <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Tin nhắn</a>
+                        <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông báo</a>
+                        <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
+                        <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                        <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
+                    </div>
                 </div>
             </form>
         </nav>

@@ -30,6 +30,8 @@ class Creat extends History {
     } else {
         redirect('/home');
     }
+      // echo json_encode($this->session->userdata('B_USER'));
+      //   echo json_encode($this->session->userdata('B_LOGIN'));
   }
 
   public function creat_bambo() {
@@ -93,19 +95,20 @@ class Creat extends History {
         'BV152' => isset($post['topic']) ? ($post['topic']) : '', //chu de
         'BV153' => isset($post['compact']) ? ($post['compact']) : '',//mo ta
         'BV154' => isset($post['name_author']) ? ($post['name_author']) : $this->session->userdata('B_USER')['name'],//tac gia
-        'BV156' => isset($post['source']) ? ($post['source']) : '',//nguon
+        'BV156' => isset($post['source']) ? ($post['source']) : 'Sưu tầm',//nguon
         'BV157' => isset($post['age']) ? ($post['age']) : '',//lua tuoi
-        'BV158' => isset($post['virtue']) ? ($post['virtue']) : '',//duc tinh
-        'TK100' => $this->session->userdata('B_LOGIN')['LI100']//id nguoi tao
+        'BV158' => isset($post['virtues']) ? ($post['virtues']) : '',//duc tinh
+        'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+        'ND150' => isset($post['content_main']) ? $post['content_main'] : ''//noi dung
     );
     $dataContent = array (
       'ND150' => isset($post['content_main']) ? $post['content_main'] : '',//noi dung
     );
    
     $resultBambo = $this->B100_MODELS->f2018_insert_bambo($data);
-    $resultContent = $this->B100_MODELS->f2018_insert_content($dataContent);
+    // $resultContent = $this->B100_MODELS->f2018_insert_content($dataContent);
 
-    return $resultBambo * $resultContent;
+    return $resultBambo;
     // if ($result == true) {
     //   $data['message_display'] = 'Registration Info Successfully !';
     // } else {

@@ -19,5 +19,7 @@
 			<span>{{item.GY151}}</span>
 		</div>
 	</div>
-
+	<?php echo $this->load->view('include/paging'); ?>
 </div>
+
+
