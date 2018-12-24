@@ -39,6 +39,7 @@
                         <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Tin nhắn</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'admin' ?>">Quản lý</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
+                        <a class="dropdown-item" href="<?php echo base_url() . 'creatOther' ?>">Viết khác</a>
                         <a class="dropdown-item" href="#">Đổi mật khẩu</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
                     </div>
@@ -64,7 +65,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'cotich_vietnam' ?>">Cổ tích Việt Nam</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cotich_vietnam' ?>">Tài khoản</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url() . 'cotich_nhatban' ?>">Cổ tích Nhật Bản</a>
@@ -79,7 +80,7 @@
                         <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'gnomic' ?>">Vè</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'gnomic' ?>">Lời hay ý đẹp</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url() . 'truyencuoi' ?>">Truyện cười</a>
