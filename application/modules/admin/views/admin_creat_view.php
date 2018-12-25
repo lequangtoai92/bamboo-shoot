@@ -3,13 +3,15 @@
     <div class="row">
       <div class="content-left col-3">
         <div class="form-group">
-        <select v-model="selected">
-          <option disabled value="1">Truyện cổ tích Việt Nam</option>
-          <option value="1">Truyện cổ tích Việt Nam</option>
-          <option value="2">Truyện cổ tích Nhật Bản</option>
-          <option value="3">Truyện cổ Grym</option>
-          <option value="4">Truyện thần thoại Hi Lạp</option>
-        </select>
+          <label for="type">Thể loại </label><label class="field-important-type"> (*)</label>
+          <select class="form-control select-option" v-model="type">
+            <option class="select-option" disabled value="">Thể loại</option>
+            <option class="select-option" value="1">Truyện cổ tích Việt Nam</option>
+            <option class="select-option" value="2">Truyện cổ tích Nhật Bản</option>
+            <option class="select-option" value="3">Truyện cổ Grym</option>
+            <option class="select-option" value="4">Truyện thần thoại Hi Lạp</option>
+          </select>
+        </div>
         </div>
         <div class="form-group">
           <label for="compact">Mô tả </label><label class="field-important-compact"> (*)</label>

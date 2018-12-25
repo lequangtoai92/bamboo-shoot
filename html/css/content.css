@@ -1,12 +1,24 @@
 .content-body { margin-top: 20px; } 
 .container .content-sup .header { text-align: center } 
+.container .content-sup .header h2 { font-weight: 600 } 
 .container .content-sup .body .img-first { text-align: center; margin: 10px 0px 10px 0px } 
 .container .content-sup .header { } 
 .container .content-sup .body { background-color: var(--pale-grey-four); border-radius: 5px; padding: 10px; } 
 .container .content-sup .body .author { text-align: right; font-weight:600; } 
+.container .content-sup .body p { font-size: .85rem; } 
 .container .content-sup .btn-to-img { margin-top: 10px; text-align: right; } 
 .container .content-sup .btn-to-fb { margin-top: 10px; text-align: left; } 
 .container .content-sup .btn-to-img .btn-warning { margin-right: 10px; } 
-.container .content-sup .auto-question { margin-top: 5px; } 
-.container .content-sup .auto-question h6 { margin: 0px 0px 0px 15px; } 
-.container .content-sup .auto-question span { margin-left: 30px; } 
+
+/* .container .content-sup .question { border: 0.5px solid #dee2e6; border-radius: 5px; padding: 10px;}  */
+.container .content-sup .question h4 { font-weight: 600; font-size: 1rem; text-decoration: underline;} 
+.container .content-sup .auto-question { margin: 5px 10px 0px 10px; background-color: rgba(0, 123, 255, 0.25); border-radius: 4px; padding: 10px 0px 5px 0px; } 
+.container .content-sup .auto-question h6 { margin: 0px 0px 5px 15px; font-size: 0.85rem; font-weight: 600; } 
+.container .content-sup .auto-question p { margin: 0px 0px 5px 35px; } 
+
+/* .container .content-sup .footer { border: 0.5px solid #dee2e6; border-radius: 5px; padding: 10px; margin-bottom: 10px;}  */
+.container .content-sup .footer { margin-bottom: 10px;} 
+.container .content-sup .footer h4 { font-weight: 600; font-size: 1rem; text-decoration: underline;} 
+.container .content-sup .comment { margin: 5px 10px 0px 10px; background-color: #e9ecef; border-radius: 4px; padding: 10px 0px 5px 0px; } 
+.container .content-sup .comment h6 { margin: 0px 0px 5px 15px; font-size: 0.85rem; font-weight: 600;} 
+.container .content-sup .comment p { margin: 0px 0px 5px 15px; } 

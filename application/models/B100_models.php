@@ -78,7 +78,7 @@ class B100_models extends CI_Model {
 
     // lay noi dung truyen
     public function n2018_get_content($data){
-        $sql = "SELECT * FROM ND100 WHERE BV100=" . $data['BV100'];
+        $sql = "SELECT * FROM ND100 WHERE ND100=" . $data['BV100'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -129,7 +129,7 @@ class B100_models extends CI_Model {
         }
     }
 
-    public function b2018_listOfTabSaga(){
+    public function b2018_listOfTabSaga($data){
         $sql = "SELECT * FROM CT100 ORDER BY CT156 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
@@ -140,8 +140,8 @@ class B100_models extends CI_Model {
         }
     }
 
-    public function b2018_listOfTabTopic(){
-        $sql = "SELECT * FROM BV100 WHERE BV151 =" . $data['BV151'] . " ORDER BY BV155 DESC Orders LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+    public function b2018_listOfTabTopic($data){
+        $sql = "SELECT * FROM BV100 WHERE BV151 = " . $data['BV151'] . " ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -151,7 +151,7 @@ class B100_models extends CI_Model {
         }
     }
 
-    public function b2018_listAll(){
+    public function b2018_listAll($data){
         $sql = "SELECT * FROM BV100 , ND100, GY100
             ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
     }

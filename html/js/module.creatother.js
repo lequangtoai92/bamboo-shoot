@@ -2,6 +2,7 @@ var creatOther = new Vue({
     el: '#form_creat',
     data: {
       compact: '',
+      type: '',
       title_name: '',
       virtues: '',
       source: '',
@@ -28,13 +29,14 @@ var creatOther = new Vue({
     methods: {
       saveContent: function () {
         var self = this;
-        if (!checkNull(self.compact)){return $(".field-important-compact").css("color", "red");}
-        if (!checkNull(self.virtues)){return $(".field-important-virtues").css("color", "red");}
-        if (self.checkedAge.length == 0){return $(".field-important-age").css("color", "red");}
+        if (!checkNull(self.type)){return $(".field-important-type").css("color", "red");}
+        // if (!checkNull(self.virtues)){return $(".field-important-virtues").css("color", "red");}
+        // if (self.checkedAge.length == 0){return $(".field-important-age").css("color", "red");}
         if (!checkNull(self.title_name)){return $(".field-important-titlename").css("color", "red");}
         if (!checkNull(tinymce.editors['content_main'].getContent())){return $(".field-important-maincontent").css("color", "red");}
         var data_post = {
           compact: self.compact,
+          type: self.type,
           title_name: self.title_name,
           virtues: self.virtues,
           source: self.source,

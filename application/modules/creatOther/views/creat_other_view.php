@@ -7,11 +7,12 @@
 
       <div class="content-right col-6">
         <div class="form-group">
-            <select v-model="selected">
-              <option disabled value="5">Truyện cười</option>
-              <option value="5">Truyện cười</option>
-              <option value="6">Ca dao - tục ngữ</option>
-              <option value="7">Châm ngôn/option>
+            <label for="type">Thể loại </label><label class="field-important-type"> (*)</label>
+            <select class="form-control select-option" v-model="type">
+              <option class="select-option" disabled value="">Thể loại</option>
+              <option class="select-option" value="5">Truyện cười</option>
+              <option class="select-option" value="6">Ca dao - tục ngữ</option>
+              <option class="select-option" value="7">Châm ngôn</option>
             </select>
         </div>
         <div class="form-group">

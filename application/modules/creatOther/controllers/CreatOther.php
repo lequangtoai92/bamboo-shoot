@@ -23,10 +23,10 @@ class CreatOther extends History {
 
   public function index() {
     if($this->_checkLogin()){
-      $modules = array( 'module.creatOther');
-      $stylesheet = 'creat';
+      $modules = array( 'module.creatother');
+      $stylesheet = 'creatother';
       $data['title'] = 'Hello world';
-      $this->renderTemplate('Tạo mới', 'creat_view', $stylesheet, $modules, $data);
+      $this->renderTemplate('Tạo mới', 'creat_other_view', $stylesheet, $modules, $data);
     } else {
         redirect('/home');
     }
