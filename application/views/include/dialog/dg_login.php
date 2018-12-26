@@ -40,37 +40,42 @@
             <div class="row">
               <div class="col-6">
                 <div class="form-group">
-                  <label for="user_name">Họ và tên:</label>
+                  <label for="user_name">Họ và tên</label><label class="user-name-import">(*)</label>
                   <input type="text" class="form-control" id="user_name_register" placeholder="Họ và tên" name="user_name">
                 </div>
                 <div class="form-group">
-                  <label for="user_id">Tên đăng nhập:</label>
+                  <label for="user_id">Tên đăng nhập</label><label class="user-name-import">(*)</label>
                   <input type="text" class="form-control" id="user_id_register" placeholder="Tên đăng nhập" name="user_id">
                 </div>
                 <div class="form-group">
-                  <label for="email">Email:</label>
+                  <label for="email">Email</label><label class="email-import">(*)</label>
                   <input type="email" class="form-control" id="email_register" placeholder="Email" name="email">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">Mật khẩu:</label>
+                  <label for="pwd">Mật khẩu</label><label class="password-import">(*)</label>
                   <input type="password" class="form-control" id="pwd_register" placeholder="Mật khẩu" name="pwd">
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group">
-                  <label for="address">Địa chỉ:</label>
+                  <label for="address">Địa chỉ</label>
                   <input type="text" class="form-control" id="address_register" placeholder="Địa chỉ" name="address">
                 </div>
                 <div class="form-group">
-                  <label for="sex">Giới tính:</label>
-                  <input type="text" class="form-control" id="sex_register" placeholder="Giới tính" name="sex">
+                  <label for="sex">Giới tính</label><label class="sex-import">(*)</label>
+                  <select class="form-control select-option" v-model="sex">
+                    <option class="select-option" disabled value="">Giới tính</option>
+                    <option class="select-option" value="1">Nam</option>
+                    <option class="select-option" value="2">Nữ</option>
+                    <option class="select-option" value="3">Khác</option>
+                  </select>
                 </div>
                 <div class="form-group">
-                  <label for="telephone">Số điện thoại:</label>
+                  <label for="telephone">Số điện thoại</label>
                   <input type="text" class="form-control" id="telephone_register" placeholder="Số điện thoại" name="telephone">
                 </div>
                 <div class="form-group">
-                  <label for="nickname">Biệt danh:</label>
+                  <label for="nickname">Biệt danh</label><label class="nickname-import">(*)</label>
                   <input type="text" class="form-control" id="nickname_register" placeholder="Biệt danh" name="nickname">
                 </div>
               </div>

@@ -40,7 +40,7 @@
                         <a class="dropdown-item" href="<?php echo base_url() . 'admin' ?>">Quản lý</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'creatOther' ?>">Viết khác</a>
-                        <a class="dropdown-item" href="#">Đổi mật khẩu</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#md_modify_pass">Đổi mật khẩu</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
                     </div>
                 </div>
