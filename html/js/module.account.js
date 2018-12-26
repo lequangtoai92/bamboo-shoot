@@ -36,7 +36,7 @@ var infoAccount = new Vue({
 	},
 
 	methods: {
-		sendFeedBack: function () {
+		updateAccount: function () {
 			$(".save-content").attr("disabled", "disabled");
 			if ($('#content_feedback').val().trim() == "") {
 				$(".save-content").removeAttr("disabled");
@@ -47,7 +47,7 @@ var infoAccount = new Vue({
 			}
 			$.ajax({
 				type: "POST",
-				url: '/feedback/send_feedback',
+				url: '/account/update_info_account',
 				data: dataPost,
 				dataType: 'json',
 				success: function (result) {
@@ -114,7 +114,7 @@ var listStory = new Vue({
 	},
 
 	methods: {
-		sendFeedBack: function () {
+		updateStory: function () {
 			$(".save-content").attr("disabled", "disabled");
 			if ($('#content_feedback').val().trim() == "") {
 				$(".save-content").removeAttr("disabled");
@@ -125,7 +125,7 @@ var listStory = new Vue({
 			}
 			$.ajax({
 				type: "POST",
-				url: '/account/send_feedback',
+				url: '/account/update_story',
 				data: dataPost,
 				dataType: 'json',
 				success: function (result) {
@@ -150,7 +150,7 @@ var listStory = new Vue({
 
 		initdata: function () {
 			var self = this;
-			var url = "/account/get_feedback?limit=2"
+			var url = "/account/get_list_story?limit=2"
 			$.ajax({
 				type: "GET",
 				url: url,
@@ -190,43 +190,9 @@ var listMessenger = new Vue({
 	},
 
 	methods: {
-		sendFeedBack: function () {
-			$(".save-content").attr("disabled", "disabled");
-			if ($('#content_feedback').val().trim() == "") {
-				$(".save-content").removeAttr("disabled");
-				return;
-			}
-			var dataPost = {
-				contentFeedback: $('#content_feedback').val()
-			}
-			$.ajax({
-				type: "POST",
-				url: '/feedback/send_feedback',
-				data: dataPost,
-				dataType: 'json',
-				success: function (result) {
-					console.log('success', result);
-					setTimeout(function () {
-						$(".save-content").removeAttr("disabled");
-					}, 15000);
-					$('#content_feedback').val("");
-
-					// self.items.push(dataPost);
-					// console.log(self.items);
-				},
-				error: function (result) {
-					console.log('error', result);
-					$(".save-content").removeAttr("disabled");
-				},
-				complete: function () {
-
-				}
-			});
-		},
-
 		initdata: function () {
 			var self = this;
-			var url = "/account/get_feedback?limit=2"
+			var url = "/account/get_list_messenger?limit=2"
 			$.ajax({
 				type: "GET",
 				url: url,
@@ -266,43 +232,9 @@ var listNotifiction = new Vue({
 	},
 
 	methods: {
-		sendFeedBack: function () {
-			$(".save-content").attr("disabled", "disabled");
-			if ($('#content_feedback').val().trim() == "") {
-				$(".save-content").removeAttr("disabled");
-				return;
-			}
-			var dataPost = {
-				contentFeedback: $('#content_feedback').val()
-			}
-			$.ajax({
-				type: "POST",
-				url: '/feedback/send_feedback',
-				data: dataPost,
-				dataType: 'json',
-				success: function (result) {
-					console.log('success', result);
-					setTimeout(function () {
-						$(".save-content").removeAttr("disabled");
-					}, 15000);
-					$('#content_feedback').val("");
-
-					// self.items.push(dataPost);
-					// console.log(self.items);
-				},
-				error: function (result) {
-					console.log('error', result);
-					$(".save-content").removeAttr("disabled");
-				},
-				complete: function () {
-
-				}
-			});
-		},
-
 		initdata: function () {
 			var self = this;
-			var url = "/account/get_feedback?limit=2"
+			var url = "/account/get_list_notifiction?limit=2"
 			$.ajax({
 				type: "GET",
 				url: url,
