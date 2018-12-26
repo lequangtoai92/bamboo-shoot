@@ -51,11 +51,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
     <script type="text/javascript" src="<?= base_url();?>html/dist/bootstrap/js/popper.min.js" ></script>
-    <script type="text/javascript" src="<?= base_url();?>html/dist/knockoutjs/knockout-3.4.2.js" ></script>
+    <!-- <script type="text/javascript" src="<?= base_url();?>html/dist/knockoutjs/knockout-3.4.2.js" ></script> -->
     <script type="text/javascript" src="<?= base_url();?>html/dist/md5/md5.js"></script>
     <script type="text/javascript" src="<?= base_url();?>html/js/default.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/js/module.menu.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/js/module.login.js" ></script>
+    <script type="text/javascript" src="<?= base_url();?>html/js/modules.pagination.js" ></script>
     
     <?php
     if(isset($script)){

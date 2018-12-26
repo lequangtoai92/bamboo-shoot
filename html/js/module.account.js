@@ -23,7 +23,8 @@ var infoAccount = new Vue({
 	el: '#info_account',
 	data: {
 		items: [],
-		loadItems: []
+		loadItems: [],
+		sex: []
 	},
 	watch: {
 		loadItems: function () {
@@ -36,38 +37,33 @@ var infoAccount = new Vue({
 	},
 
 	methods: {
-		updateAccount: function () {
-			$(".save-content").attr("disabled", "disabled");
-			if ($('#content_feedback').val().trim() == "") {
-				$(".save-content").removeAttr("disabled");
-				return;
-			}
-			var dataPost = {
-				contentFeedback: $('#content_feedback').val()
-			}
-			$.ajax({
-				type: "POST",
-				url: '/account/update_info_account',
-				data: dataPost,
-				dataType: 'json',
-				success: function (result) {
-					console.log('success', result);
-					setTimeout(function () {
-						$(".save-content").removeAttr("disabled");
-					}, 15000);
-					$('#content_feedback').val("");
+		updateInfo: function () {
+			// $("#update_info").attr("disabled", "disabled");
+			console.log(this.items);
+			
+			// $.ajax({
+			// 	type: "POST",
+			// 	url: '/account/update_info_account',
+			// 	data: dataPost,
+			// 	dataType: 'json',
+			// 	success: function (result) {
+			// 		console.log('success', result);
+			// 		setTimeout(function () {
+			// 			$(".save-content").removeAttr("disabled");
+			// 		}, 15000);
+			// 		$('#content_feedback').val("");
 
-					// self.items.push(dataPost);
-					// console.log(self.items);
-				},
-				error: function (result) {
-					console.log('error', result);
-					$(".save-content").removeAttr("disabled");
-				},
-				complete: function () {
+			// 		// self.items.push(dataPost);
+			// 		// console.log(self.items);
+			// 	},
+			// 	error: function (result) {
+			// 		console.log('error', result);
+			// 		$(".save-content").removeAttr("disabled");
+			// 	},
+			// 	complete: function () {
 
-				}
-			});
+			// 	}
+			// });
 		},
 
 		initdata: function () {
@@ -78,14 +74,15 @@ var infoAccount = new Vue({
 				url: url,
 				dataType: 'json',
 				success: function (result) {
-					self.items = result.data;
+					console.log( result.data[0]);
+					self.items = result.data[0];
 					//phan trang
-					$('.bb-pagination.image').doPagination(10, url, 2, function (res) {
-						if (res.status === 'success') {
-							self.loadItems = res.data;
-							this.items = self.loadItems;
-						}
-					});
+					// $('.bb-pagination.image').doPagination(10, url, 2, function (res) {
+					// 	if (res.status === 'success') {
+					// 		this.loadItems = res.data;
+					// 		this.items = this.loadItems;
+					// 	}
+					// });
 				},
 				error: function (error) {
 					console.log(error);
@@ -101,7 +98,7 @@ var listStory = new Vue({
 	el: '#list_story',
 	data: {
 		items: [],
-		loadItems: []
+		loadItems: []		
 	},
 	watch: {
 		loadItems: function () {

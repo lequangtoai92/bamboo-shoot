@@ -14,7 +14,7 @@ class Account extends History {
     parent::__construct();
     $this->lang->load('history');
     $this->load->model('A100_models', 'A100_MODELS');
-    $this->load->model('B100_models', 'A100_MODELS');
+    $this->load->model('B100_models', 'B100_MODELS');
   }
 
   /*   * **************************************************************** */
@@ -142,7 +142,7 @@ class Account extends History {
     $data = array(
       'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
     );
-    return $this->B100_MODELS->a2018_get_account($data);
+    return $this->A100_MODELS->a2018_get_account($data);
   }
 
   private function getListStory($get) {
@@ -160,7 +160,7 @@ class Account extends History {
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
-    return $this->B100_MODELS->a2018_get_messenger($data);
+    return $this->A100_MODELS->a2018_get_messenger($data);
   }
 
   private function getListNotifiction($get) {
@@ -169,7 +169,7 @@ class Account extends History {
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
-    return $this->B100_MODELS->a2018_get_notifiction($data);
+    return $this->A100_MODELS->a2018_get_notifiction($data);
   }
 
 

@@ -53,6 +53,7 @@
     <script type="text/javascript" src="<?= base_url();?>html/js/default.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/js/module.menu.js" ></script>
     <script type="text/javascript" src="<?= base_url();?>html/js/module.login.js" ></script>
+    <script type="text/javascript" src="<?= base_url();?>html/js/modules.pagination.js" ></script>
     
     <?php
     if(isset($script)){

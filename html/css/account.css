@@ -1,16 +1,22 @@
-.content-body.container{display: table}
+.content-body.container { display: table } 
 
 /* Style the tab */
-.tab { float: left; /*border: 1px solid #ccc; background-color: #f1f1f1;*/ width: 20%; margin-top: 10px; min-height: 400px;} 
+.tab { float: left; /*border: 1px solid #ccc; background-color: #f1f1f1; */ width: 20%; margin-top: 10px; min-height: 400px; } 
 
 /* Style the buttons that are used to open the tab content */
-.tab button { display: block; background-color: inherit; color: black; padding: 16px 16px; width: 100%; border: none; outline: none; text-align: left; cursor: pointer; transition: 0.3s; margin-bottom: 5px; padding-left: 30px;} 
+.tab button { display: block; background-color: inherit; color: black; padding: 16px 16px; width: 100%; border: none; outline: none; text-align: left; cursor: pointer; transition: 0.3s; margin-bottom: 5px; padding-left: 30px; } 
 
 /* Change background color of buttons on hover */
-.tab button:hover { background-color: #ddd; border-radius: 30px;} 
+.tab button:hover { background-color: #ddd; border-radius: 30px; } 
 
 /* Create an active/current "tab button" class */
-.tab button.active { background-color: #17c6e2; border-radius: 30px;} 
+.tab button.active { background-color: #17c6e2; border-radius: 30px; } 
 
 /* Style the tab content */
-.tabcontent { float: left; padding: 10px 12px; /*border: 1px solid #ccc;*/ width: 80%; border-left: none; display: none; padding-left: 30px;} 
+.tabcontent { float: left; padding: 10px 12px; /*border: 1px solid #ccc; */ width: 80%; border-left: none; display: none; padding-left: 30px; } 
+
+#info_account .body-info label { font-size: .85rem } 
+#info_account .body-info input { font-size: .85rem } 
+#info_account .footer-info .button-form { text-align: right } 
+#info_account .footer-info .button-form .btn { height: 30px; width: 85px; padding-top: 0px; padding-bottom: 0px; font-size: 0.85rem; } 
+#info_account .footer-info label { font-size: .85rem; font-weight: 600; width: 100px; } 

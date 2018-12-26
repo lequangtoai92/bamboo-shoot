@@ -20,7 +20,8 @@
               <a href="/u/nhantambin">{{item.BV154}}</a>
             </div>
             <div class="meta-info-time">
-              <span>{{item.BV155}}</span>
+              <span>{{render_ddMMyyyy  (item.BV155)}}</span>
+              <!-- <span>{{item.BV155}}</span>setTime(item.BV155) -->
             </div>
           </div>
 

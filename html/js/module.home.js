@@ -29,6 +29,10 @@ var firstTable = new Vue({
       document.location.href = '/content?storyId=' + data;
     },
 
+    render_ddMMyyyy: function (data) {
+      return get_ddMMyyyy(data);
+    },
+
     initdata: function () {
       var self = this;
       var url = "/home/get_list_story?limit=15"

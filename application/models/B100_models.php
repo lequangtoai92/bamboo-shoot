@@ -113,7 +113,7 @@ class B100_models extends CI_Model {
     }
     // lay danh sach theo ca nhan
     public function b2018_listOfAcount($data){
-        $sql = "SELECT * FROM BV100 WHERE TK100=" . $data['TK100'] . "ORDER BY BV155 DESC Orders LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * FROM BV100 WHERE TK100 = " . $data['TK100'] . " ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
