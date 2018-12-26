@@ -14,6 +14,7 @@ class Home extends History {
     parent::__construct();
     $this->lang->load('history');
     $this->load->database();
+    $this->load->model('B100_models', 'B100_MODELS');
   }
 
   /*   * **************************************************************** */
@@ -97,5 +98,30 @@ class Home extends History {
     $stylesheet = 'home';
     $data['title'] = 'Hello world';
     $this->renderTemplate('Truyện cười', 'funny_view', $stylesheet, $modules, $data);
+  }
+
+  public function get_list_story() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getListStory ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
+  /*     * **************************************************************** */
+  /*     * ****************************[PRIVATE]*************************** */
+  /*     * **************************************************************** */
+
+  private function getListStory($get) {
+    $data = array(
+      'BV151' => isset($get['BV151']) ? $get['BV151'] : 0,
+      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
+      'START' => isset($get['start']) ? $get['start'] : 0,
+    );
+    return $this->B100_MODELS->b2018_listOfTabTopic($data);
   }
 }

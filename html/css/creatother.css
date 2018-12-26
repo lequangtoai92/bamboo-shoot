@@ -4,5 +4,6 @@
 .content-body .content-left textarea { font-size: 0.85rem } 
 .content-body .content-left input { font-size: 0.85rem } 
 .content-body .content-right input { font-size: 0.85rem } 
-.footer-save { margin-top: 1rem; } 
+.content-body .content-right .select-option { font-size: 0.85rem } 
+.footer-save { margin-top: 1rem; text-align: right;} 
 .footer-save .save-content { height: 30px; width: 70px; padding-top: 0px; padding-bottom: 0px; font-size: 0.85rem; } 

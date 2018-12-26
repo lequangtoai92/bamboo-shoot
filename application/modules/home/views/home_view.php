@@ -2,7 +2,7 @@
   <div class="row">
     <div class="content-sup col-9" id="firstTable">
 
-      <div class="item" v-for="(row, index) in rows">
+      <div class="item" v-for="item in items">
         <div class="avatar">
           <a href="/u/nhantambin">
             <img src="https://viblo.asia/images/mm.png">
@@ -17,23 +17,23 @@
         <div class="info">
           <div class="meta-info">
             <div class="meta-info-name">
-              <a href="/u/nhantambin">nhantambin</a>
+              <a href="/u/nhantambin">{{item.BV154}}</a>
             </div>
             <div class="meta-info-time">
-              <span>2 tuần trước</span>
+              <span>{{item.BV155}}</span>
             </div>
           </div>
 
-          <div class="title-info" v-on:click="goToContent(row)">
-            <h4>{{row.name}}</h4>
+          <div class="title-info" v-on:click="goToContent(item.BV100)">
+            <h4>{{item.BV150}}</h4>
             <div class="title-tag">
-              <span>{{row.virtues}}</span>
+              <span>{{item.BV158}}</span>
               <!-- <span>thông minh</span> -->
             </div>
           </div>
 
           <div class="content-info">
-            <p>{{row.describe}}</p>
+            <p>{{item.BV153}}</p>
           </div>
 
           <div class="comment-info">
