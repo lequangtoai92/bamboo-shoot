@@ -67,3 +67,4 @@ $route['thanthoai_hilap'] = 'home/greek_mythology';
 $route['cagiao_tucngu'] = 'home/folk_proverb';
 $route['chamngon'] = 'home/gnomic';
 $route['truyencuoi'] = 'home/funny';
+$route[$this->session->userdata('B_USER')['name']] = 'account/user?userName=' . $this->session->userdata('B_USER')['name'];

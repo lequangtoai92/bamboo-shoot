@@ -16,12 +16,6 @@ class B100_models extends CI_Model {
 
     // Insert registration data in database
     public function f2018_insert_bambo($data){
-        // $this->db->insert('BV100', $data);
-        // if ($this->db->affected_rows() > 0) {
-        //     return 1;
-        // }else{
-        //     return -1;
-        // }
         $sql = "INSERT INTO BV100 (TK100, BV150, BV151, BV152, BV153, BV154, BV156, BV157, BV158) 
                 VALUES ('" . $data["TK100"] . "','" . $data["BV150"] . "','" . $data["BV151"] . "','" . $data["BV152"] .
             "','" . $data["BV153"] . "','" . $data["BV154"] . "','" . $data["BV156"] . "','" . $data["BV157"] .
@@ -152,8 +146,41 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll(){
-        $sql = "SELECT * FROM BV100 , ND100, GY100
+        $sql = "SELECT * FROM BV100 , ND100, BL100
             ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+    }
+
+    public function n2018_update_hay($data){
+        $sql = "UPDATE DG100 SET DG152 = DG152 + 1 , 
+                DG153 = CONCAT(DG153," . $data['TK100'] . ") 
+                WHERE BV100 =" . $data['BV100'];
+        if ($this->db->query($sql) === TRUE) {
+            return 1;
+        }else{
+            return -1;
+        }
+    }
+
+    public function n2018_update_chan($data){
+        $sql = "UPDATE DG100 SET DG150 = DG150 + 1 ,
+                DG151 = CONCAT(DG151," . $data['TK100'] . ") 
+                WHERE BV100 =" . $data['BV100'];
+        if ($this->db->query($sql) === TRUE) {
+            return 1;
+        }else{
+            return -1;
+        }
+    }
+
+    public function n2018_insert_comment($data){
+        $sql = "INSERT INTO BL100 (BV100, TK100, BL150, BL152, BL153, BL154, BL155) 
+                VALUES (" . $data['BV100'] . "," . $data['TK100'] . "," . $data['BL150'] . "," . $data['BL152'] . 
+                "," . $data['BL153'] . "," . $data['BL154'] . "," . $data['BL155'] . ")";
+        if ($this->db->query($sql) === TRUE) {
+            return 1;
+        }else{
+            return -1;
+        }
     }
 
 }

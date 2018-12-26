@@ -28,6 +28,27 @@ class Admin extends History {
     $data['title'] = 'Hello world';
     $this->loadTemplateAdmin('ADMIN', 'admin_view', $stylesheet, $modules, $data);
   }
+  
+  public function creat() {
+    $modules = array( 'module.admin');
+    $stylesheet = 'admin';
+    $data['title'] = 'Hello world';
+    $this->loadTemplateAdmin('ADMIN', 'admin_creat_view', $stylesheet, $modules, $data);
+  }
+
+  public function account() {
+    $modules = array( 'module.admin');
+    $stylesheet = 'admin';
+    $data['title'] = 'Hello world';
+    $this->loadTemplateAdmin('ADMIN', 'admin_view_account', $stylesheet, $modules, $data);
+  }
+
+  public function story() {
+    $modules = array( 'module.admin');
+    $stylesheet = 'admin';
+    $data['title'] = 'Hello world';
+    $this->loadTemplateAdmin('ADMIN', 'admin_view_story', $stylesheet, $modules, $data);
+  }
 
   public function get_listBambo() {
     $get = $_GET;

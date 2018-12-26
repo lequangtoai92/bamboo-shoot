@@ -13,6 +13,8 @@ class Account extends History {
   public function __construct() {
     parent::__construct();
     $this->lang->load('history');
+    $this->load->model('A100_models', 'A100_MODELS');
+    $this->load->model('B100_models', 'A100_MODELS');
   }
 
   /*   * **************************************************************** */
@@ -25,6 +27,216 @@ class Account extends History {
         $data['title'] = 'Hello world';
         $this->renderTemplate('Tài khoản', 'account_view', $stylesheet, $modules, $data);
   }
+
+  public function user(){
+    $modules = array( 'module.account');
+    $stylesheet = 'account';
+    $data['title'] = 'Hello world';
+    $this->renderTemplate('Tác giả', 'info_view', $stylesheet, $modules, $data);
+  }
+
+  public function get_info_account() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getInfoAccount ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
+  public function get_list_story() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getListStory ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
+  public function get_list_messenger() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getListMessenger ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
+  public function get_list_notifiction() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getListNotifiction ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
+  public function update_info_account() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
+    $arrayRS = $this->updateInfoAccount($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Cám ơn bạn đã góp ý cho chúng tôi!';
+    };
+    echo json_encode($res);
+  }
+
+  public function update_story() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
+    $arrayRS = $this->updateStory($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Cám ơn bạn đã góp ý cho chúng tôi!';
+    };
+    echo json_encode($res);
+  }
+
+  public function update_pass() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
+    $arrayRS = $this->updatePass($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Cám ơn bạn đã góp ý cho chúng tôi!';
+    };
+    echo json_encode($res);
+  }
+
+  public function update_notifiction() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
+    $arrayRS = $this->updateNotifiction($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Cám ơn bạn đã góp ý cho chúng tôi!';
+    };
+    echo json_encode($res);
+  }
+
+
+
+
+  /*     * **************************************************************** */
+  /*     * ****************************[PRIVATE]*************************** */
+  /*     * **************************************************************** */
+
+  private function getInfoAccount($get) {
+    $data = array(
+      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+    );
+    return $this->B100_MODELS->a2018_get_account($data);
+  }
+
+  private function getListStory($get) {
+    $data = array(
+      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
+      'START' => isset($get['start']) ? $get['start'] : 0,
+    );
+    return $this->B100_MODELS->b2018_listOfAcount($data);
+  }
+
+  private function getListMessenger($get) {
+    $data = array(
+      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
+      'START' => isset($get['start']) ? $get['start'] : 0,
+    );
+    return $this->B100_MODELS->a2018_get_messenger($data);
+  }
+
+  private function getListNotifiction($get) {
+    $data = array(
+      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
+      'START' => isset($get['start']) ? $get['start'] : 0,
+    );
+    return $this->B100_MODELS->a2018_get_notifiction($data);
+  }
+
+
+  private function updateInfoAccount($post)/*     * : array */ {
+    $data = array(
+      'TK151' => isset($post['TK100']) ? $post['contentFeedback'] : 0,
+      'TK152' => isset($post['TK100']) ? $post['contentFeedback'] : 0,
+      'TK153' => isset($post['contentFeedback']) ? $post['contentFeedback'] : NULL,
+      'TK154' => isset($post['GY152']) ? $post['contentFeedback'] : 0,
+      'TK155' => isset($post['GY153']) ? $post['contentFeedback'] : NULL,
+      'TK156' => isset($post['GY154']) ? $post['contentFeedback'] : NULL,
+      'TK157' => isset($post['GY155']) ? $post['contentFeedback'] : NULL,
+      'TK159' => isset($post['GY156']) ? $post['contentFeedback'] : NULL,
+    );
+    return  $this->A100_MODELS->a2018_update_account($data);
+  }
+
+  private function updateStory($post)/*     * : array */ {
+    $data = array(
+      'KD100' => isset($post['KD100']) ? $post['KD100'] : 0,
+      'KD150' => isset($post['KD150']) ? $post['KD150'] : 0,
+    );
+    return  $this->A100_MODELS->a2018_updateKD100($data);
+  }
+
+  private function updatePass($post)/*     * : array */ {
+    $data = array(
+      'LI100' => $this->session->userdata('B_LOGIN')['LI100'],//id nguoi tao
+      'LI151' => isset($post['LI151']) ? $post['LI151'] : NULL,
+    );
+    return  $this->A100_MODELS->a2018_update_pass($data);
+  }
+
+  private function updateNotifiction($post)/*     * : array */ {
+    $data = array(
+      'TB100' => isset($post['TB100']) ? $post['TB100'] : NULL,
+      'TB152' => isset($post['TB152']) ? $post['TB152'] : NULL,
+    );
+    return  $this->A100_MODELS->a2018_update_notifiction($data);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   public function connect(){
         

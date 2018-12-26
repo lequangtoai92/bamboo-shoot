@@ -44,7 +44,7 @@ class A100_models extends CI_Model {
     }
 
     public function a2018_update_pass($data) {
-        $sql = "UPDATE LI100 SET LI151 =" . $data['LI151'] . "WHERE LI100 =" . $data['LI150'];
+        $sql = "UPDATE LI100 SET LI151 =" . $data['LI151'] . "WHERE LI100 =" . $data['LI100'];
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{
@@ -83,8 +83,17 @@ class A100_models extends CI_Model {
         }
     }
 
-    public function a2018_sen_messenger(){
+    public function a2018_send_messenger(){
         $sql = "INSERT INTO TN100 (TK101, TK102, TN150) VALUES ('" . $data["TK101"] . "','" . $data["TK102"] . "','" . $data["TN150"] . "')";
+        if ($this->db->query($sql) === TRUE) {
+            return 1;
+        }else{
+            return -1;
+        }
+    }
+
+    public function a2018_updateKD100($data) {
+        $sql = "UPDATE KD100 SET KD150 ='" . $data["KD150"] . "' WHERE KD100 =" . $data['KD100'];
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{
