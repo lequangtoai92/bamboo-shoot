@@ -28,7 +28,8 @@
           <div class="title-info" v-on:click="goToContent(item.BV100)">
             <h4>{{item.BV150}}</h4>
             <div class="title-tag">
-              <span>{{rendder_virtues(item.BV158)}}</span>
+              <span>{{(item.BV158)}}</span>
+              <!-- <span>{{rendder_virtues(item.BV158)}}</span> -->
               <!-- <span>thông minh</span> -->
             </div>
           </div>
