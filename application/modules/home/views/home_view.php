@@ -1,6 +1,6 @@
 <div class="content-body container">
   <div class="row">
-    <div class="content-sup col-9" id="firstTable">
+    <div class="content-sup col-md-9" id="firstTable">
 
       <div class="item" v-for="item in items">
         <div class="avatar">
@@ -93,7 +93,7 @@
         </tbody>
       </table> -->
     </div>
-    <div class="content-sub col-3">
+    <div class="content-sub col-md-3">
       <p><img src="<?=base_url();?>images/image.jpg" height="310" width="255"
         alt="thẻ img" /></p>
     </div>

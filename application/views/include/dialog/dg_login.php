@@ -16,7 +16,7 @@
           <div class="modal-body">
             <p>Some text in the modal.</p>
             <div class="row">
-              <div class="col-6">
+              <div class="col-md-6">
                 <div class="form-group">
                   <label for="email">Tên đăng nhập:</label>
                   <input type="text" class="form-control" id="user_id_login" placeholder="Tên đăng nhập" name="email">
@@ -38,7 +38,7 @@
           <div class="modal-body">
             <p>Some text in the modal.</p>
             <div class="row">
-              <div class="col-6">
+              <div class="col-md-6">
                 <div class="form-group">
                   <label for="user_name">Họ và tên</label><label class="user-name-import">(*)</label>
                   <input type="text" class="form-control" id="user_name_register" placeholder="Họ và tên" name="user_name">
@@ -56,7 +56,7 @@
                   <input type="password" class="form-control" id="pwd_register" placeholder="Mật khẩu" name="pwd">
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <div class="form-group">
                   <label for="address">Địa chỉ</label>
                   <input type="text" class="form-control" id="address_register" placeholder="Địa chỉ" name="address">
@@ -91,7 +91,7 @@
           <div class="modal-body">
             <p>Sau khi đăng ký bạn muốn sử dụng hết chức năng thì phải vào mục tài khoản và bổ sung thêm thông tin.</p>
             <div class="row">
-              <div class="col-6">
+              <div class="col-md-6">
                 <div class="form-group">
                   <label for="user_name">Tên đăng nhập:</label>
                   <input type="text" class="form-control" id="user_id_quick_register" placeholder="Tên đăng nhập" name="email">

@@ -15,6 +15,7 @@ class Account extends History {
     $this->lang->load('history');
     $this->load->model('A100_models', 'A100_MODELS');
     $this->load->model('B100_models', 'B100_MODELS');
+    $this->load->model('Login_models', 'LOGIN_MODELS');
   }
 
   /*   * **************************************************************** */
@@ -111,7 +112,7 @@ class Account extends History {
     $post = $_POST;
     $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
     $arrayRS = $this->updatePass($post);
-    if ($arrayRS > 0) {
+    if ($arrayRS != false) {
         $res['status'] = 'success';
         $res['data'] = $arrayRS;
         $res['message'] = 'Cám ơn bạn đã góp ý cho chúng tôi!';
@@ -196,11 +197,20 @@ class Account extends History {
   }
 
   private function updatePass($post)/*     * : array */ {
-    $data = array(
-      'LI100' => $this->session->userdata('B_LOGIN')['LI100'],//id nguoi tao
-      'LI151' => isset($post['LI151']) ? $post['LI151'] : NULL,
+    $dataLogin = array(
+      'LI150' => $this->session->userdata('B_LOGIN')['LI150'],
+      'LI151' => isset($post['old_pass']) ? md5($post['old_pass']) : '',
     );
-    return  $this->A100_MODELS->a2018_update_pass($data);
+    $result = $this->LOGIN_MODELS->login($dataLogin);
+    if ($result !== false) {
+      $data = array(
+        'LI100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+        'LI151' => isset($post['new_pass']) ? md5($post['new_pass']) : '',
+      );
+      return  $this->A100_MODELS->a2018_update_pass($data);
+    } else {
+      return false;
+    }
   }
 
   private function updateNotifiction($post)/*     * : array */ {

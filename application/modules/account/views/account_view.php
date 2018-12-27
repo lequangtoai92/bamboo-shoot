@@ -10,7 +10,7 @@
     <h3>Thông tin cá nhân</h3>
     <hr>
     <div class="row">
-      <div class="col-6 body-info">
+      <div class="col-md-6 body-info">
         <div class="form-group">
           <label for="user_name">Họ và tên</label><label class="user-name-import">(*)</label>
           <input type="text" class="form-control" :value="items.TK151" v-model="TK151" id="user_name" placeholder="Họ và tên" name="user_name">
@@ -29,7 +29,7 @@
         </div>
         
       </div>
-      <div class="col-6 body-info">
+      <div class="col-md-6 body-info">
         <div class="form-group">
           <label for="sex">Giới tính</label><label class="sex-import">(*)</label>
           <!-- <input type="text" class="form-control" id="sex" placeholder="Giới tính" name="sex"> -->
@@ -54,7 +54,7 @@
           <input type="text" class="form-control" :value="items.TK157" v-model="TK157" id="nickname" placeholder="nick name" name="nickname">
         </div>
       </div>
-      <div class="col-12 footer-info">
+      <div class="col-md-12 footer-info">
         <div class="form-group button-form">
           <button type="button" class="btn btn-primary" id="update_info" v-on:click="updateInfo">Cập nhật</button>
         </div>

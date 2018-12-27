@@ -1,6 +1,6 @@
 <div class="content-body container">
   <div class="row">
-    <div class="content-sup col-9">
+    <div class="content-sup col-md-9">
       <div class="item" id="firstTable">
         <div class="avatar">
           <a href="/u/xuanvupham96">
@@ -202,7 +202,7 @@
         <hr class="hr-end">
       </div>
     </div>
-    <div class="content-sub col-3">
+    <div class="content-sub col-md-3">
       <div class="item-right">
         <h4>Bảng vàng tác giả</h4>
         <a href="#">Nhẫn tâm bin</a>

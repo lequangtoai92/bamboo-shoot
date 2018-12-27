@@ -45,7 +45,7 @@ class A100_models extends CI_Model {
     }
 
     public function a2018_update_pass($data) {
-        $sql = "UPDATE LI100 SET LI151 = " . $data['LI151'] . " WHERE LI100 = " . $data['LI100'];
+        $sql = "UPDATE LI100 SET LI151 = '" . $data["LI151"] . "' WHERE LI100 = " . $data['LI100'];
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{

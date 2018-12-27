@@ -1,7 +1,7 @@
 <div class="content-body container">
   <form id="form_creat" method="post">
     <div class="row">
-      <div class="content-left col-3">
+      <div class="content-left col-md-3">
         <div class="form-group">
           <label for="compact">Mô tả </label><label class="field-important-compact"> (*)</label>
           <textarea class="form-control" placeholder="Mô tả, tóm tắt câu truyện" rows="11" v-model="compact"></textarea>
@@ -35,7 +35,7 @@
           <input type="text" class="form-control" name="source" v-model="source" placeholder="Nguồn (sưu tầm, sáng tác,..)">
         </div>
       </div>
-      <div class="content-right col-9">
+      <div class="content-right col-md-9">
         <div class="name-title form-group">
           <label for="titlename">Tên tác phẩm </label><label class="field-important-titlename"> (*)</label>
           <input text="text" placeholder="Tên truyện" name="titlename" class="form-control" v-model="title_name">

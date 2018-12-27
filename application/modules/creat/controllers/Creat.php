@@ -126,7 +126,7 @@ class Creat extends History {
         'BV156' => isset($post['source']) ? ($post['source']) : '',//nguon
         'BV157' => isset($post['age']) ? ($post['age']) : '',//lua tuoi
         'BV158' => isset($post['virtue']) ? ($post['virtue']) : '',//duc tinh
-        'TK100' => $this->session->userdata('B_LOGIN')['LI100']//id nguoi tao
+        'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
     );
     $dataContent = array (
       'ND150' => isset($post['content_main']) ? $post['content_main'] : '',//noi dung

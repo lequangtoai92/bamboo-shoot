@@ -1,6 +1,6 @@
 <div class="content-body container">
 	<div class="row">
-		<div class="content-sup col-9" id="content_item">
+		<div class="content-sup col-md-9" id="content_item">
 			<div class="header">
 				<div class="avatar">
 					<a href="/u/nhantambin">
@@ -18,14 +18,14 @@
 				<p id="inset_content"></p>
 			</div>
 			<div class=row>
-				<div class="btn-to-fb col-6">
+				<div class="btn-to-fb col-md-6">
 					<div class="fb-like"
 						data-href="https://developers.facebook.com/docs/plugins/"
 						data-layout="button_count" data-action="like"
 						data-size="small" data-show-faces="true"
 						data-share="true"></div>
 				</div>
-				<div class="btn-to-img col-6">
+				<div class="btn-to-img col-md-6">
 					<button class="btn btn-success">Hay</button>
 					<button class="btn btn-warning">Chán</button>
 				</div>
@@ -109,7 +109,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="content-sub col-3">
+		<div class="content-sub col-md-3">
 			<p><img src="<?= base_url(); ?>images/image.jpg" height="310"
 				width="255" alt="thẻ img" /></p>
 		</div>

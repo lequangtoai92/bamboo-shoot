@@ -1,11 +1,11 @@
 <div class="content-body container">
   <form id="form_creat" method="post">
     <div class="row">
-      <div class="content-left col-3">
+      <div class="content-left col-md-3">
         
       </div>
 
-      <div class="content-right col-6">
+      <div class="content-right col-md-6">
         <div class="form-group">
             <label for="type">Thể loại </label><label class="field-important-type"> (*)</label>
             <select class="form-control select-option" v-model="type">
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="content-left col-3">
+      <div class="content-left col-md-3">
         
       </div>
       
