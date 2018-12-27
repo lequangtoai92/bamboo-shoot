@@ -28,7 +28,7 @@
           <div class="title-info" v-on:click="goToContent(item.BV100)">
             <h4>{{item.BV150}}</h4>
             <div class="title-tag">
-              <span>{{item.BV158}}</span>
+              <span>{{rendder_virtues(item.BV158)}}</span>
               <!-- <span>thông minh</span> -->
             </div>
           </div>
@@ -67,31 +67,6 @@
         </div>
         <hr class="hr-end">
       </div>
-
-
-      <!-- <table id="firstTable" class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Tên truyện</th>
-            <th>Mô tả</th>
-            <th>Đức tính</th>
-            <th>Lứa tuổi</th>
-            <th>Đánh giá</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(row, index) in rows" class="td-hover"
-            v-on:click="goToContent(row)">
-            <td>{{index +1}}</td>
-            <td>{{row.name}}</td>
-            <td>{{row.describe}}</td>
-            <td>{{row.virtues}}</td>
-            <td class="for-age">{{row.age}}</td>
-            <td>{{row.rate}}</td>
-          </tr>
-        </tbody>
-      </table> -->
     </div>
     <div class="content-sub col-md-3">
       <p><img src="<?=base_url();?>images/image.jpg" height="310" width="255"

@@ -24,3 +24,11 @@
 .content-body .content-sub .item-right { display: grid; width: 100%; margin-top: 10px; margin-bottom: 10px; background-color: aliceblue; border-radius: 4px; padding: 5px 5px 5px 9px;} 
 .content-body .content-sub .item-right h4 { font-size: 1.1rem; font-weight: 600; } 
 .content-body .content-sub .item-right a { padding-bottom: 3px; color: black; } 
+
+@media (max-width: 768px) { 
+
+    .content-body .content-sup .item .info .meta-info { display: inline-flex; font-size: 0.85rem; } 
+.content-body .content-sup .item .info .title-info h4 { margin: 0px; font-size: 1.15rem; cursor: pointer;} 
+    .content-body .content-sup .item .info .content-info p { font-style: italic; font-size: 0.9rem; margin-bottom: 5px; } 
+    .content-body .content-sub .item-right h4 { font-size: 1.15rem; font-weight: 600; } 
+}

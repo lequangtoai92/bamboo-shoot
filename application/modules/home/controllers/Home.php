@@ -64,7 +64,7 @@ class Home extends History {
     $this->renderTemplate('Cổ tích Việt Nam', 'saga_view', $stylesheet, $modules, $data);
   }
   public function saganb(){
-    $modules = array( 'module.home');
+    $modules = array( 'module.saga');
     $stylesheet = 'home';
     $data['title'] = 'Cổ tích Nhật Bản';
     $this->renderTemplate('Cổ tích Nhật Bản', 'saga_view', $stylesheet, $modules, $data);
@@ -85,13 +85,13 @@ class Home extends History {
     $modules = array( 'module.home');
     $stylesheet = 'home';
     $data['title'] = 'Hello world';
-    $this->renderTemplate('Ca dao tục ngữ', 'funny_view', $stylesheet, $modules, $data);
+    $this->renderTemplate('Ca dao', 'funny_view', $stylesheet, $modules, $data);
   }
   public function gnomic(){
     $modules = array( 'module.home');
     $stylesheet = 'home';
     $data['title'] = 'Hello world';
-    $this->renderTemplate('Châm ngôn', 'gnomic_view', $stylesheet, $modules, $data);
+    $this->renderTemplate('Châm ngôn', 'funny_view', $stylesheet, $modules, $data);
   }
   public function funny(){
     $modules = array( 'module.home');
@@ -117,8 +117,25 @@ class Home extends History {
   /*     * **************************************************************** */
 
   private function getListStory($get) {
+    $val = $this->uri->segment(1);
+    if($val == 'cotich_vietnam'){
+      $BV151 = 1;
+    } else  if($val == 'cotich_nhatban'){
+      $BV151 = 2;
+    } else if($val == 'truyenco_grimm'){
+      $BV151 = 3;
+    } else if($val == 'thanthoai_hilap'){
+      $BV151 = 4;
+    } else if($val == 'truyencuoi'){
+      $BV151 = 5;
+    } else if($val == 'cagiao_tucngu'){
+      $BV151 = 6;
+    } else if($val == 'chamngon'){
+      $BV151 = 7;
+    }
+    
     $data = array(
-      'BV151' => isset($get['BV151']) ? $get['BV151'] : 0,
+      'BV151' => isset($BV151) ? $BV151 : 0,
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );

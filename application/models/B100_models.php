@@ -146,8 +146,14 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll($data){
-        $sql = "SELECT * FROM BV100 , ND100, NL100
-            ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        } else {
+            return false;
+        }
     }
 
     public function n2018_update_hay($data){

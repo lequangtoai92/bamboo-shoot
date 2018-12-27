@@ -33,6 +33,18 @@ var firstTable = new Vue({
       return get_ddMMyyyy(data);
     },
 
+    rendder_virtues: function (data) {
+      if (data !== null) {
+        var arr = data.split(",");
+        var str = '';
+        for(var i = 0; i < arr.length; i++){
+          str = str + ' ' + '<span>' + arr[i] + '</span>'
+        }
+        return str;
+      }
+      // return get_ddMMyyyy(data);
+    },
+
     initdata: function () {
       var self = this;
       var url = "/home/get_list_story?limit=15"

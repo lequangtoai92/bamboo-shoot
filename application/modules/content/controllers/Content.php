@@ -39,14 +39,26 @@ class Content extends History {
     echo json_encode($res);
   }
 
+  public function get_content_all() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getContentAll ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
   /*     * **************************************************************** */
   /*     * ****************************[PRIVATE]*************************** */
   /*     * **************************************************************** */
 
-  private function getContent($get) {
+  private function getContentAll($get) {
     $data = array(
       'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
     );
-    return $this->B100_MODELS->n2018_get_content($data);
+    return $this->B100_MODELS->b2018_listAll($data);
   }
 }

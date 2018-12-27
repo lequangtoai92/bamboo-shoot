@@ -22,3 +22,15 @@
 .container .content-sup .comment { margin: 5px 10px 0px 10px; background-color: #e9ecef; border-radius: 4px; padding: 10px 0px 5px 0px; } 
 .container .content-sup .comment h6 { margin: 0px 0px 5px 15px; font-size: 0.85rem; font-weight: 600;} 
 .container .content-sup .comment p { margin: 0px 0px 5px 15px; } 
+
+
+
+
+@media (max-width: 768px) { 
+    .container .content-sup .body p { font-size: .9rem; } 
+    .container .content-sup .question h4 { font-weight: 600; font-size: 1.05rem; text-decoration: underline;} 
+    .container .content-sup .auto-question h6 { margin: 0px 0px 5px 15px; font-size: 0.9rem; font-weight: 600; } 
+    .container .content-sup .footer h4 { font-weight: 600; font-size: 1.05rem; text-decoration: underline;} 
+    .container .content-sup .comment h6 { margin: 0px 0px 5px 15px; font-size: 0.9rem; font-weight: 600;} 
+
+}

@@ -13,7 +13,7 @@
       <div class="col-md-6 body-info">
         <div class="form-group">
           <label for="user_name">Họ và tên</label><label class="user-name-import">(*)</label>
-          <input type="text" class="form-control" :value="items.TK151" v-model="TK151" id="user_name" placeholder="Họ và tên" name="user_name">
+          <input type="text" class="form-control" v-model="items.TK151" id="user_name" placeholder="Họ và tên" name="user_name">
         </div>
         <div class="form-group">
           <label for="user_id">Tên đăng nhập:</label>
@@ -21,11 +21,11 @@
         </div>
         <div class="form-group">
           <label for="email">Email</label><label class="email-import">(*)</label>
-          <input type="email" class="form-control" :value="items.TK156" v-model="TK156" id="email" placeholder="Email" name="email">
+          <input type="email" class="form-control" v-model="items.TK156"  id="email" placeholder="Email" name="email">
         </div>
         <div class="form-group">
           <label for="birthday">Ngày sinh</label><label class="birthday-import">(*)</label>
-          <input type="birthday" class="form-control" :value="items.TK152" v-model="TK152" id="birthday" placeholder="Ngày sinh" name="birthday">
+          <input type="birthday" class="form-control" v-model="items.TK152" id="birthday" placeholder="Ngày sinh" name="birthday">
         </div>
         
       </div>
@@ -33,7 +33,7 @@
         <div class="form-group">
           <label for="sex">Giới tính</label><label class="sex-import">(*)</label>
           <!-- <input type="text" class="form-control" id="sex" placeholder="Giới tính" name="sex"> -->
-          <select class="form-control select-option" :value="items.TK153">
+          <select class="form-control select-option" v-model="items.TK153">
             <option class="select-option" disabled value="items.TK153"></option>
             <option class="select-option" value="1">Nam</option>
             <option class="select-option" value="2">Nữ</option>
@@ -42,16 +42,16 @@
         </div>
         <div class="form-group">
           <label for="address">Địa chỉ:</label>
-          <input type="text" class="form-control" :value="items.TK154" v-model="TK154" id="address" placeholder="Địa chỉ" name="address">
+          <input type="text" class="form-control" v-model="items.TK154" id="address" placeholder="Địa chỉ" name="address">
         </div>
 
         <div class="form-group">
           <label for="telephone">Số điện thoại:</label>
-          <input type="text" class="form-control" :value="items.TK155" v-model="TK155" id="telephone" placeholder="Số điện thoại" name="telephone">
+          <input type="text" class="form-control" v-model="items.TK155"  id="telephone" placeholder="Số điện thoại" name="telephone">
         </div>
         <div class="form-group">
           <label for="nickname">Biệt danh</label><label class="nickname-import">(*)</label>
-          <input type="text" class="form-control" :value="items.TK157" v-model="TK157" id="nickname" placeholder="nick name" name="nickname">
+          <input type="text" class="form-control" v-model="items.TK157" id="nickname" placeholder="nick name" name="nickname">
         </div>
       </div>
       <div class="col-md-12 footer-info">

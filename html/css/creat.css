@@ -6,3 +6,11 @@
 .content-body .content-right input { font-size: 0.85rem } 
 .footer-save { margin-top: 1rem; } 
 .footer-save .save-content { height: 30px; width: 70px; padding-top: 0px; padding-bottom: 0px; font-size: 0.85rem; } 
+
+@media (max-width: 768px) { 
+.content-body .content-left textarea { font-size: 0.9rem } 
+.content-body .content-left input { font-size: 0.9rem } 
+.content-body .content-right input { font-size: 0.9rem } 
+.footer-save { margin-top: 1.05rem; } 
+.footer-save .save-content { height: 30px; width: 70px; padding-top: 0px; padding-bottom: 0px; font-size: 0.9rem; } 
+}

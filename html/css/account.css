@@ -20,3 +20,10 @@
 #info_account .footer-info .button-form { text-align: right } 
 #info_account .footer-info .button-form .btn { height: 30px; width: 85px; padding-top: 0px; padding-bottom: 0px; font-size: 0.85rem; } 
 #info_account .footer-info label { font-size: .85rem; font-weight: 600; width: 100px; } 
+
+@media (max-width: 768px) { 
+    #info_account .body-info label { font-size: .9rem } 
+    #info_account .body-info input { font-size: .9rem } 
+    #info_account .footer-info .button-form .btn { font-size: 0.9rem; } 
+    #info_account .footer-info label { font-size: .9rem; }   
+}
