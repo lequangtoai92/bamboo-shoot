@@ -74,10 +74,14 @@
       <div class="info">
         <div class="meta-info">
           <div class="meta-info-name">
-            <a href="/u/nhantambin">{{item.BV154}}</a>
+            <a href="/account/author/<?php echo ($this->session->userdata('B_LOGIN')['LI150']); ?>">{{item.BV154}}</a>
           </div>
           <div class="meta-info-time">
             <span>{{item.BV155}}</span>
+          </div>
+          <div class="button-function">
+            <i class="far fa-edit"></i>
+            <i class="far fa-trash-alt"></i>
           </div>
         </div>
 

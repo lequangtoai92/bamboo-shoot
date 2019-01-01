@@ -176,14 +176,14 @@ class Account extends History {
 
   private function updateInfoAccount($post)/*     * : array */ {
     $data = array(
-      'TK151' => isset($post['TK100']) ? $post['contentFeedback'] : 0,
-      'TK152' => isset($post['TK100']) ? $post['contentFeedback'] : 0,
-      'TK153' => isset($post['contentFeedback']) ? $post['contentFeedback'] : NULL,
-      'TK154' => isset($post['GY152']) ? $post['contentFeedback'] : 0,
-      'TK155' => isset($post['GY153']) ? $post['contentFeedback'] : NULL,
-      'TK156' => isset($post['GY154']) ? $post['contentFeedback'] : NULL,
-      'TK157' => isset($post['GY155']) ? $post['contentFeedback'] : NULL,
-      'TK159' => isset($post['GY156']) ? $post['contentFeedback'] : NULL,
+      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+      'TK151' => isset($post['TK151']) ? $post['TK151'] : 0,
+      'TK152' => isset($post['TK152']) ? $post['TK152'] : 0,
+      'TK153' => isset($post['TK153']) ? $post['TK153'] : NULL,
+      'TK154' => isset($post['TK154']) ? $post['TK154'] : 0,
+      'TK155' => isset($post['TK155']) ? $post['TK155'] : NULL,
+      'TK156' => isset($post['TK156']) ? $post['TK156'] : NULL,
+      'TK157' => isset($post['TK157']) ? $post['TK157'] : NULL
     );
     return  $this->A100_MODELS->a2018_update_account($data);
   }

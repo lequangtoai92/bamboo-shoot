@@ -64,7 +64,18 @@ $route['cotich_vietnam'] = 'home/sagavn';
 $route['cotich_nhatban'] = 'home/saganb';
 $route['truyenco_grimm'] = 'home/grimm';
 $route['thanthoai_hilap'] = 'home/greek_mythology';
-$route['cagiao_tucngu'] = 'home/folk_proverb';
-$route['chamngon'] = 'home/gnomic';
+$route['cadao_tucngu'] = 'home/folk_proverb';
+$route['loihay_ydep'] = 'home/good_word';
 $route['truyencuoi'] = 'home/funny';
+
+
+$route['admin_baidang'] = 'admin/story';
+$route['admin_taikhoan'] = 'admin/account';
+$route['admin_cotich'] = 'admin/saga';
+$route['admin_cadao'] = 'admin/folk_proverb';
+$route['admin_loihay'] = 'admin/good_word';
+$route['admin_truyencuoi'] = 'admin/funny';
+$route['admin_gopy'] = 'admin/feedback';
+$route['admin_taomoi'] = 'admin/creat';
+
 // $route[$this->session->userdata('B_USER')['name']] = 'account/user?userName=' . $this->session->userdata('B_USER')['name'];

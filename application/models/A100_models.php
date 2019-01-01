@@ -28,15 +28,14 @@ class A100_models extends CI_Model {
 
     public function a2018_update_account($data) {
         $sql = "UPDATE TK100 
-                SET TK151 =" . $data['TK151'] . "," .
-                    "TK152 =" . $data['TK152'] . "," .
-                    "TK153 =" . $data['TK153'] . "," .
-                    "TK154 =" . $data['TK154'] . "," .
-                    "TK155 =" . $data['TK155'] . "," .
-                    "TK156 =" . $data['TK156'] . "," .
-                    "TK157 =" . $data['TK157'] . "," .
-                    "TK159 =" . $data['TK159'] .
-                " WHERE TK100 = " . $data['TK100'];
+                SET TK151 ='" . $data["TK151"] . "' , 
+                    TK152 ='" . $data["TK152"] . "' ,
+                    TK153 ='" . $data["TK153"] . "' ,
+                    TK154 ='" . $data["TK154"] . "' ,
+                    TK155 ='" . $data["TK155"] . "' ,
+                    TK156 ='" . $data["TK156"] . "' ,
+                    TK157 ='" . $data["TK157"] . "'
+                 WHERE TK100 = " . $data['TK100'];
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{

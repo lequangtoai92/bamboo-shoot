@@ -1,7 +1,11 @@
 <div class="content-body container">
   <div class="row">
     <div class="content-sup col-md-9" id="firstTable">
-
+      <input hidden id="input_type" v-model="input_type" value="<?php 
+        if (isset($data['type_story'])){
+          echo $data['type_story'];
+        }
+      ?>">
       <div class="item" v-for="item in items">
         <div class="avatar">
           <a href="/u/nhantambin">
@@ -28,7 +32,8 @@
           <div class="title-info" v-on:click="goToContent(item.BV100)">
             <h4>{{item.BV150}}</h4>
             <div class="title-tag">
-              <span>{{item.BV158}}</span>
+              <span>{{(item.BV158)}}</span>
+              <!-- <span>{{rendder_virtues(item.BV158)}}</span> -->
               <!-- <span>thông minh</span> -->
             </div>
           </div>
@@ -69,8 +74,21 @@
       </div>
     </div>
     <div class="content-sub col-md-3">
-      <p><img src="<?=base_url();?>images/image.jpg" height="310" width="255"
-        alt="thẻ img" /></p>
+      <div class="item-right">
+        <h4>Bảng vàng tác giả</h4>
+        <a href="#">Nhẫn tâm bin</a>
+        <a href="#">Mắt bão</a>
+        <a href="#">Bão ảnh</a>
+        <a href="#">Nanh trắng</a>
+      </div>
+      <p><img src="<?=base_url();?>html/images/image.jpg" height="310" width="255" alt="thẻ img" /></p>
+      <div class="item-right">
+          <h4>Bảng vàng tác phẩm</h4>
+          <a href="#">Đồi thông 2 mộ</a>
+          <a href="#">Đêm trong căn nhà hoang</a>
+          <a href="#">Chú mèo cô đơn</a>
+          <a href="#">2 con heo con</a>
+        </div>
     </div>
 
   </div>

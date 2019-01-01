@@ -8,6 +8,7 @@
     <title><?= isset($title) ? $title : 'Facilio'; ?></title>
     <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>html/css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <?php
       if (isset($stylesheet))
         echo '<link rel="stylesheet" href="' . base_url() . 'html/css/' . $stylesheet . '.css" />'
@@ -34,12 +35,7 @@
                         <?php echo ($this->session->userdata('B_LOGIN')['LI150']); ?>
                     </a>
                     <div class="dropdown-menu menu_name" aria-labelledby="navbarDropdownMenuInfo">
-                        <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông tin</a>
-                        <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Bài viết</a>
-                        <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Tin nhắn</a>
-                        <a class="dropdown-item" href="<?php echo base_url() . 'admin' ?>">Quản lý</a>
-                        <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
-                        <a class="dropdown-item" href="<?php echo base_url() . 'creatOther' ?>">Viết khác</a>
+                        <a class="dropdown-item" href="#">Quản lý</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#md_modify_pass">Đổi mật khẩu</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
                     </div>
@@ -53,37 +49,29 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown3">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
-                            Giáo dục
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="<?php echo base_url() . 'man' ?>">Mầm</a>
-                            <a class="dropdown-item" href="<?php echo base_url() . 'choi' ?>">Chồi</a>
-                            <a class="dropdown-item" href="<?php echo base_url() . 'la' ?>">Lá</a>
-                            <a class="dropdown-item" href="<?php echo base_url() . 'mang_non' ?>">Măng non</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url() . 'admin_baidang' ?>">Bài đăng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'cotich_vietnam' ?>">Tài khoản</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'admin_taikhoan' ?>">Tài khoản</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'cotich_nhatban' ?>">Cổ tích Nhật Bản</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'admin_cotich' ?>">Cổ tích</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'truyenco_grimm' ?>">Truyện cổ Grimm</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'admin_cadao' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'thanthoai_hilap' ?>">Thần thoại Hi Lạp</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'admin_loihay' ?>">Lời hay ý đẹp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'admin_truyencuoi' ?>">Truyện cười</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'gnomic' ?>">Lời hay ý đẹp</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'admin_gopy' ?>">Góp ý</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'truyencuoi' ?>">Truyện cười</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'admin_taomoi' ?>">Viết truyện</a>
                     </li>
                 </ul>
             </div>

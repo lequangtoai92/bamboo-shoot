@@ -2,7 +2,7 @@
 @import "util.css"; 
 body { background-color:var(--white-three); font-family: Verdana,Arial,sans-serif;; letter-spacing:-0.4px; font-size: 0.86rem; overflow-x: hidden;} 
 
-@media (max-width: 768px) { font-size: 0.9rem }
+/* @media (max-width: 768px) { font-size: 0.9rem } */
 
 nav .title-name { font-size:30px; cursor:pointer; font-weight:600; } 
 

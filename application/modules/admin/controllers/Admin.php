@@ -30,8 +30,8 @@ class Admin extends History {
   }
   
   public function creat() {
-    $modules = array( 'module.admin');
-    $stylesheet = 'admin';
+    $modules = array( 'module.creat');
+    $stylesheet = 'creat';
     $data['title'] = 'Hello world';
     $this->loadTemplateAdmin('ADMIN', 'admin_creat_view', $stylesheet, $modules, $data);
   }
@@ -40,15 +40,52 @@ class Admin extends History {
     $modules = array( 'module.admin');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
-    $this->loadTemplateAdmin('ADMIN', 'admin_view_account', $stylesheet, $modules, $data);
+    $this->loadTemplateAdmin('ADMIN', 'admin_account_view', $stylesheet, $modules, $data);
   }
 
   public function story() {
     $modules = array( 'module.admin');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
-    $this->loadTemplateAdmin('ADMIN', 'admin_view_story', $stylesheet, $modules, $data);
+    $this->loadTemplateAdmin('ADMIN', 'admin_story_view', $stylesheet, $modules, $data);
   }
+
+  public function saga() {
+    $modules = array( 'module.admin_saga');
+    $stylesheet = 'admin_saga';
+    $data['title'] = 'Hello world';
+    $this->loadTemplateAdmin('ADMIN', 'admin_saga_view', $stylesheet, $modules, $data);
+  }
+
+  public function folk_proverb() {
+    $modules = array( 'module.admin');
+    $stylesheet = 'admin';
+    $data['title'] = 'Hello world';
+    $this->loadTemplateAdmin('ADMIN', 'admin_funny_view', $stylesheet, $modules, $data);
+  }
+
+  public function good_word() {
+    $modules = array( 'module.admin');
+    $stylesheet = 'admin';
+    $data['title'] = 'Hello world';
+    $this->loadTemplateAdmin('ADMIN', 'admin_funny_view', $stylesheet, $modules, $data);
+  }
+
+  public function funny() {
+    $modules = array( 'module.admin');
+    $stylesheet = 'admin';
+    $data['title'] = 'Hello world';
+    $this->loadTemplateAdmin('ADMIN', 'admin_funny_view', $stylesheet, $modules, $data);
+  }
+
+  public function feedback() {
+    $modules = array( 'module.admin');
+    $stylesheet = 'admin';
+    $data['title'] = 'Hello world';
+    $this->loadTemplateAdmin('ADMIN', 'admin_feedback_view', $stylesheet, $modules, $data);
+  }
+
+
 
   public function get_listBambo() {
     $get = $_GET;

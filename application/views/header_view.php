@@ -8,6 +8,7 @@
     <title><?= isset($title) ? $title : 'Facilio'; ?></title>
     <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>html/css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <?php
       if (isset($stylesheet))
         echo '<link rel="stylesheet" href="' . base_url() . 'html/css/' . $stylesheet . '.css" />'
@@ -87,7 +88,7 @@
                         <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'gnomic' ?>">Châm ngôn</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'loihay_ydep' ?>">Lời hay ý đẹp</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url() . 'truyencuoi' ?>">Truyện cười</a>

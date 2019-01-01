@@ -55,6 +55,14 @@ class Content extends History {
   /*     * ****************************[PRIVATE]*************************** */
   /*     * **************************************************************** */
 
+  private function getContent($get) {
+    $data = array(
+      'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
+    );
+    return $this->B100_MODELS->n2018_get_content($data);
+  }
+  
+
   private function getContentAll($get) {
     $data = array(
       'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,

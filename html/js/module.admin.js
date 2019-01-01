@@ -91,7 +91,12 @@ var viewStory = new Vue({
   },
 
   methods: {
-    upadateAcount: function () {
+    goToContent: function (data) {
+      console.log(data);
+      document.location.href = '/content?storyId=' + data;
+    },
+
+    deleteStory: function () {
       $(".save-content").attr("disabled", "disabled");
       if ($('#content_feedback').val().trim() == "") {
         $(".save-content").removeAttr("disabled");

@@ -16,14 +16,34 @@
 .tabcontent { float: left; padding: 10px 12px; /*border: 1px solid #ccc; */ width: 80%; border-left: none; display: none; padding-left: 30px; } 
 
 #info_account .body-info label { font-size: .85rem } 
+#info_account h3 { font-size: 1.5rem; font-weight: 600; } 
 #info_account .body-info input { font-size: .85rem } 
 #info_account .footer-info .button-form { text-align: right } 
 #info_account .footer-info .button-form .btn { height: 30px; width: 85px; padding-top: 0px; padding-bottom: 0px; font-size: 0.85rem; } 
 #info_account .footer-info label { font-size: .85rem; font-weight: 600; width: 100px; } 
 
-@media (max-width: 768px) { 
-    #info_account .body-info label { font-size: .9rem } 
-    #info_account .body-info input { font-size: .9rem } 
-    #info_account .footer-info .button-form .btn { font-size: 0.9rem; } 
-    #info_account .footer-info label { font-size: .9rem; }   
+#list_story .list-story { display: inline-flex; margin-top: 10px; margin-bottom: 10px; width: 100%; padding: 7px; background-color: #dae0e5; border-radius: 5px; } 
+#list_story .info .meta-info .meta-info-time { margin-left: 5px; } 
+#list_story .info .meta-info { display: inline-flex; font-size: 0.8rem; } 
+#list_story .info .title-info h4 { margin: 0px; font-size: 1.1rem; cursor: pointer; } 
+#list_story .info .title-info .title-tag span { background-color: cornflowerblue; padding: 2px 5px 2px 5px; border-radius: 4px; font-size: 12px; cursor: pointer; } 
+#list_story .info .content-info { margin-top: 5px; cursor: pointer; } 
+#list_story .info .content-info p { font-style: italic; font-size: 0.85rem; margin-bottom: 5px; } 
+#list_story .info .comment-info span { margin-right: 5px; } 
+#list_story .info .comment-info .comment-item { font-size: 0.8em; color: #a0a1a1; } 
+#list_story .info .comment-info .item-tooltip:hover .tooltiptext { visibility: visible; } 
+#list_story .info .comment-info .item-tooltip { position: relative; display: inline-block; } 
+#list_story .info .comment-info .item-tooltip .tooltiptext { top: 10px; visibility: hidden; width: 80px; color: black; background-color: #83adf9; text-align: left; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; font-size: 1.1em; font-weight: 300; text-align: center; } 
+#list_story .list-story .meta-info .button-function { display: flex; position: absolute; float: right; right: 100px; } 
+#list_story .list-story .meta-info .button-function .fa-edit { font-size: 1.5rem; margin-right: 15px; color: #0062cc; } 
+#list_story .list-story .meta-info .button-function .fa-trash-alt { font-size: 1.5rem; color: red; } 
+
+
+
+@media (max-width: 768px) {
+ .tab button { padding-left: 16px; text-align: center; } 
+ #info_account .body-info label { font-size: .9rem } 
+ #info_account .body-info input { font-size: .9rem } 
+ #info_account .footer-info .button-form .btn { font-size: 0.9rem; } 
+ #info_account .footer-info label { font-size: .9rem; } 
 }

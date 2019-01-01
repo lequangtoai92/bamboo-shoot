@@ -38,32 +38,32 @@ var infoAccount = new Vue({
 
 	methods: {
 		updateInfo: function () {
-			// $("#update_info").attr("disabled", "disabled");
+			$("#update_info").attr("disabled", "disabled");
 			console.log(this.items);
 			
-			// $.ajax({
-			// 	type: "POST",
-			// 	url: '/account/update_info_account',
-			// 	data: dataPost,
-			// 	dataType: 'json',
-			// 	success: function (result) {
-			// 		console.log('success', result);
-			// 		setTimeout(function () {
-			// 			$(".save-content").removeAttr("disabled");
-			// 		}, 15000);
-			// 		$('#content_feedback').val("");
+			$.ajax({
+				type: "POST",
+				url: '/account/update_info_account',
+				data: this.items,
+				dataType: 'json',
+				success: function (result) {
+					console.log('success', result);
+					setTimeout(function () {
+						$("#update_info").removeAttr("disabled");
+					}, 15000);
+					$('#content_feedback').val("");
 
-			// 		// self.items.push(dataPost);
-			// 		// console.log(self.items);
-			// 	},
-			// 	error: function (result) {
-			// 		console.log('error', result);
-			// 		$(".save-content").removeAttr("disabled");
-			// 	},
-			// 	complete: function () {
+					// self.items.push(dataPost);
+					// console.log(self.items);
+				},
+				error: function (result) {
+					console.log('error', result);
+					$("#update_info").removeAttr("disabled");
+				},
+				complete: function () {
 
-			// 	}
-			// });
+				}
+			});
 		},
 
 		initdata: function () {
