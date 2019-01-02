@@ -21,6 +21,11 @@ var firstTable = new Vue({
       document.location.href = '/content?storyId=' + data;
     },
 
+    goToUser: function (data) {
+      console.log(data);
+      document.location.href = '/account_user?userId=' + data;
+    },
+
     render_ddMMyyyy: function (data) {
       return get_ddMMyyyy(data);
     },

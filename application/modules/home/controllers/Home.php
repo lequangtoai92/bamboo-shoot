@@ -132,4 +132,15 @@ class Home extends History {
     );
     return $this->B100_MODELS->b2018_listOfTabTopic($data);
   }
+
+  private function getListALLStory($get) {
+    $type = 0;
+    if(isset($get['type_story']) && $get['type_story'] )
+    $data = array(
+      'BV151' => isset($get['type_story']) ? $get['type_story'] : 0,
+      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
+      'START' => isset($get['start']) ? $get['start'] : 0,
+    );
+    return $this->B100_MODELS->b2018_listOfTabTopic($data);
+  }
 }

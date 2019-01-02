@@ -1,5 +1,5 @@
 var firstTable = new Vue({
-    el: '#admin_saga_view',
+    el: '#admin_feedback_view',
     data: {
       items: [],
       loadItems: [],

@@ -1,6 +1,6 @@
 <div class="content-body container">
 	<div class="row">
-		<div class="content-sup col-md-9" id="content_item">
+		<div class="content-sup col-md-9" id="account_user">
 			<div class="header">
 				<div class="avatar">
 					<a href="/u/nhantambin">

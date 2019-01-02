@@ -32,6 +32,7 @@ class B100_models extends CI_Model {
     private function n2018_insert_content($data){
         $sql = "INSERT INTO ND100 (ND150) VALUES ('" . $data["ND150"] . "')";
         if ($this->db->query($sql) === TRUE) {
+            $this->db->query("UPDATE ND100 SET BV100 = ND100 ORDER BY ND100 DESC LIMIT 1");
             $this->d2018_creat_table();
             return 1;
         }else{
@@ -42,8 +43,10 @@ class B100_models extends CI_Model {
         $sql_creat_assess = "INSERT INTO DG100 (DG150, DG151, DG152, DG153, DG154, DG155, DG156) 
                                 VALUES (0, '', 0, '', 0, 0, '')";
         $this->db->query($sql_creat_assess);
+        $this->db->query("UPDATE DG100 SET BV100 = DG100 ORDER BY DG100 DESC LIMIT 1");
         $sql_creat_censor = "INSERT INTO KD100 (TK100, KD150) VALUES (0, 0)";
         $this->db->query($sql_creat_censor);
+        $this->db->query("UPDATE KD100 SET BV100 = KD100 ORDER BY KD100 DESC LIMIT 1");
     }
 
     //lay tat ca truyen
@@ -147,6 +150,28 @@ class B100_models extends CI_Model {
 
     public function b2018_listAll($data){
         $sql = "SELECT * FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function b2018_listAll_story($data){
+        $sql = "SELECT * FROM BV100, DG100, KD100 WHERE KD100.KD100 = BV100.BV100 AND DG100.DG100 = BV100.BV100";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
+    public function b2018_listAll_funny($data){
+        $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

@@ -68,6 +68,8 @@ $route['cadao_tucngu'] = 'home/folk_proverb';
 $route['loihay_ydep'] = 'home/good_word';
 $route['truyencuoi'] = 'home/funny';
 
+$route['account_user'] = 'account/user';
+
 
 $route['admin_baidang'] = 'admin/story';
 $route['admin_taikhoan'] = 'admin/account';
