@@ -111,7 +111,7 @@ class Home extends History {
   public function get_list_story() {
     $get = $_GET;
     $res = array('status' => 'error', 'message' => '');
-    $arrayRS = $this->getListStory ($get);
+    $arrayRS = $this->getListALLStory ($get);
     if ($arrayRS != false) {
         $res['status'] = 'success';
         $res['data'] = $arrayRS;
@@ -130,17 +130,19 @@ class Home extends History {
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
-    return $this->B100_MODELS->b2018_listOfTabTopic($data);
+    return $this->B100_MODELS->b2018_listAll_story($data);
   }
 
   private function getListALLStory($get) {
-    $type = 0;
-    if(isset($get['type_story']) && $get['type_story'] )
     $data = array(
       'BV151' => isset($get['type_story']) ? $get['type_story'] : 0,
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
-    return $this->B100_MODELS->b2018_listOfTabTopic($data);
+    if($data['BV151'] < 5){
+      return $this->B100_MODELS->b2018_listAll_story($data);
+    } else {
+      return $this->B100_MODELS->b2018_listAll_funny($data);
+    }
   }
 }

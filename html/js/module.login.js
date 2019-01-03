@@ -58,6 +58,12 @@ $(document).ready(function () {
 
 		},
 		registerForm: function () {
+			if (!checkNull($('#user_name_register').val())){return $(".name-import").css("color", "red");}
+      		if (!checkNull($('#user_id_register').val())){return $(".user-name-import").css("color", "red");}
+      		if (!checkNull($('#email_register').val())){return $(".email-import").css("color", "red");}
+      		if (!checkNull($('#pwd_register').val())){return $(".password-import").css("color", "red");}
+      		if (!checkNull($('#sex_register').val())){return $(".sex-import").css("color", "red");}
+      		if (!checkNull($('#nickname_register').val())){return $(".nickname-import").css("color", "red");}
 			var data = {
 				name: $('#user_name_register').val(),
 				userName: $('#user_id_register').val(),
@@ -89,6 +95,8 @@ $(document).ready(function () {
 
 		},
 		quickRegisterForm: function () {
+			if (!checkNull($('#user_id_quick_register').val())){return $(".user-name-quick-import").css("color", "red");}
+      		if (!checkNull($('#pwd_quick_register').val())){return $(".password-quick-import").css("color", "red");}
 			var data = {
 				userName: $('#user_id_quick_register').val(),
 				passWord: $('#pwd_quick_register').val()
@@ -101,6 +109,7 @@ $(document).ready(function () {
 				dataType: 'json',
 				success: function (response) {
 					console.log('success', response);
+					location.reload();
 				},
 				error: function (response) {
 					console.log('error', response);

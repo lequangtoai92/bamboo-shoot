@@ -40,7 +40,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="user_name">Họ và tên</label><label class="user-name-import">(*)</label>
+                  <label for="user_name">Họ và tên</label><label class="name-import">(*)</label>
                   <input type="text" class="form-control" id="user_name_register" placeholder="Họ và tên" name="user_name">
                 </div>
                 <div class="form-group">
@@ -63,9 +63,8 @@
                 </div>
                 <div class="form-group">
                   <label for="sex">Giới tính</label><label class="sex-import">(*)</label>
-                  <select class="form-control select-option" v-model="sex">
-                    <option class="select-option" disabled value="">Giới tính</option>
-                    <option class="select-option" value="1">Nam</option>
+                  <select class="form-control select-option" id="sex_register">
+                    <option class="select-option" selected value="1">Nam</option>
                     <option class="select-option" value="2">Nữ</option>
                     <option class="select-option" value="3">Khác</option>
                   </select>
@@ -93,11 +92,11 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="user_name">Tên đăng nhập:</label>
+                  <label for="user_name">Tên đăng nhập</label><label class="user-name-quick-import">(*)</label>
                   <input type="text" class="form-control" id="user_id_quick_register" placeholder="Tên đăng nhập" name="email">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">Mật khẩu:</label>
+                  <label for="pwd">Mật khẩu</label><label class="password-quick-import">(*)</label>
                   <input type="password" class="form-control" id="pwd_quick_register" placeholder="Mật khẩu" name="pwd">
                 </div>
               </div>

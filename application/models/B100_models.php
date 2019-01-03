@@ -149,7 +149,8 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll($data){
-        $sql = "SELECT * FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100";
+        $sql = "SELECT * FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD150 = 1
+                AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT '" . $data["LIMIT"] . "' OFFSET '" . $data["START"];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -160,7 +161,8 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll_story($data){
-        $sql = "SELECT * FROM BV100, DG100, KD100 WHERE KD100.KD100 = BV100.BV100 AND DG100.DG100 = BV100.BV100";
+        $sql = "SELECT * FROM BV100, DG100, KD100 WHERE KD100.KD100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD150 = 1
+                AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT '" . $data["LIMIT"] . "' OFFSET '" . $data["START"];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -171,7 +173,8 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll_funny($data){
-        $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100";
+        $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100 AND KD100.KD150 = 1
+                AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT '" . $data["LIMIT"] . "' OFFSET '" . $data["START"];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
