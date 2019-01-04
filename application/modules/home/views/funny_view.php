@@ -25,20 +25,15 @@
             </div>
             <div class="meta-info-time">
               <span>{{render_ddMMyyyy  (item.BV155)}}</span>
-              <!-- <span>{{item.BV155}}</span>setTime(item.BV155) -->
             </div>
           </div>
 
-          <!-- <div class="title-info" v-on:click="goToContent(item.BV100)">
+          <div class="title-info" v-on:click="goToContent(item.BV100)">
             <h4>{{item.BV150}}</h4>
-            <div class="title-tag">
-              <span>{{item.BV158}}</span>
-              <span>thông minh</span>
-            </div>
-          </div> -->
+          </div>
 
           <div class="content-info">
-            <p>{{item.BV153}}</p>
+            <p v-html="item.ND150"></p>
           </div>
 
           <div class="comment-info">
@@ -50,17 +45,17 @@
             <span class="comment-item">
               <i class="far fa-thumbs-up item-tooltip">
                 <span class="tooltiptext">Lượt chọn hay</span>
-              </i>(253)
+              </i>{{item.DG150}}
             </span>
             <span class="comment-item">
               <i class="far fa-thumbs-down item-tooltip">
                 <span class="tooltiptext">Lượt chọn chán</span>
-              </i>(12)
+              </i>{{item.DG152}}
             </span>
             <span class="comment-item">
               <i class="far fa-comment-dots item-tooltip">
                 <span class="tooltiptext">Lượt bình luận</span>
-              </i>(86)
+              </i>{{item.DG154}}
             </span>
             <span class="comment-item">
               <i class="fas fa-exclamation-triangle item-tooltip">
