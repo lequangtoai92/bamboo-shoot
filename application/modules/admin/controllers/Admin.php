@@ -112,9 +112,9 @@ class Admin extends History {
   }
 
   public function a2018_updateKD100() {
-    $get = $_GET;
+    $post = $_POST;
     $res = array('status' => 'error', 'message' => '');
-    $arrayRS = $this->a2018UpdateKD100 ($get);
+    $arrayRS = $this->a2018UpdateKD100 ($post);
     if ($arrayRS != false) {
         $res['status'] = 'success';
         $res['data'] = $arrayRS;
@@ -226,10 +226,12 @@ class Admin extends History {
 
   private function a2018UpdateKD100($post)/*     * : array */ {
     $data = array(
-      'KD150' => isset($post['KD150']) ? $post['KD150'] : 0,
+      'KD150' => isset($post['KD150']) ? $post['KD150'] : NULL,
+      'KD151' => isset($post['KD151']) ? $post['KD151'] : 0,
       'KD100' => isset($post['KD100']) ? $post['KD100'] : 0,
+      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi login
     );
-    return  $this->G100_MODELS->a2018_updateKD100($data);
+    return  $this->ADM_MODELS->a2018_updateKD100($data);
   }
 
   private function a2018UpdateTK100($post)/*     * : array */ {
@@ -237,7 +239,7 @@ class Admin extends History {
       'TK159' => isset($post['TK159']) ? $post['TK159'] : 0,
       'TK100' => isset($post['TK100']) ? $post['TK100'] : 0,
     );
-    return  $this->G100_MODELS->a2018_updateTK100($data);
+    return  $this->ADM_MODELS->a2018_updateTK100($data);
   }
 
   private function a2018UpdateLI100($post)/*     * : array */ {
@@ -245,7 +247,7 @@ class Admin extends History {
       'LI152' => isset($post['LI152']) ? $post['LI152'] : 0,
       'LI100' => isset($post['LI100']) ? $post['LI100'] : 0,
     );
-    return  $this->G100_MODELS->a2018_updateLI100($data);
+    return  $this->ADM_MODELS->a2018_updateLI100($data);
   }
 
   private function a2018UpdateBL100($post)/*     * : array */ {
@@ -253,7 +255,7 @@ class Admin extends History {
       'BL100' => isset($post['BL100']) ? $post['BL100'] : 0,
       'BL155' => isset($post['BL155']) ? $post['BL155'] : 0,
     );
-    return  $this->G100_MODELS->a2018_updateBL100($data);
+    return  $this->ADM_MODELS->a2018_updateBL100($data);
   }
 
   private function a2018UpdateNotifiction($post)/*     * : array */ {
@@ -261,7 +263,7 @@ class Admin extends History {
       'TB100' => isset($post['TB100']) ? $post['TB100'] : 0,
       'TB152' => isset($post['TB152']) ? $post['TB152'] : 0,
     );
-    return  $this->G100_MODELS->a2018_update_notifiction($data);
+    return  $this->ADM_MODELS->a2018_update_notifiction($data);
   }
 
   private function a2018SendNotification($post)/*     * : array */ {
@@ -270,7 +272,7 @@ class Admin extends History {
       'TB150' => isset($post['TB150']) ? $post['TB150'] : 0,
       'TB152' => isset($post['TB152']) ? $post['TB152'] : 0,
     );
-    return  $this->G100_MODELS->a2018_send_notification($data);
+    return  $this->ADM_MODELS->a2018_send_notification($data);
   }
 
   private function a2018SendMessenger($post)/*     * : array */ {
@@ -279,7 +281,7 @@ class Admin extends History {
       'TK102' => isset($post['TK102']) ? $post['TK102'] : 0,
       'TN150' => isset($post['TN150']) ? $post['TN150'] : 0,
     );
-    return  $this->G100_MODELS->a2018_send_messenger($data);
+    return  $this->ADM_MODELS->a2018_send_messenger($data);
   }
   
 }

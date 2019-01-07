@@ -6,7 +6,8 @@ var creatBamboo = new Vue({
     virtues: '',
     source: '',
     author: '',
-    checkedAge: []
+    checkedAge: [],
+    type: ''
   },
 
   mounted: function () {
@@ -34,6 +35,7 @@ var creatBamboo = new Vue({
       if (!checkNull(self.title_name)){return $(".field-important-titlename").css("color", "red");}
       if (!checkNull(tinymce.editors['content_main'].getContent())){return $(".field-important-maincontent").css("color", "red");}
       var data_post = {
+        type : self.type,
         compact: self.compact,
         title_name: self.title_name,
         virtues: self.virtues,

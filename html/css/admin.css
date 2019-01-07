@@ -5,6 +5,7 @@
 .content-body { margin-top: 20px; } 
 .content-body .content-left .checkbox { margin-left: 10px; } 
 .content-body .content-left .checkbox input { margin-right: 10px; } 
+.content-body .content-left .select-option { font-size: 0.85rem } 
 .content-body .content-left textarea { font-size: 0.85rem } 
 .content-body .content-left input { font-size: 0.85rem } 
 .content-body .content-right input { font-size: 0.85rem } 
@@ -13,16 +14,35 @@
 .footer-save .save-content { height: 30px; width: 70px; padding-top: 0px; padding-bottom: 0px; font-size: 0.85rem; } 
 
 
+#admin_story_view {font-size: .8rem;}
+#admin_story_view th {text-align: center;}
+#admin_story_view .th-1 {width: 15%}
+#admin_story_view .th-2 {width: 25%}
+#admin_story_view .th-3 {width: 0%}
+#admin_story_view .th-4 {width: 5%}
+#admin_story_view .th-5 {width: 10%}
+#admin_story_view .th-6 {width: 10%}
+#admin_story_view .th-7 {width: 10%}
+#admin_story_view .th-8 {width: 10%}
+#admin_story_view .th-9 {width: 10%}
+#admin_story_view .th-10 {width: 5%}
+
+#admin_story_view td {padding: 5px;}
+#admin_story_view .td-1 {padding-left: 10px;}
+#admin_story_view .td-4 {text-align: center;}
+#admin_story_view .td-5 {text-align: center;}
+#admin_story_view .td-6 {text-align: center;}
+#admin_story_view .td-7 {text-align: center;}
+
+#admin_story_view .td-8 .select-option {padding: 5px; font-size: .8rem;}
+#admin_story_view .td-9 input {padding: 5px; font-size: .8rem;}
+
 
 @media (max-width: 768px) { 
-
     .content-body .content-left textarea { font-size: 0.9rem } 
     .content-body .content-left input { font-size: 0.9rem } 
     .content-body .content-right input { font-size: 0.9rem } 
     .content-body .content-right .select-option { font-size: 0.9rem } 
     .footer-save { margin-top: 1.05rem; text-align: right;} 
     .footer-save .save-content { height: 30px; width: 70px; padding-top: 0px; padding-bottom: 0px; font-size: 0.9rem; } 
-
-
-
 }

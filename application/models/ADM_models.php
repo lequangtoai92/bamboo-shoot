@@ -42,7 +42,9 @@ class ADM_models extends CI_Model {
     }
 
     public function a2018_updateKD100($data) {
-        $sql = "UPDATE KD100 SET KD150 ='" . $data["KD150"] . "' WHERE KD100 =" . $data['KD100'];
+        $sql = "UPDATE KD100 SET KD150 ='" . $data["KD150"] . "', KD151 = '". $data["KD151"] . "',  TK100 = '" . $data["TK100"] . "'
+                WHERE KD100 =" . $data['KD100'];
+        // die(json_encode($sql));
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{

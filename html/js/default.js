@@ -29,6 +29,20 @@ function get_ddMMyyyy(value) {
     }
 }
 
+function convert_age(data){
+    if (!!data){
+        if (data == 1){
+            return 'Mần';
+        } else if (data == 2){
+            return 'Chồi';
+        } else if (data == 3) {
+            return 'Lá';
+        } else {
+            return 'Măng non';
+        }
+    }
+}
+
 function showLoading() {
     $('.faci-loading').addClass('open');
     $('.lg-login').addClass('invisible');

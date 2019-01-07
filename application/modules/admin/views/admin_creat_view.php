@@ -12,7 +12,6 @@
             <option class="select-option" value="4">Truyện thần thoại Hi Lạp</option>
           </select>
         </div>
-        </div>
         <div class="form-group">
           <label for="compact">Mô tả </label><label class="field-important-compact"> (*)</label>
           <textarea class="form-control" placeholder="Mô tả, tóm tắt câu truyện" rows="11" v-model="compact"></textarea>

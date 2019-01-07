@@ -17,9 +17,9 @@
         </thead>
         <tbody>
           <tr v-for="item in items" class="td-hover" v-on:click="goToContent(row)">
-            <td>{{item.BV150}}</td>
+            <td v-on:click="goToContent(row)">{{item.BV150}}</td>
+            <td v-on:click="goToContent(row)">{{(item.BV153)}}</td>
             <td>{{(item.BV158)}}</td>
-            <td>{{(item.BV153)}}</td>
             <td class="for-age">Tuổi</td>
             <td>{{item.BV154}}</td>
             <td>{{render_ddMMyyyy  (item.BV155)}}</td>
