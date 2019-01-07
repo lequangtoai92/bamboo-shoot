@@ -1,6 +1,6 @@
 <div class="content-body container">
   <div class="row">
-    <div class="content-sup col-md-12" id="admin_funny_view">
+    <div class="content-sup col-md-12" id="admin_account_view">
       <table id="firstTable" class="table table-striped table-hover">
         <thead>
           <tr>

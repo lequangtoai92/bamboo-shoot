@@ -78,7 +78,7 @@ class ADM_models extends CI_Model {
     }
 
     public function a2018_listOfTopic_BV100($data){//BV151 the loai
-        $sql = "SELECT * FROM BV100 WHERE BV151 =" . $data['BV151'] . " ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * FROM BV100 WHERE BV151 =" . $data['BV151'] . " ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -89,7 +89,7 @@ class ADM_models extends CI_Model {
     }
 
     public function a2018_listOfTabTK100($data){
-        $sql = "SELECT * FROM TK100 ORDER BY KT158 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * FROM TK100 ORDER BY TK158 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

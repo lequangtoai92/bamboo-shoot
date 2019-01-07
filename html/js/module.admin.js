@@ -1,5 +1,5 @@
 var viewAccount = new Vue({
-  el: '#view_account',
+  el: '#admin_account_view',
   data: {
     items: [],
     loadItems: []
@@ -75,7 +75,7 @@ var viewAccount = new Vue({
 });
 
 var viewStory = new Vue({
-  el: '#view_story',
+  el: '#admin_story_view',
   data: {
     items: [],
     loadItems: []
@@ -156,7 +156,7 @@ var viewStory = new Vue({
 });
 
 var viewSaga = new Vue({
-  el: '#view_saga',
+  el: '#admin_saga_view',
   data: {
     items: [],
     loadItems: []
@@ -208,7 +208,7 @@ var viewSaga = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/admin/get_feedback?limit=2"
+      var url = "/admin/get_listBambo?limit=2"
       $.ajax({
         type: "GET",
         url: url,
@@ -232,7 +232,7 @@ var viewSaga = new Vue({
 });
 
 var viewFeedback = new Vue({
-  el: '#view_feedback',
+  el: '#admin_feedback_view',
   data: {
     items: [],
     loadItems: []
@@ -244,7 +244,7 @@ var viewFeedback = new Vue({
   },
 
   mounted: function () {
-    this.initdata();
+    // this.initdata();
   },
 
   methods: {
