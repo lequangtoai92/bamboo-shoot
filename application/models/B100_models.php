@@ -75,7 +75,8 @@ class B100_models extends CI_Model {
 
     // lay noi dung truyen
     public function n2018_get_content($data){
-        $sql = "SELECT * FROM ND100 WHERE ND100=" . $data['BV100'];
+        $sql = "SELECT * FROM ND100, BL100, CH100, DG100 WHERE ND100.BV100='" . $data["BV100"] ."' AND BL100.BV100='" . $data["BV100"] . "' 
+                AND CH100.BV100='" . $data["BV100"] . "' AND DG100.BV100='" . $data["BV100"] ."' ";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
