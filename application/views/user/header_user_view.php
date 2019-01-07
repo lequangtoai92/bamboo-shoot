@@ -43,6 +43,7 @@ if (isset($stylesheet)) {
                         <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông báo</a> -->
                         <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'creatOther' ?>">Viết khác</a>
+                        <a class="dropdown-item" href="<?php echo base_url() . 'question' ?>">Câu hỏi</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#md_modify_pass">Đổi mật khẩu</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
                     </div>
@@ -80,7 +81,7 @@ if (isset($stylesheet)) {
                         <a class="nav-link" href="<?php echo base_url() . 'thanthoai_hilap' ?>">Thần thoại Hi Lạp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cadao_tucngu' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url() . 'loihay_ydep' ?>">Lời hay ý đẹp</a>
