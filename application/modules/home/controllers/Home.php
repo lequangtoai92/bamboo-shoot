@@ -139,6 +139,7 @@ class Home extends History {
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
+    // die(json_encode($data));
     if($data['BV151'] < 5){
       return $this->B100_MODELS->b2018_listAll_story($data);
     } else {

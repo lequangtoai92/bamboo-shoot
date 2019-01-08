@@ -44,7 +44,7 @@ class B100_models extends CI_Model {
                                 VALUES (0, '', 0, '', 0, 0, '')";
         $this->db->query($sql_creat_assess);
         $this->db->query("UPDATE DG100 SET BV100 = DG100 ORDER BY DG100 DESC LIMIT 1");
-        $sql_creat_censor = "INSERT INTO KD100 (TK100, KD151) VALUES (0, 0)";
+        $sql_creat_censor = "INSERT INTO KD100 (TK100, KD150, KD151) VALUES (0, '', 0)";
         $this->db->query($sql_creat_censor);
         $this->db->query("UPDATE KD100 SET BV100 = KD100 ORDER BY KD100 DESC LIMIT 1");
     }
@@ -75,9 +75,12 @@ class B100_models extends CI_Model {
 
     // lay noi dung truyen
     public function n2018_get_content($data){
-        $sql = "SELECT * FROM ND100, BL100, CH100, DG100 WHERE ND100.ND100='" . $data["BV100"] ."' AND BL100.BV100='" . $data["BV100"] . "' 
-                AND CH100.BV100='" . $data["BV100"] . "' AND DG100.BV100='" . $data["BV100"] ."' ";
-        die(json_encode($sql));
+        // $sql = "SELECT * FROM ND100, BL100, CH100, DG100 WHERE ND100.ND100='" . $data["BV100"] ."' AND BL100.BV100='" . $data["BV100"] . "' 
+        //         AND CH100.BV100='" . $data["BV100"] . "' AND DG100.BV100='" . $data["BV100"] ."' ";
+        $sql = "SELECT * FROM ND100 n1 JOIN BV100 b1 ON b1.BV100='" . $data["BV100"] . "'
+                                       JOIN DG100 d1 ON d1.BV100='" . $data["BV100"] . "'  
+                                       WHERE ND100='" . $data["BV100"] ."'";
+        // die(json_encode($sql));
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -163,9 +166,13 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll_story($data){
-        $sql = "SELECT * FROM BV100, DG100, KD100 WHERE KD100.KD100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD151 = 0
-                AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
-        die(json_encode($sql));
+        // $sql = "SELECT * FROM BV100, DG100, KD100 WHERE KD100.KD100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD151 = 0
+        //         AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
+        $sql = "SELECT * FROM BV100 b1 JOIN DG100 d1 ON d1.DG100 = b1.BV100
+                                       JOIN KD100 k1 ON k1.KD100 = b1.BV100 
+                                       WHERE KD151 = 0 AND BV151 = '" . $data["BV151"] . "' 
+                                       ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
+        // die(json_encode($sql));
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -176,8 +183,13 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll_funny($data){
-        $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100 AND KD100.KD151 = 0
-                AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
+        // $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100 AND KD100.KD151 = 0
+        //         AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
+        $sql = "SELECT * FROM BV100 b1 JOIN ND100 n1 ON n1.ND100 = b1.BV100 
+                                       JOIN DG100 d1 ON d1.DG100 = b1.BV100 
+                                       JOIN KD100 k1 ON k1.KD100 = b1.BV100 
+                                       WHERE KD151 = 0 AND BV151 = '" . $data["BV151"] . "' 
+                                       ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
         // die(json_encode($sql));
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {

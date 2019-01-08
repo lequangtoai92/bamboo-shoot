@@ -1,14 +1,14 @@
 <div class="content-body container">
-    <div class="row">
-        <div class="content-sup col-md-9" id="content_item">
+    <div class="row" id="content_item">
+        <div class="content-sup col-md-9" v-for="item in items">
             <div class="header">
-                <h2>CHÚ MÈO CON</h2>
+                <h2>{{item.BV150}}</h2>
             </div>
             <div class="body">
                 <div class="img-first"><img src="<?= base_url(); ?>images/image.jpg"/></div>
-                <p id="inset_content"></p>
+                <p v-html="item.ND150"></p>
                 <div class="author">
-                    <span>Nhẫn Tâm Bin - Sáng tác</span>
+                    <span>{{item.BV154}} - {{item.BV156}}</span>
                 </div>
             </div>
             <div class=row>
@@ -22,7 +22,7 @@
             </div>
             </div>
             <hr>
-            <div class="question">
+            <div class="question" v-for="question in listQuestion">
                 <h4>Các câu hỏi mẹ có thể hỏi và trả lời với con</h4>
                 <div class="auto-question">
                     <h6>1. Tại sao mèo con bị bạn bè xa lánh?</h6>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <hr>
-            <div class="footer">
+            <div class="footer" v-for="comment in listComment">
                 <h4>Bình luận</h4>
                 <div class="comment">
                     <h6>Nguyễn Văn A</h6>

@@ -39,6 +39,30 @@ class Content extends History {
     echo json_encode($res);
   }
 
+  public function get_question() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getQuestion ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
+  public function get_comment() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getComment ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
   public function get_content_all() {
     $get = $_GET;
     $res = array('status' => 'error', 'message' => '');
@@ -56,6 +80,20 @@ class Content extends History {
   /*     * **************************************************************** */
 
   private function getContent($get) {
+    $data = array(
+      'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
+    );
+    return $this->B100_MODELS->n2018_get_content($data);
+  }
+
+  private function getQuestion($get) {
+    $data = array(
+      'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
+    );
+    return $this->B100_MODELS->n2018_get_content($data);
+  }
+
+  private function getComment($get) {
     $data = array(
       'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
     );
