@@ -2,7 +2,8 @@ var question = new Vue({
     el: '#id_question',
     data: {
       items: [],
-      loadItems: []
+      loadItems: [],
+      listStory: []
     },
     watch: {
       loadItems: function () {
@@ -11,11 +12,12 @@ var question = new Vue({
     },
   
     mounted: function () {
+      this.initlistStory();
       this.initdata();
     },
   
     methods: {
-      sendFeedBack: function () {
+      sendQuestion: function () {
         $(".save-content").attr("disabled", "disabled");
         if ($('#content_question').val().trim() == "") {
           $(".save-content").removeAttr("disabled");
@@ -27,16 +29,13 @@ var question = new Vue({
         }
         $.ajax({
           type: "POST",
-          url: '/feedback/send_feedback',
+          url: '/question/sendQuestion',
           data: dataPost,
           dataType: 'json',
           success: function (result) {
             console.log('success', result);
             $('#content_question').val("");
             $('#content_answer').val("");
-  
-            // self.items.push(dataPost);
-            // console.log(self.items);
           },
           error: function (result) { console.log('error', result); $(".save-content").removeAttr("disabled"); },
           complete: function () {
@@ -44,10 +43,26 @@ var question = new Vue({
           }
         });
       },
-  
+
+      initlistStory: function () {
+        var self = this;
+        var url = "/account/getListStory?limit=500"
+        $.ajax({
+          type: "GET",
+          url: url,
+          dataType: 'json',
+          success: function (result) {
+            self.listStory = result.data;
+          },
+          error: function (error) {
+            console.log(error);
+          }
+        });
+      },
+
       initdata: function () {
         var self = this;
-        var url = "/feedback/get_feedback?limit=2"
+        var url = "/question/getQuestion?limit=15"
         $.ajax({
           type: "GET",
           url: url,
@@ -55,12 +70,12 @@ var question = new Vue({
           success: function (result) {
             self.items = result.data;
             //phan trang
-            $('.bb-pagination.image').doPagination(10, url, 2, function (res) {
-              if (res.status === 'success') {
-                self.loadItems = res.data;
-                this.items = self.loadItems;
-              }
-            });
+            // $('.bb-pagination.image').doPagination(10, url, 2, function (res) {
+            //   if (res.status === 'success') {
+            //     self.loadItems = res.data;
+            //     this.items = self.loadItems;
+            //   }
+            // });
           },
           error: function (error) {
             console.log(error);

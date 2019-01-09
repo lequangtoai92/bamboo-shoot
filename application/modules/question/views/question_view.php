@@ -14,15 +14,13 @@
 		<div class="content-left ">
 			<textarea class="form-control" rows="2" id="content_question" placeholder="Câu hỏi"></textarea>
 		</div>
+		<hr>
         <div class="content-left ">
 			<textarea class="form-control" rows="2" id="content_answer" placeholder="Câu trả lời"></textarea>
 		</div>
 		<div class="content-right footer-save form-group row">
-			<div class="text-thank col-md-9">
-				<span>Cám ơn những đóng góp của các bạn, chúng tôi sẽ cố gắng giải quyết để đem đến trãi nghiệm tốt nhất</span>
-			</div>
 			<div class="button-right col-md-3">
-				<button type="button" class="btn btn-primary save-content" v-on:click="sendFeedBack">Gửi</button>
+				<button type="button" class="btn btn-primary save-content" v-on:click="sendQuestion">Gửi</button>
 			</div>
 		</div>
 	</div>

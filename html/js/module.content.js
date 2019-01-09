@@ -8,6 +8,7 @@ var content = new Vue({
     items: [],
     listQuestion: [],
     listComment: [],
+    comment: ''
   },
   watch: {
     loadItems: function () {
@@ -16,12 +17,33 @@ var content = new Vue({
   },
 
   mounted: function () {
+    $('.content-sup .question').hide();
+    $('.content-sup .footer .comment').hide();
     this.initdata();
     this.getListQuestion();
     this.getListComment();
   },
 
   methods: {
+    sendComment: function (){
+      var param =  getUrlParameter('storyId')
+      var self = this;
+      if (!checkNull(self.comment)){return;}
+      var dataPost = {BV100: param}
+      $.ajax({
+        type: "POST",
+        url: '/content/creat_comment',
+        data: dataPost,
+        dataType: 'json',
+        success: function (result) {
+          console.log(result);
+        },
+        error: function (result) {console.log(result);},
+        complete: function () {
+
+        }
+      });
+    },
     initdata: function () {
       var param =  getUrlParameter('storyId')
       var self = this;
@@ -50,6 +72,7 @@ var content = new Vue({
         url: url,
         dataType: 'json',
         success: function (result) {
+          $('.content-sup .question').show();
           console.log(result);
           self.listQuestion = result.data;
         },
@@ -68,6 +91,7 @@ var content = new Vue({
         url: url,
         dataType: 'json',
         success: function (result) {
+          $('.content-sup .footer .comment').show();
           console.log(result);
           self.listComment = result.data;
         },

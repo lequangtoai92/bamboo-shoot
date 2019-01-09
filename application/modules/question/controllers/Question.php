@@ -46,6 +46,18 @@ class Question extends History {
     echo json_encode($res);
   }
 
+  public function update_question() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
+    $arrayRS = $this->updateQuestion($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Cám ơn bạn đã góp ý cho chúng tôi!';
+    };
+    echo json_encode($res);
+  }
+
   public function get_question() {
     $get = $_GET;
     $res = array('status' => 'error', 'message' => '');
@@ -69,7 +81,15 @@ class Question extends History {
       'CH151' => isset($post['contentAnswer']) ? $post['contentAnswer'] : NULL,
       'CH152' => 0,
     );
-    return  $this->G100_MODELS->f2018_insert_question($data);
+    return  $this->G100_MODELS->ch2018_insert_question($data);
+  }
+
+  private function updateQuestion($post)/*     * : array */ {
+    $data = array(
+      'CH152' => isset($post['CH152']) ? $post['CH152'] : 0,
+      'CH152' => isset($post['contentAnswer']) ? $post['contentAnswer'] : 0,
+    );
+    return  $this->G100_MODELS->ch2018_update_question($data);
   }
 
   private function getQuestion($get) {
@@ -78,6 +98,6 @@ class Question extends History {
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
-    return $this->G100_MODELS->f2018_get_question($data);
+    return $this->G100_MODELS->ch2018_get_question($data);
   }
 }

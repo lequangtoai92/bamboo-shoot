@@ -9,7 +9,7 @@ if (!defined('BASEPATH')) {
 }
 
 class A100_models extends CI_Model {
-
+    // COUNT(*)
     public function __construct() {
         parent::__construct();
     }

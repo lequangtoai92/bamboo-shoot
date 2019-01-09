@@ -18,33 +18,35 @@
             <div class="btn-to-img col-md-6">
                 <button class="btn btn-success">Hay</button>
                 <button class="btn btn-warning">Chán</button>
-                <button class="btn btn-info">Hình ảnh trong bài</button>
+                <!-- <button class="btn btn-info">Hình ảnh trong bài</button> -->
             </div>
             </div>
             <hr>
-            <div class="question" v-for="question in listQuestion">
+            <div class="question" >
                 <h4>Các câu hỏi mẹ có thể hỏi và trả lời với con</h4>
-                <div class="auto-question">
-                    <h6>1. Tại sao mèo con bị bạn bè xa lánh?</h6>
-                    <p>Tại vì mèo con ham ăn, không thèm nhường nhịn bạn bè gì cả, mèo chỉ thích ăn 1 mình không muốn chia sẻ cho ai cả</p>
+                <div class="auto-question" v-for="question in listQuestion">
+                    <h6>{{question.CH150}}</h6>
+                    <p>{{question.CH151}}</p>
                 </div>
-                <div class="auto-question">
+                <!-- <div class="auto-question">
                     <h6>2. Bạn chó đã làm gì bạn mèo đen?</h6>
                     <p>Bạn chó đã lấy thức ăn của mèo đen, không cho mèo đen ăn cơm trưa, làm cho bạn mèo bị đói bụng</p>
                 </div>
                 <div class="auto-question">
                     <h6>3. Bạn mèo trắng đã làm gì để giúp bạn mèo đen?</h6>
                     <p>Bạn mèo trắng đã đứng ra bảo vệ mèo đe, bạn ý lấy lại thức ăn từ bạn chó, đánh bạn chó 1 trận, rồi cấm ko cho bạn chó ức hiếp bạn mèo đen nữa</p>
-                </div>
+                </div> -->
             </div>
             <hr>
-            <div class="footer" v-for="comment in listComment">
+            <div class="footer" >
                 <h4>Bình luận</h4>
-                <div class="comment">
-                    <h6>Nguyễn Văn A</h6>
-                    <p>Bài viết rất hay và có tính sáng tạo</p>
+                <input v-modle="comment" placeholder="Bình luận">
+                <button class="btn btn-primary" v-on:click="sendComment">Gửi</button>
+                <div class="comment" v-for="comment in listComment">
+                    <h6>{{question.BL151}}</h6>
+                    <p>{{question.BL151}}</p>
                 </div>
-                <div class="comment">
+                <!-- <div class="comment">
                     <h6>Nguyễn Văn A</h6>
                     <p>Tội nghiệp cho chú mèo con trong bài, toàn bị bạn bè ức hiếp</p>
                 </div>
@@ -55,7 +57,7 @@
                 <div class="comment">
                     <h6>Nguyễn Văn A</h6>
                     <p>Bài viết được </p>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="content-sub col-md-3">

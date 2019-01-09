@@ -14,6 +14,8 @@ class Content extends History {
     parent::__construct();
     $this->lang->load('history');
     $this->load->model('B100_models', 'B100_MODELS');
+    $this->load->model('CH100_models', 'CH100_MODELS');
+    $this->load->model('BL100_models', 'BL100_MODELS');
   }
 
   /*   * **************************************************************** */
@@ -75,6 +77,18 @@ class Content extends History {
     echo json_encode($res);
   }
 
+  public function creat_comment() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
+    $arrayRS = $this->creatComment($post);
+    if ($arrayRS > 0) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = 'Cám ơn bạn đã đóng góp cho chúng tôi!';
+    };
+    echo json_encode($res);
+  }
+
   /*     * **************************************************************** */
   /*     * ****************************[PRIVATE]*************************** */
   /*     * **************************************************************** */
@@ -90,14 +104,28 @@ class Content extends History {
     $data = array(
       'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
     );
-    return $this->B100_MODELS->n2018_get_content($data);
+    return $this->CH100_MODELS->ch2018_get_question_for_user($data);
+  }
+
+  private function creatComment($post) {
+    $data = array(
+      'BV100' => isset($post['storyId']) ? $post['storyId'] : 0,
+      'BL150' => isset($post['storyId1']) ? $post['storyId1'] : 0,
+      'BL152' => isset($post['storyId1']) ? $post['storyId1'] : 0,
+      'BL153' => isset($post['storyId1']) ? $post['storyId1'] : 0,
+      'BL154' => isset($post['storyId1']) ? $post['storyId1'] : 0,
+      'BL155' => isset($post['storyId1']) ? $post['storyId1'] : 0,
+      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+      'BL156' => $this->session->userdata('B_USER')['name'],//tac gia
+    );
+    return $this->BL100_MODELS->bl2018_insert_comment($data);
   }
 
   private function getComment($get) {
     $data = array(
       'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
     );
-    return $this->B100_MODELS->n2018_get_content($data);
+    return $this->BL100_MODELS->bl2018_get_question_for_user($data);
   }
   
 
@@ -107,4 +135,6 @@ class Content extends History {
     );
     return $this->B100_MODELS->b2018_listAll($data);
   }
+
+
 }
