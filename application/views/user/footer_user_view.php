@@ -37,6 +37,7 @@
             </div>
         </div>
     </div>
+    <?php echo $this->load->view('include/dialog/dg_showContent'); ?>
     <?php echo $this->load->view('include/dialog/modify_password'); ?>
     <!-- <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> -->
     <script type="text/javascript" src="<?= base_url();?>html/dist/jquery/jquery-3.2.1.min.js" ></script>

@@ -11,6 +11,7 @@ var feedback = new Vue({
   },
 
   mounted: function () {
+    $("#id_feedback .content-feedback-result").hide();
     this.initdata();
   },
 
@@ -55,6 +56,7 @@ var feedback = new Vue({
         dataType: 'json',
         success: function (result) {
           self.items = result.data;
+          $("#id_feedback .content-feedback-result").show();
           //phan trang
           $('.bb-pagination.image').doPagination(10, url, 2, function (res) {
             if (res.status === 'success') {

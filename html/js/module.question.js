@@ -3,7 +3,10 @@ var question = new Vue({
     data: {
       items: [],
       loadItems: [],
-      listStory: []
+      listStory: [],
+      selected: '',
+      question: '',
+      answer: ''
     },
     watch: {
       loadItems: function () {
@@ -18,24 +21,23 @@ var question = new Vue({
   
     methods: {
       sendQuestion: function () {
-        $(".save-content").attr("disabled", "disabled");
-        if ($('#content_question').val().trim() == "") {
-          $(".save-content").removeAttr("disabled");
-          return;
-        }
+        var self = this;
+        if (!checkNull(self.question)){return;}
+        if (!checkNull(self.answer)){return;}
         var dataPost = {
-          contentQuestion: $('#content_question').val(),
-          contentAnswer: $('#content_answer').val()
+          BV100: self.selected,
+          contentQuestion: self.question,
+          contentAnswer: self.answer
         }
         $.ajax({
           type: "POST",
-          url: '/question/sendQuestion',
+          url: '/question/send_question',
           data: dataPost,
           dataType: 'json',
           success: function (result) {
             console.log('success', result);
-            $('#content_question').val("");
-            $('#content_answer').val("");
+            self.question = '';
+            self.answer = '';
           },
           error: function (result) { console.log('error', result); $(".save-content").removeAttr("disabled"); },
           complete: function () {
@@ -46,7 +48,7 @@ var question = new Vue({
 
       initlistStory: function () {
         var self = this;
-        var url = "/account/getListStory?limit=500"
+        var url = "/account/get_list_story?limit=500"
         $.ajax({
           type: "GET",
           url: url,
@@ -62,7 +64,7 @@ var question = new Vue({
 
       initdata: function () {
         var self = this;
-        var url = "/question/getQuestion?limit=15"
+        var url = "/question/get_question?limit=15"
         $.ajax({
           type: "GET",
           url: url,

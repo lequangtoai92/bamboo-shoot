@@ -40,11 +40,15 @@
             <hr>
             <div class="footer" >
                 <h4>Bình luận</h4>
-                <input v-modle="comment" placeholder="Bình luận">
-                <button class="btn btn-primary" v-on:click="sendComment">Gửi</button>
+                <div class="comment-send">
+                    <textarea class="form-control" rows="2" v-model="comment" placeholder="Bình luận"></textarea>
+                    <div class="button">
+                        <button class="btn btn-primary" v-on:click="sendComment">Gửi</button>
+                    </div>
+                </div>
                 <div class="comment" v-for="comment in listComment">
-                    <h6>{{question.BL151}}</h6>
-                    <p>{{question.BL151}}</p>
+                    <h6>{{comment.TK151}}</h6>
+                    <p>{{comment.BL150}}</p>
                 </div>
                 <!-- <div class="comment">
                     <h6>Nguyễn Văn A</h6>

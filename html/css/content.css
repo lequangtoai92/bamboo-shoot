@@ -20,11 +20,11 @@
 .container .content-sup .footer { margin-bottom: 10px;} 
 .container .content-sup .footer h4 { font-weight: 600; font-size: 1rem; text-decoration: underline;} 
 .container .content-sup .comment { margin: 5px 10px 0px 10px; background-color: #e9ecef; border-radius: 4px; padding: 10px 0px 5px 0px; } 
+.container .content-sup .comment-send { margin: 5px 10px 0px 10px; border-radius: 4px; padding: 10px 0px 5px 0px; } 
 .container .content-sup .comment h6 { margin: 0px 0px 5px 15px; font-size: 0.85rem; font-weight: 600;} 
 .container .content-sup .comment p { margin: 0px 0px 5px 15px; } 
-
-
-
+.container .content-sup .comment-send .button { text-align: right; margin-top: 5px; } 
+.container .content-sup .comment-send .button button { height: 30px; width: 70px; padding-top: 0px; padding-bottom: 0px; font-size: 0.85rem; } 
 
 @media (max-width: 768px) { 
     .container .content-sup .body p { font-size: .9rem; } 

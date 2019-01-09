@@ -17,7 +17,7 @@ class CH100_models extends CI_Model {
     // Insert registration data in database
     public function ch2018_insert_question($data){
         $sql = "INSERT INTO CH100 (BV100, CH150, CH151, CH152) 
-        VALUES (" . $data["BV100"] . ",'" . $data["CH150"] . ",'" . $data["CH151"] . 
+        VALUES (" . $data["BV100"] . ",'" . $data["CH150"] . "','" . $data["CH151"] . 
         "','" . $data["CH152"] . "')";
         if ($this->db->query($sql) === TRUE) {
             return 1;
@@ -50,7 +50,8 @@ class CH100_models extends CI_Model {
     }
 
     public function ch2018_get_question_for_user($data){
-        $sql =  "SELECT * FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' AND CH152 = 0 ORDER BY CH153 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        // $sql =  "SELECT * FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' AND CH152 = 0 ORDER BY CH153 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql =  "SELECT * FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' AND CH152 = 0 ORDER BY CH153 DESC";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

@@ -103,20 +103,22 @@ class Content extends History {
   private function getQuestion($get) {
     $data = array(
       'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
+      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
+      'START' => isset($get['start']) ? $get['start'] : 0,
     );
     return $this->CH100_MODELS->ch2018_get_question_for_user($data);
   }
 
   private function creatComment($post) {
     $data = array(
-      'BV100' => isset($post['storyId']) ? $post['storyId'] : 0,
-      'BL150' => isset($post['storyId1']) ? $post['storyId1'] : 0,
+      'BV100' => isset($post['BV100']) ? $post['BV100'] : 0,
+      'BL150' => isset($post['comment']) ? $post['comment'] : 0,
       'BL152' => isset($post['storyId1']) ? $post['storyId1'] : 0,
       'BL153' => isset($post['storyId1']) ? $post['storyId1'] : 0,
       'BL154' => isset($post['storyId1']) ? $post['storyId1'] : 0,
       'BL155' => isset($post['storyId1']) ? $post['storyId1'] : 0,
       'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
-      'BL156' => $this->session->userdata('B_USER')['name'],//tac gia
+      'TK151' => $this->session->userdata('B_USER')['name'],//tac gia
     );
     return $this->BL100_MODELS->bl2018_insert_comment($data);
   }
@@ -124,6 +126,8 @@ class Content extends History {
   private function getComment($get) {
     $data = array(
       'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
+      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
+      'START' => isset($get['start']) ? $get['start'] : 0,
     );
     return $this->BL100_MODELS->bl2018_get_question_for_user($data);
   }

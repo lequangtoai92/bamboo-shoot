@@ -12,6 +12,7 @@ var firstTable = new Vue({
   },
 
   mounted: function () {
+    $("#firstTable .item").hide();
     this.initdata();
   },
 
@@ -51,6 +52,7 @@ var firstTable = new Vue({
         dataType: 'json',
         success: function (result) {
           console.log(result);
+          $("#firstTable .item").show();
           self.items = result.data;
           //phan trang
           // $('.bb-pagination.image').doPagination(10, url, 2, function (res) {

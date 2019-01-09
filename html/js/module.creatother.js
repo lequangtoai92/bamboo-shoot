@@ -27,12 +27,19 @@ var creatOther = new Vue({
     },
   
     methods: {
+      saveContent2: function () {
+        $("#dg_show_content").addClass("show");
+        $("#dg_show_content").css("display", "block");
+
+        $("#dg_show_content").removeClass("show");
+        $("#dg_show_content").css("display", "none");
+      },
       saveContent: function () {
         var self = this;
         if (!checkNull(self.type)){return $(".field-important-type").css("color", "red");}
         // if (!checkNull(self.virtues)){return $(".field-important-virtues").css("color", "red");}
         // if (self.checkedAge.length == 0){return $(".field-important-age").css("color", "red");}
-        if (!checkNull(self.title_name)){return $(".field-important-titlename").css("color", "red");}
+        // if (!checkNull(self.title_name)){return $(".field-important-titlename").css("color", "red");}
         if (!checkNull(tinymce.editors['content_main'].getContent())){return $(".field-important-maincontent").css("color", "red");}
         var data_post = {
           compact: self.compact,
@@ -52,6 +59,15 @@ var creatOther = new Vue({
           dataType: 'json',
           success: function (result) {
             console.log(result);
+            // $("#dg_show_content").addClass("show");
+            // $("#dg_show_content").css("display", "block");
+            self.compact= '';
+            self.type= '';
+            self.title_name= '';
+            self.virtues= '';
+            self.source= '';
+            self.author= '';
+            self.checkedAge= [];
           },
           error: function (result) {console.log(result);},
           complete: function () {

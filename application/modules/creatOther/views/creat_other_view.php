@@ -23,7 +23,7 @@
           <input type="text" class="form-control" name="source" v-model="source" placeholder="Nguồn (sưu tầm, sáng tác,..)">
         </div>
         <div class="name-title form-group">
-          <label for="titlename">Tên tác phẩm </label><label class="field-important-titlename"> (*)</label>
+          <label for="titlename">Tên tác phẩm </label>
           <input text="text" placeholder="Tên truyện" name="titlename" class="form-control" v-model="title_name">
         </div>
         <div class="content-main">

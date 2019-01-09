@@ -20,7 +20,7 @@ class Question extends History {
     $this->load->library('form_validation');
     // Load session library
     $this->load->library('session');
-    $this->load->model('G100_models', 'G100_MODELS');
+    $this->load->model('CH100_models', 'CH100_MODELS');
   }
 
   /*   * **************************************************************** */
@@ -81,7 +81,7 @@ class Question extends History {
       'CH151' => isset($post['contentAnswer']) ? $post['contentAnswer'] : NULL,
       'CH152' => 0,
     );
-    return  $this->G100_MODELS->ch2018_insert_question($data);
+    return  $this->CH100_MODELS->ch2018_insert_question($data);
   }
 
   private function updateQuestion($post)/*     * : array */ {
@@ -89,7 +89,7 @@ class Question extends History {
       'CH152' => isset($post['CH152']) ? $post['CH152'] : 0,
       'CH152' => isset($post['contentAnswer']) ? $post['contentAnswer'] : 0,
     );
-    return  $this->G100_MODELS->ch2018_update_question($data);
+    return  $this->CH100_MODELS->ch2018_update_question($data);
   }
 
   private function getQuestion($get) {
@@ -98,6 +98,6 @@ class Question extends History {
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
-    return $this->G100_MODELS->ch2018_get_question($data);
+    return $this->CH100_MODELS->ch2018_get_question($data);
   }
 }

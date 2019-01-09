@@ -29,7 +29,9 @@ var content = new Vue({
       var param =  getUrlParameter('storyId')
       var self = this;
       if (!checkNull(self.comment)){return;}
-      var dataPost = {BV100: param}
+      var dataPost = {
+        BV100: param,
+        comment: self.comment}
       $.ajax({
         type: "POST",
         url: '/content/creat_comment',
@@ -37,6 +39,7 @@ var content = new Vue({
         dataType: 'json',
         success: function (result) {
           console.log(result);
+          self.comment = '';
         },
         error: function (result) {console.log(result);},
         complete: function () {

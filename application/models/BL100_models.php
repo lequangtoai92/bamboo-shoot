@@ -16,9 +16,9 @@ class BL100_models extends CI_Model {
 
     // Insert registration data in database
     public function bl2018_insert_comment($data){
-        $sql = "INSERT INTO BL100 (BV100, TK100, BL150, BL152, BL153, BL154, BL155) 
-        VALUES (" . $data["BV100"] . ",'" . $data["TK100"] . ",'" . $data["BL150"] . ",'" . $data["BL152"] . 
-        ",'" . $data["BL153"] . ",'" . $data["BL154"] . "','" . $data["BL155"] . "')";
+        $sql = "INSERT INTO BL100 (BV100, TK100, TK151, BL150, BL152, BL153, BL154, BL155) 
+        VALUES (" . $data["BV100"] . "," . $data["TK100"] . ",'" . $data["TK151"] . "','" . $data["BL150"] . 
+        "','" . $data["BL152"] . "','" . $data["BL153"] . "','" . $data["BL154"] . "','" . $data["BL155"] . "')";
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{
@@ -41,7 +41,7 @@ class BL100_models extends CI_Model {
     }
 
     private function bl2018_update_comment($data) {
-        $sql = "UPDATE BL100 SET BL151 ='" . $data["BL151"] . "'WHERE BL100 =" . $data["BL100"];
+        $sql = "UPDATE BL100 SET BL155 ='" . $data["BL151"] . "'WHERE BL100 =" . $data["BL100"];
         if ($this->db->query($sql) === TRUE) {
             return 1;
         }else{
@@ -50,7 +50,8 @@ class BL100_models extends CI_Model {
     }
 
     public function bl2018_get_question_for_user($data){
-        $sql =  "SELECT * FROM BL100 WHERE BV100 = '" .$data["BV100"]. "' AND BL151 = 0 ORDER BY BL152 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql =  "SELECT * FROM BL100 WHERE BV100 = '" .$data["BV100"]. "' AND BL155 = 0 ORDER BY BL152 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        // die(json_encode($sql));
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

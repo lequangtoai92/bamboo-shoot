@@ -1,22 +1,23 @@
 #id_question { margin-top: 10px } 
 #id_question .row { margin: 5px 0px 5px 0px } 
-.content-left {width: 100%; } 
-.content-right {width: 100%;margin-top: 5px;}
+.content-left { width: 100%; margin-bottom: 10px; } 
+.content-left .conten-select { padding-left: 0px; } 
+.content-left .conten-select .select-option { padding-left: 5px; } 
+.content-left .content-quesion { margin-bottom: 10px; width: 100%; } 
+.content-left .content-answer { margin-bottom: 10px; width: 100%; } 
+.content-left .button-right { text-align: right; padding-right: 0px; } 
+.content-left .button-right button { height: 30px; width: 70px; padding-top: 0px; padding-bottom: 0px; font-size: 0.85rem; } 
 .content-body .content-left textarea { font-size: 0.85rem } 
-.content-right .button-right {text-align: right; padding-right: 0px;} 
-.content-right .text-thank {text-align: left; padding-left: 0px;} 
-.content-right .text-thank span{font-size: 0.85rem} 
-.content-right button {height: 30px;width: 70px;padding-top: 0px;padding-bottom: 0px;font-size: 0.85rem; } 
-.content-question-result { background-color: var(--pale-grey-four); border-radius: 5px; padding: 10px; margin-bottom: 5px; font-size: 0.85rem } 
-.content-question-result .daytime { text-align: right; font-weight:normal; font-style: italic; font-size: 0.8rem } 
 
-@media (max-width: 768px) { 
+.content-question-result { margin: 5px 0px 0px 0px; background-color: #e9ecef; border-radius: 4px; padding: 10px 0px 5px 0px; width: 100%; } 
+.content-question-result h6 { margin: 0px 0px 5px 15px; font-size: 0.85rem; font-weight: 600; } 
+.content-question-result p { margin: 0px 0px 5px 15px; } 
 
-    .content-body .content-left textarea { font-size: 0.9rem } 
-    .content-right .text-thank span{font-size: 0.9rem} 
-    .content-right button {height: 30px;width: 70px;padding-top: 0px;padding-bottom: 0px;font-size: 0.9rem; } 
-    .content-question-result { background-color: var(--pale-grey-four); border-radius: 5px; padding: 10px; margin-bottom: 5px; font-size: 0.9rem } 
-    .content-question-result .daytime { text-align: right; font-weight:normal; font-style: italic; font-size: 0.85rem } 
-
+@media (max-width: 768px) {
+ .content-body .content-left textarea { font-size: 0.9rem } 
+ .content-right .text-thank span { font-size: 0.9rem } 
+ .content-right button { height: 30px; width: 70px; padding-top: 0px; padding-bottom: 0px; font-size: 0.9rem; } 
+ .content-question-result { background-color: var(--pale-grey-four); border-radius: 5px; padding: 10px; margin-bottom: 5px; font-size: 0.9rem } 
+ .content-question-result .daytime { text-align: right; font-weight:normal; font-style: italic; font-size: 0.85rem } 
 
 }
