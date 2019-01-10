@@ -80,7 +80,11 @@ class ADM_models extends CI_Model {
     }
 
     public function a2018_listOfTopic_BV100($data){//BV151 the loai
-        $sql = "SELECT * FROM BV100 WHERE BV151 =" . $data['BV151'] . " ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        if($data['BV151'] == 1){
+            $sql = "SELECT * FROM BV100 WHERE BV151 > 0 AND BV151 < 5  ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        } else {
+            $sql = "SELECT * FROM BV100 WHERE BV151 =" . $data['BV151'] . " ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        }
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

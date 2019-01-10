@@ -45,53 +45,11 @@ var viewStory = new Vue({
         dataType: 'json',
         success: function (result) {
           console.log('success', result);
-          setTimeout(function () {
-            $(".save-content").removeAttr("disabled");
-          }, 15000);
-          $('#content_feedback').val("");
         },
         error: function (result) {
           console.log('error', result);
-          $(".save-content").removeAttr("disabled");
         },
         complete: function () {
-
-        }
-      });
-    },
-
-    deleteStory: function () {
-      var self = this;
-      $(".save-content").attr("disabled", "disabled");
-      if ($('#content_feedback').val().trim() == "") {
-        $(".save-content").removeAttr("disabled");
-        return;
-      }
-      var dataPost = {
-        KD150: self.cause,
-        KD151: self.type
-      }
-      $.ajax({
-        type: "POST",
-        url: '/admin/a2018_updateKD100',
-        data: dataPost,  
-        dataType: 'json',
-        success: function (result) {
-          console.log('success', result);
-          setTimeout(function () {
-            $(".save-content").removeAttr("disabled");
-          }, 15000);
-          $('#content_feedback').val("");
-
-          // self.items.push(dataPost);
-          // console.log(self.items);
-        },
-        error: function (result) {
-          console.log('error', result);
-          $(".save-content").removeAttr("disabled");
-        },
-        complete: function () {
-
         }
       });
     },

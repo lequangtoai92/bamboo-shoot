@@ -37,7 +37,7 @@ class Admin extends History {
   }
 
   public function account() {
-    $modules = array( 'module.admin');
+    $modules = array( 'module.account_user');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
     $this->loadTemplateAdmin('ADMIN', 'admin_account_view', $stylesheet, $modules, $data);
@@ -52,7 +52,7 @@ class Admin extends History {
 
   public function saga() {
     $modules = array( 'module.admin_saga');
-    $stylesheet = 'admin_saga';
+    $stylesheet = 'admin';
     $data['title'] = 'Hello world';
     $this->loadTemplateAdmin('ADMIN', 'admin_saga_view', $stylesheet, $modules, $data);
   }
@@ -61,6 +61,7 @@ class Admin extends History {
     $modules = array( 'module.admin');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
+    $data['type_story'] = '5';
     $this->loadTemplateAdmin('ADMIN', 'admin_funny_view', $stylesheet, $modules, $data);
   }
 
@@ -68,6 +69,7 @@ class Admin extends History {
     $modules = array( 'module.admin');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
+    $data['type_story'] = '7';
     $this->loadTemplateAdmin('ADMIN', 'admin_funny_view', $stylesheet, $modules, $data);
   }
 
@@ -75,6 +77,7 @@ class Admin extends History {
     $modules = array( 'module.admin');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
+    $data['type_story'] = '5';
     $this->loadTemplateAdmin('ADMIN', 'admin_funny_view', $stylesheet, $modules, $data);
   }
 
@@ -103,6 +106,18 @@ class Admin extends History {
     $get = $_GET;
     $res = array('status' => 'error', 'message' => '');
     $arrayRS = $this->getListAccount ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
+  public function g2018_updateFeedback() {
+    $post = $_POST;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->updateFeedback ($post);
     if ($arrayRS != false) {
         $res['status'] = 'success';
         $res['data'] = $arrayRS;
@@ -216,12 +231,12 @@ class Admin extends History {
     return $this->ADM_MODELS->a2018_listOfTabTK100($data);
   }
 
-  private function getListFeedback($get) {
+  private function updateFeedback($post) {
     $data = array(
-      'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
-      'START' => isset($get['start']) ? $get['start'] : 0,
+      'GY100' => isset($post['GY100']) ? $post['GY100'] : 0,
+      'GY152' => isset($post['GY152']) ? $post['GY152'] : 0,
     );
-    return $this->G100_MODELS->f2018_get_feedback($data);
+    return $this->G100_MODELS->G2018_update_feedback($data);
   }
 
   private function a2018UpdateKD100($post)/*     * : array */ {
