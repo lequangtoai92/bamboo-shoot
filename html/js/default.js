@@ -23,7 +23,9 @@ function getUrlParameter(sParam) {
 
 //input: Date object -> dd-MM-yyyy
 function get_ddMMyyyy(value) {
-    if (value !== null) {
+    if (value == 'now'){
+        return 'Mới xong';
+    } else if (value !== null) {
         var date = value.substr(0, 10).split("-");
         return date[2] + "-" + date[1] + "-" + date[0];
     }

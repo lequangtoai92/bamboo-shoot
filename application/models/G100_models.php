@@ -26,7 +26,7 @@ class G100_models extends CI_Model {
         }
     }
     public function f2018_get_feedback($data){
-        $sql =  "SELECT *, (SELECT COUNT(*) FROM GY100 WHERE GY152 = 1) AS ROWS FROM GY100 WHERE GY152 = 1 ORDER BY GY151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql =  "SELECT *, (SELECT COUNT(*) FROM GY100 WHERE GY152 = 0) AS ROWS FROM GY100 WHERE GY152 = 0 ORDER BY GY151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

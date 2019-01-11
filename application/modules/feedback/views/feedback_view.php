@@ -1,7 +1,7 @@
 <div class="content-body container" id="id_feedback">
 	<div class="row">
 		<div class="content-left ">
-			<textarea class="form-control" rows="2" id="content_feedback" placeholder="Nội dung góp ý"></textarea>
+			<textarea class="form-control" rows="2" v-model="feedback" placeholder="Nội dung góp ý"></textarea>
 		</div>
 		<div class="content-right footer-save form-group row">
 			<div class="text-thank col-md-9">
@@ -16,7 +16,7 @@
 	<div v-for="item in items" class="content-feedback-result">
 		<p>{{item.GY150}}</p>
 		<div class="daytime">
-			<span>{{item.GY151}}</span>
+			<span>{{render_ddMMyyyy(item.GY151)}}</span>
 		</div>
 	</div>
 	<?php echo $this->load->view('include/paging'); ?>
