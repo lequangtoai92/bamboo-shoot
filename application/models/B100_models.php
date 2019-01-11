@@ -13,7 +13,7 @@ class B100_models extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
-
+    // , (SELECT COUNT(*) FROM TB100) AS ROWS
     // Insert registration data in database
     public function f2018_insert_bambo($data){
         $sql = "INSERT INTO BV100 (TK100, BV150, BV151, BV152, BV153, BV154, BV156, BV157, BV158) 
@@ -51,7 +51,7 @@ class B100_models extends CI_Model {
 
     //lay tat ca truyen
     public function b2018_listOfTabBV100($data){
-        $sql = "SELECT * FROM BV100 ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT *, (SELECT COUNT(*) FROM BV100) AS ROWS FROM BV100 ORDER BY BV155 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -121,7 +121,7 @@ class B100_models extends CI_Model {
     }
     // lay danh sach theo ca nhan
     public function b2018_listOfAcount($data){
-        $sql = "SELECT * FROM BV100 WHERE TK100 = " . $data['TK100'] . " ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT *, (SELECT COUNT(*) FROM BV100 WHERE TK100 = '" . $data["TK100"] . "') AS ROWS FROM BV100 WHERE TK100 = '" . $data["TK100"] . "' ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -132,7 +132,7 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listOfTabSaga($data){
-        $sql = "SELECT * FROM CT100 ORDER BY CT156 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT *, (SELECT COUNT(*) FROM CT100) AS ROWS FROM CT100 ORDER BY CT156 DESC LIMIT" . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -143,7 +143,7 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listOfTabTopic($data){
-        $sql = "SELECT * FROM BV100 WHERE BV151 = " . $data['BV151'] . " ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT *, (SELECT COUNT(*) FROM BV100 WHERE BV151 = '" . $data["BV151"] . "') AS ROWS FROM BV100 WHERE BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -154,7 +154,8 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll($data){
-        $sql = "SELECT * FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD151 = 0
+        $sql = "SELECT *, (SELECT COUNT(*) FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD151 = 0
+                AND BV151 = '" . $data["BV151"] . "') AS ROWS FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD151 = 0
                 AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT '" . $data["LIMIT"] . "' OFFSET '" . $data["START"];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
@@ -168,7 +169,10 @@ class B100_models extends CI_Model {
     public function b2018_listAll_story($data){
         // $sql = "SELECT * FROM BV100, DG100, KD100 WHERE KD100.KD100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD151 = 0
         //         AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
-        $sql = "SELECT * FROM BV100 b1 JOIN DG100 d1 ON d1.DG100 = b1.BV100
+        $sql = "SELECT *, (SELECT COUNT(*) FROM BV100 b1 JOIN DG100 d1 ON d1.DG100 = b1.BV100
+                                JOIN KD100 k1 ON k1.KD100 = b1.BV100 
+                                WHERE KD151 = 0 AND BV151 = '" . $data["BV151"] . "') AS ROWS
+                                       FROM BV100 b1 JOIN DG100 d1 ON d1.DG100 = b1.BV100
                                        JOIN KD100 k1 ON k1.KD100 = b1.BV100 
                                        WHERE KD151 = 0 AND BV151 = '" . $data["BV151"] . "' 
                                        ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
@@ -185,7 +189,11 @@ class B100_models extends CI_Model {
     public function b2018_listAll_funny($data){
         // $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100 AND KD100.KD151 = 0
         //         AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
-        $sql = "SELECT * FROM BV100 b1 JOIN ND100 n1 ON n1.ND100 = b1.BV100 
+        $sql = "SELECT *, (SELECT COUNT(*) FROM BV100 b1 JOIN ND100 n1 ON n1.ND100 = b1.BV100 
+                                JOIN DG100 d1 ON d1.DG100 = b1.BV100 
+                                JOIN KD100 k1 ON k1.KD100 = b1.BV100 
+                                WHERE KD151 = 0 AND BV151 = '" . $data["BV151"] . "' ) AS ROWS
+                                       FROM BV100 b1 JOIN ND100 n1 ON n1.ND100 = b1.BV100 
                                        JOIN DG100 d1 ON d1.DG100 = b1.BV100 
                                        JOIN KD100 k1 ON k1.KD100 = b1.BV100 
                                        WHERE KD151 = 0 AND BV151 = '" . $data["BV151"] . "' 

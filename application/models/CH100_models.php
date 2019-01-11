@@ -13,7 +13,7 @@ class CH100_models extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
-
+    // , (SELECT COUNT(*) FROM TB100) AS ROWS
     // Insert registration data in database
     public function ch2018_insert_question($data){
         $sql = "INSERT INTO CH100 (BV100, CH150, CH151, CH152) 
@@ -27,9 +27,9 @@ class CH100_models extends CI_Model {
     }
     public function ch2018_get_question($data){
         if ($data['BV100'] == 0 ) {
-            $sql =  "SELECT * FROM CH100 ORDER BY CH153 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+            $sql =  "SELECT *, (SELECT COUNT(*) FROM CH100) AS ROWS FROM CH100 ORDER BY CH153 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         } else {
-            $sql =  "SELECT * FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' ORDER BY CH153 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+            $sql =  "SELECT *, (SELECT COUNT(*) FROM CH100 WHERE BV100 = '" .$data["BV100"]. "') AS ROWS FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' ORDER BY CH153 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         }
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
@@ -51,7 +51,7 @@ class CH100_models extends CI_Model {
 
     public function ch2018_get_question_for_user($data){
         // $sql =  "SELECT * FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' AND CH152 = 0 ORDER BY CH153 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
-        $sql =  "SELECT * FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' AND CH152 = 0 ORDER BY CH153 DESC";
+        $sql =  "SELECT *, (SELECT COUNT(*) FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' AND CH152 = 0) AS ROWS FROM CH100 WHERE BV100 = '" .$data["BV100"]. "' AND CH152 = 0 ORDER BY CH153 DESC";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

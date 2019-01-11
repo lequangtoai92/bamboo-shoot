@@ -53,7 +53,7 @@ class A100_models extends CI_Model {
     }
 
     public function a2018_get_messenger($data){
-        $sql = "SELECT * FROM TN100 WHERE TK101 = " . $data['TK100'] . " OR TK102= " . $data['TK100'] . " ORDER BY TN151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * ,(SELECT COUNT(*) FROM TN100 WHERE TK101 = '" . $data["TK100"] . "' OR TK102= '" . $data["TK100"] . "') AS ROWS FROM TN100 WHERE TK101 = '" . $data["TK100"] . "' OR TK102= '" . $data["TK100"] . "' ORDER BY TN151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
@@ -64,7 +64,7 @@ class A100_models extends CI_Model {
     }
 
     public function a2018_get_notifiction($data){
-        $sql = "SELECT * FROM TB100 WHERE TK100 = " . $data['TK100'] . " ORDER BY TB151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * ,(SELECT COUNT(*) FROM TB100 WHERE TK101 = '" . $data["TK100"] . "') AS ROWS FROM TB100 WHERE TK100 = '" . $data["TK100"] . "' ORDER BY TB151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
