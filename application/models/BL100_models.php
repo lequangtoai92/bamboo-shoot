@@ -13,7 +13,7 @@ class BL100_models extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
-
+    // , (SELECT COUNT(*) FROM TB100) AS ROWS)
     // Insert registration data in database
     public function bl2018_insert_comment($data){
         $sql = "INSERT INTO BL100 (BV100, TK100, TK151, BL150, BL152, BL153, BL154, BL155) 
@@ -27,9 +27,9 @@ class BL100_models extends CI_Model {
     }
     public function bl2018_get_comment($data){
         if ($data['BV100'] == 0 ) {
-            $sql =  "SELECT * FROM BL100 ORDER BY BL151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+            $sql =  "SELECT *, (SELECT COUNT(*) FROM BL100) AS ROWS FROM BL100 ORDER BY BL151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         } else {
-            $sql =  "SELECT * FROM BL100 WHERE BV100 = '" .$data["BV100"]. "' ORDER BY BL151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+            $sql =  "SELECT *, (SELECT COUNT(*) FROM BL100 WHERE BV100 = '" .$data["BV100"]. "') AS ROWS FROM BL100 WHERE BV100 = '" .$data["BV100"]. "' ORDER BY BL151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         }
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
@@ -50,7 +50,7 @@ class BL100_models extends CI_Model {
     }
 
     public function bl2018_get_question_for_user($data){
-        $sql =  "SELECT * FROM BL100 WHERE BV100 = '" .$data["BV100"]. "' AND BL155 = 0 ORDER BY BL152 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql =  "SELECT *, (SELECT COUNT(*) FROM BL100 WHERE BV100 = '" .$data["BV100"]. "' AND BL155 = 0) AS ROWS FROM BL100 WHERE BV100 = '" .$data["BV100"]. "' AND BL155 = 0 ORDER BY BL152 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         // die(json_encode($sql));
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {

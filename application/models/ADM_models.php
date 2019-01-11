@@ -13,7 +13,7 @@ class ADM_models extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
-
+    // , (SELECT COUNT(*) FROM TB100) AS ROWS
     public function a2018_send_messenger($data){
         $sql = "INSERT INTO TN100 (TK101, TK102, TN150) VALUES ('" . $data["TK101"] . "','" . $data["TK102"] . "','" . $data["TN150"] . "')";
         if ($this->db->query($sql) === TRUE) {
@@ -81,9 +81,9 @@ class ADM_models extends CI_Model {
 
     public function a2018_listOfTopic_BV100($data){//BV151 the loai
         if($data['BV151'] == 1){
-            $sql = "SELECT * FROM BV100 WHERE BV151 > 0 AND BV151 < 5  ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+            $sql = "SELECT *, (SELECT COUNT(*) FROM BV100 WHERE BV151 > 0 AND BV151 < 5) AS ROWS FROM BV100 WHERE BV151 > 0 AND BV151 < 5  ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         } else {
-            $sql = "SELECT * FROM BV100 WHERE BV151 =" . $data['BV151'] . " ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+            $sql = "SELECT *, (SELECT COUNT(*) FROM BV100 WHERE BV151 ='" . $data["BV151"] . "') AS ROWS FROM BV100 WHERE BV151 ='" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         }
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
@@ -95,7 +95,7 @@ class ADM_models extends CI_Model {
     }
 
     public function a2018_listOfTabTK100($data){
-        $sql = "SELECT * FROM TK100 ORDER BY TK158 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT *, (SELECT COUNT(*) FROM TK100) AS ROWS FROM TK100 ORDER BY TK158 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
