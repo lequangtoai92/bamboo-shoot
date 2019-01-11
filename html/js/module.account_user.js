@@ -56,7 +56,7 @@ var viewStory = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/admin/get_listAccount?limit=1"
+      var url = "/admin/get_listAccount?limit=15"
       $.ajax({
         type: "GET",
         url: url,

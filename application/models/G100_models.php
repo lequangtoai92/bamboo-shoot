@@ -36,7 +36,7 @@ class G100_models extends CI_Model {
         }
     }
 
-    private function G2018_update_feedback($data) {
+    public function G2018_update_feedback($data) {
         $sql = "UPDATE GY100 SET GY152 ='" . $data["GY152"] . "'WHERE GY100 =" . $data["GY100"];
         if ($this->db->query($sql) === TRUE) {
             return 1;

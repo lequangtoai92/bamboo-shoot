@@ -154,7 +154,7 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_listAll($data){
-        $sql = "SELECT * FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD151 = 0
+        $sql = "SELECT * FROM BV100 , ND100, DG100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD151 = 1
                 AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT '" . $data["LIMIT"] . "' OFFSET '" . $data["START"];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
@@ -170,7 +170,7 @@ class B100_models extends CI_Model {
         //         AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
         $sql = "SELECT * FROM BV100 b1 JOIN DG100 d1 ON d1.DG100 = b1.BV100
                                        JOIN KD100 k1 ON k1.KD100 = b1.BV100 
-                                       WHERE KD151 = 0 AND BV151 = '" . $data["BV151"] . "' 
+                                       WHERE KD151 = 1 AND BV151 = '" . $data["BV151"] . "' 
                                        ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
         // die(json_encode($sql));
         $query = $this->db->query($sql);
@@ -188,7 +188,7 @@ class B100_models extends CI_Model {
         $sql = "SELECT * FROM BV100 b1 JOIN ND100 n1 ON n1.ND100 = b1.BV100 
                                        JOIN DG100 d1 ON d1.DG100 = b1.BV100 
                                        JOIN KD100 k1 ON k1.KD100 = b1.BV100 
-                                       WHERE KD151 = 0 AND BV151 = '" . $data["BV151"] . "' 
+                                       WHERE KD151 = 1 AND BV151 = '" . $data["BV151"] . "' 
                                        ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
         // die(json_encode($sql));
         $query = $this->db->query($sql);

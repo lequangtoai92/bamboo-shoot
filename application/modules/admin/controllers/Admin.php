@@ -58,15 +58,15 @@ class Admin extends History {
   }
 
   public function folk_proverb() {
-    $modules = array( 'module.admin');
+    $modules = array( 'module.admin_funny');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
-    $data['type_story'] = '5';
+    $data['type_story'] = '6';
     $this->loadTemplateAdmin('ADMIN', 'admin_funny_view', $stylesheet, $modules, $data);
   }
 
   public function good_word() {
-    $modules = array( 'module.admin');
+    $modules = array( 'module.admin_funny');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
     $data['type_story'] = '7';
@@ -74,7 +74,7 @@ class Admin extends History {
   }
 
   public function funny() {
-    $modules = array( 'module.admin');
+    $modules = array( 'module.admin_funny');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
     $data['type_story'] = '5';
@@ -82,7 +82,7 @@ class Admin extends History {
   }
 
   public function feedback() {
-    $modules = array( 'module.admin');
+    $modules = array( 'module.admin_feedback');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
     $this->loadTemplateAdmin('ADMIN', 'admin_feedback_view', $stylesheet, $modules, $data);
