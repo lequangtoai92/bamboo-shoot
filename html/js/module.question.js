@@ -38,6 +38,9 @@ var question = new Vue({
             console.log('success', result);
             self.question = '';
             self.answer = '';
+            self.loadItems = self.items;
+            self.loadItems.unshift(item);
+            this.items = self.loadItems;
           },
           error: function (result) { console.log('error', result); $(".save-content").removeAttr("disabled"); },
           complete: function () {

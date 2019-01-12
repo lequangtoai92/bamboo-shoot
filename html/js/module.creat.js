@@ -33,6 +33,8 @@ var creatBamboo = new Vue({
       if (!checkNull(self.virtues)){return $(".field-important-virtues").css("color", "red");}
       if (self.checkedAge.length == 0){return $(".field-important-age").css("color", "red");}
       if (!checkNull(self.title_name)){return $(".field-important-titlename").css("color", "red");}
+      if (!checkNull(self.author)){return self.author = undefined}
+      if (!checkNull(self.source)){return self.source = undefined}
       if (!checkNull(tinymce.editors['content_main'].getContent())){return $(".field-important-maincontent").css("color", "red");}
       var data_post = {
         type : self.type,
