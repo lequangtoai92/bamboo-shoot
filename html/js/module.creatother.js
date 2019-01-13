@@ -40,8 +40,8 @@ var creatOther = new Vue({
         // if (!checkNull(self.virtues)){return $(".field-important-virtues").css("color", "red");}
         // if (self.checkedAge.length == 0){return $(".field-important-age").css("color", "red");}
         // if (!checkNull(self.title_name)){return $(".field-important-titlename").css("color", "red");}
-        if (!checkNull(self.author)){return self.author = undefined}
-        if (!checkNull(self.source)){return self.source = undefined}
+        if (!checkNull(self.author)){self.author = undefined}
+        if (!checkNull(self.source)){self.source = undefined}
         if (!checkNull(tinymce.editors['content_main'].getContent())){return $(".field-important-maincontent").css("color", "red");}
         var data_post = {
           compact: self.compact,
@@ -61,8 +61,12 @@ var creatOther = new Vue({
           dataType: 'json',
           success: function (result) {
             console.log(result);
-            // $("#dg_show_content").addClass("show");
-            // $("#dg_show_content").css("display", "block");
+            $("#dg_show_content #title_name").text(data_post.title_name);
+            $("#dg_show_content #content_main").html(data_post.content_main);
+            $("#dg_show_content #name_author").text(data_post.name_author + ' - ' + data_post.source);
+
+            $("#dg_show_content").addClass("show");
+            $("#dg_show_content").css("display", "block");
             self.compact= '';
             self.type= '';
             self.title_name= '';
@@ -76,6 +80,16 @@ var creatOther = new Vue({
   
           }
         });
+      },
+
+      closeDidlog: function(){
+        $("#dg_show_content").removeClass("show");
+        $("#dg_show_content").css("display", "");
       }
     }
   });
+
+  $(".btn-close").click(function(){
+    $("#dg_show_content").removeClass("show");
+    $("#dg_show_content").css("display", "");
+  })

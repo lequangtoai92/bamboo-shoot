@@ -85,7 +85,7 @@
                         <a class="nav-link" href="<?php echo base_url() . 'thanthoai_hilap' ?>">Thần thoại Hi Lạp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'cagiao_tucngu' ?>">Ca dao - tục ngữ</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'cadao_tucngu' ?>">Ca dao - tục ngữ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url() . 'loihay_ydep' ?>">Lời hay ý đẹp</a>

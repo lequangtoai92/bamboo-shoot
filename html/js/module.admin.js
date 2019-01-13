@@ -5,6 +5,7 @@ var viewStory = new Vue({
     loadItems: [],
     type : '',
     cause: '',
+    select: '',
   },
   watch: {
     loadItems: function () {
@@ -20,6 +21,12 @@ var viewStory = new Vue({
     goToContent: function (data) {
       console.log(data);
       document.location.href = '/content?storyId=' + data;
+    },
+
+    selectType: function () {
+      this.select;
+      alert(this.select);
+
     },
 
     render_ddMMyyyy: function (data) {

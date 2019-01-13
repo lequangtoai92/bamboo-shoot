@@ -22,28 +22,29 @@ var creatBamboo = new Vue({
       relative_urls: false,
       remove_script_host: false,
       document_base_url: (!window.location.origin ? window.location.protocol + "//" + window.location.host : window.location.origin) + "/",
-      file_browser_callback: function (field_name, url, type, win) {},
+      file_browser_callback: function (field_name, url, type, win) { },
     });
   },
 
   methods: {
     saveContent: function () {
       var self = this;
-      if (!checkNull(self.compact)){return $(".field-important-compact").css("color", "red");}
-      if (!checkNull(self.virtues)){return $(".field-important-virtues").css("color", "red");}
-      if (self.checkedAge.length == 0){return $(".field-important-age").css("color", "red");}
-      if (!checkNull(self.title_name)){return $(".field-important-titlename").css("color", "red");}
-      if (!checkNull(self.author)){return self.author = undefined}
-      if (!checkNull(self.source)){return self.source = undefined}
-      if (!checkNull(tinymce.editors['content_main'].getContent())){return $(".field-important-maincontent").css("color", "red");}
+      if (!checkNull(self.compact)) { return $(".field-important-compact").css("color", "red"); }
+      if (!checkNull(self.virtues)) { return $(".field-important-virtues").css("color", "red"); }
+      if (self.checkedAge.length == 0) { return $(".field-important-age").css("color", "red"); }
+      if (!checkNull(self.title_name)) { return $(".field-important-titlename").css("color", "red"); }
+      if (!checkNull(self.author)) { self.author = undefined }
+      if (!checkNull(self.source)) { self.source = undefined }
+      if (!checkNull(tinymce.editors['content_main'].getContent())) { return $(".field-important-maincontent").css("color", "red"); }
+      self.content_main = tinymce.editors['content_main'].getContent();
       var data_post = {
-        type : self.type,
+        type: self.type,
         compact: self.compact,
         title_name: self.title_name,
         virtues: self.virtues,
         source: self.source,
-        age : self.checkedAge,
-        name_author : self.author,
+        age: self.checkedAge,
+        name_author: self.author,
         content_main: tinymce.editors['content_main'].getContent()
       }
       console.log(data_post);
@@ -53,9 +54,22 @@ var creatBamboo = new Vue({
         data: data_post,
         dataType: 'json',
         success: function (result) {
+          $("#dg_show_content #title_name").text(data_post.title_name);
+          $("#dg_show_content #content_main").html(data_post.content_main);
+          $("#dg_show_content #name_author").text(data_post.name_author + ' - ' + data_post.source);
+
+          $("#dg_show_content").addClass("show");
+          $("#dg_show_content").css("display", "block");
           console.log(result);
+          self.compact = '';
+          self.type = '';
+          self.title_name = '';
+          self.virtues = '';
+          self.source = '';
+          self.author = '';
+          self.checkedAge = [];
         },
-        error: function (result) {console.log(result);},
+        error: function (result) { console.log(result); },
         complete: function () {
 
         }
@@ -63,3 +77,9 @@ var creatBamboo = new Vue({
     }
   }
 });
+
+
+$(".btn-close").click(function () {
+  $("#dg_show_content").removeClass("show");
+  $("#dg_show_content").css("display", "");
+})
