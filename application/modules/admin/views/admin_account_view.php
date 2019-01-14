@@ -1,6 +1,12 @@
 <div class="content-body container">
   <div class="row">
     <div class="content-sup col-md-12" id="admin_account_view">
+      <select class="form-control select-option" v-model="select" v-on:change="selectType()">
+        <option class="select-option" value="0">Người dùng </option>
+        <option class="select-option" value="1">Admin</option>
+        <option class="select-option" value="8">Tạm khóa</option>
+        <option class="select-option" value="9">Xóa</option>
+      </select>
       <table id="firstTable" class="table table-striped table-hover">
         <thead>
           <tr>
@@ -30,12 +36,10 @@
             <td class="td-9">
               <select class="form-control select-option" v-model="type">
                 <option class="select-option" disabled value="">Duyệt</option>
+                <option class="select-option" value="0">Người dùng</option>
                 <option class="select-option" value="1">Admin</option>
-                <option class="select-option" value="2">Admin 1</option>
-                <option class="select-option" value="3">Người dùng</option>
-                <option class="select-option" value="4">Người dùng 1</option>
-                <option class="select-option" value="5">Khóa</option>
-                <option class="select-option" value="6">Xóa</option>
+                <option class="select-option" value="8">Khóa</option>
+                <option class="select-option" value="9">Xóa</option>
               </select>
             </td>
             <!-- <td class="td-10">

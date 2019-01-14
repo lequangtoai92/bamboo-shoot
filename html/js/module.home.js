@@ -55,12 +55,12 @@ var firstTable = new Vue({
           $("#firstTable .item").show();
           self.items = result.data;
           //phan trang
-          // $('.bb-pagination.image').doPagination(10, url, 2, function (res) {
-          //   if (res.status === 'success') {
-          //     self.loadItems = res.data;
-          //     this.items = self.loadItems;
-          //   }
-          // });
+          $('.bb-pagination.image').doPagination(result.data[0].ROWS, url, 15, function (res) {
+            if (res.status === 'success') {
+              self.loadItems = res.data;
+              this.items = self.loadItems;
+            }
+          });
         },
         error: function (error) {
           console.log(error);

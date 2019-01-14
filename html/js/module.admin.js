@@ -24,8 +24,9 @@ var viewStory = new Vue({
     },
 
     selectType: function () {
-      this.select;
-      alert(this.select);
+      var self = this;
+      self.select = this.select;
+      initdata();
 
     },
 
@@ -63,7 +64,7 @@ var viewStory = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/admin/get_listBambo?limit=2"
+      var url = "/admin/get_listBambo?type=" + self.select;
       $.ajax({
         type: "GET",
         url: url,
@@ -71,7 +72,7 @@ var viewStory = new Vue({
         success: function (result) {
           self.items = result.data;
           //phan trang
-          $('.bb-pagination.image').doPagination(10, url, 2, function (res) {
+          $('.bb-pagination.image').doPagination(result.data[0].ROWS, url, 15, function (res) {
             if (res.status === 'success') {
               self.loadItems = res.data;
               this.items = self.loadItems;

@@ -5,6 +5,7 @@ var viewStory = new Vue({
     loadItems: [],
     type : '',
     cause: '',
+    select: 0,
   },
   watch: {
     loadItems: function () {
@@ -17,6 +18,13 @@ var viewStory = new Vue({
   },
 
   methods: {
+    selectType: function () {
+      var self = this;
+      self.select = this.select;
+      initdata();
+
+    },
+
     toAccount: function (data) {
       console.log(data);
       // document.location.href = '/content?storyId=' + data;
@@ -56,7 +64,7 @@ var viewStory = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/feedback/get_feedback?limit=15"
+      var url = "/feedback/get_feedback?type=" + self.select;
       $.ajax({
         type: "GET",
         url: url,
@@ -64,7 +72,7 @@ var viewStory = new Vue({
         success: function (result) {
           self.items = result.data;
           //phan trang
-          $('.bb-pagination.image').doPagination(10, url, 2, function (res) {
+          $('.bb-pagination.image').doPagination(result.data[0].ROWS, url, 15, function (res) {
             if (res.status === 'success') {
               self.loadItems = res.data;
               this.items = self.loadItems;

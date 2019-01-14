@@ -216,6 +216,7 @@ class Admin extends History {
 
   private function getListBambo($get) {
     $data = array(
+      'KD151' => isset($get['type']) ? $get['type'] : 0,
       'BV151' => isset($get['BV151']) ? $get['BV151'] : 0,
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
@@ -225,6 +226,7 @@ class Admin extends History {
 
   private function getListAccount($get) {
     $data = array(
+      'TK159' => isset($get['type']) ? $get['type'] : 0,
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );

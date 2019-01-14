@@ -12,7 +12,7 @@
               <option class="select-option" disabled value="">Thể loại</option>
               <option class="select-option" value="5">Truyện cười</option>
               <option class="select-option" value="6">Ca dao - tục ngữ</option>
-              <option class="select-option" value="7">Châm ngôn</option>
+              <option class="select-option" value="7">Lời hay ý đẹp</option>
             </select>
         </div>
         <div class="form-group">

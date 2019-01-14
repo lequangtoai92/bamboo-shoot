@@ -66,7 +66,7 @@ class Feedback extends History {
     $data = array(
       'TK100' => isset($post['TK100']) ? $post['contentFeedback'] : 0,
       'GY150' => isset($post['contentFeedback']) ? $post['contentFeedback'] : NULL,
-      'GY152' => isset($post['GY152']) ? $post['contentFeedback'] : 0,
+      'GY152' => isset($post['GY152']) ? $post['contentFeedback'] : 1,
       'GY153' => isset($post['GY153']) ? $post['contentFeedback'] : NULL,
       'GY154' => isset($post['GY154']) ? $post['contentFeedback'] : NULL,
       'GY155' => isset($post['GY155']) ? $post['contentFeedback'] : NULL,
@@ -77,6 +77,7 @@ class Feedback extends History {
 
   private function getFeedback($get) {
     $data = array(
+      'GY152' => isset($get['type']) ? $get['type'] : 1,
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
