@@ -140,8 +140,8 @@ class Account extends History {
   /*     * **************************************************************** */
 
   private function getInfoAccount($get) {
-    if(isset($data["userName"])){
-      $TK100 = $data["userName"];
+    if(isset($get["userName"])){
+      $TK100 = $get["userName"];
     }else{
       $TK100 = $this->session->userdata('B_LOGIN')['TK100'];
     }
@@ -152,8 +152,8 @@ class Account extends History {
   }
 
   private function getListStory($get) {
-    if(isset($data["userName"])){
-      $TK100 = $data["userName"];
+    if(isset($get["userName"])){
+      $TK100 = $get["userName"];
     }else{
       $TK100 = $this->session->userdata('B_LOGIN')['TK100'];
     }

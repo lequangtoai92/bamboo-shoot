@@ -12,7 +12,8 @@ var infoAccount = new Vue({
 	},
 
 	mounted: function () {
-		this.initdata();
+		this.initdata(); 
+		this.initListStory(); 
 	},
 
 	methods: {
@@ -44,6 +45,7 @@ var infoAccount = new Vue({
 				url: url,
 				dataType: 'json',
 				success: function (result) {
+					if(result.status == 'success'){
 					console.log( result.data[0]);
 					self.items = result.data;
 					//phan trang
@@ -53,6 +55,7 @@ var infoAccount = new Vue({
 					// 		this.items = this.loadItems;
 					// 	}
 					// });
+					}
 				},
 				error: function (error) {
 					console.log(error);

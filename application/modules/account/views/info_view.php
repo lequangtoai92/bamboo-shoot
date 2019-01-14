@@ -48,64 +48,13 @@
 							<h4>{{item.BV150}}</h4>
 							<div class="title-tag">
 								<span>{{item.BV158}}</span>
-								<!-- <span>thông minh</span> -->
 							</div>
 						</div>
 
 						<div class="content-info">
 							<p>{{item.BV153}}</p>
 						</div>
-
-						<div class="comment-info">
-							<span class="comment-item">
-								<i class="far fa-eye item-tooltip">
-									<span class="tooltiptext">Số lượt xem</span>
-								</i>(314)
-							</span>
-							<span class="comment-item">
-								<i class="far fa-thumbs-up item-tooltip">
-									<span class="tooltiptext">Lượt chọn hay</span>
-								</i>(253)
-							</span>
-							<span class="comment-item">
-								<i class="far fa-thumbs-down item-tooltip">
-									<span class="tooltiptext">Lượt chọn chán</span>
-								</i>(12)
-							</span>
-							<span class="comment-item">
-								<i class="far fa-comment-dots item-tooltip">
-									<span class="tooltiptext">Lượt bình luận</span>
-								</i>(86)
-							</span>
-							<span class="comment-item">
-								<i class="fas fa-exclamation-triangle item-tooltip">
-									<span class="tooltiptext">Lượt báo cáo</span>
-								</i>(7)
-							</span>
-						</div>
 					</div>
-				</div>
-			</div>
-			<hr>
-			<div class="footer">
-				<h4>Bình luận</h4>
-				<div class="comment">
-					<h6>Nguyễn Văn A</h6>
-					<p>Bài viết rất hay và có tính sáng tạo</p>
-				</div>
-				<div class="comment">
-					<h6>Nguyễn Văn A</h6>
-					<p>Tội nghiệp cho chú mèo con trong bài, toàn bị bạn bè ức
-						hiếp</p>
-				</div>
-				<div class="comment">
-					<h6>Nguyễn Văn A</h6>
-					<p>Chú mèo thật là mạnh mẽ, đã đứng lên để bảo vệ bạn mèo
-						đen khỏi bị ức hiếp của các bạn chó</p>
-				</div>
-				<div class="comment">
-					<h6>Nguyễn Văn A</h6>
-					<p>Bài viết được </p>
 				</div>
 			</div>
 		</div>

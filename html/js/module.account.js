@@ -74,6 +74,7 @@ var infoAccount = new Vue({
 				url: url,
 				dataType: 'json',
 				success: function (result) {
+					if(result.status == 'success'){
 					console.log( result.data[0]);
 					self.items = result.data[0];
 					//phan trang
@@ -83,6 +84,7 @@ var infoAccount = new Vue({
 					// 		this.items = this.loadItems;
 					// 	}
 					// });
+					}
 				},
 				error: function (error) {
 					console.log(error);
@@ -153,6 +155,7 @@ var listStory = new Vue({
 				url: url,
 				dataType: 'json',
 				success: function (result) {
+					if(result.status == 'success'){
 					self.items = result.data;
 					//phan trang
 					$('.bb-pagination.image').doPagination(10, url, 2, function (res) {
@@ -161,6 +164,7 @@ var listStory = new Vue({
 							this.items = self.loadItems;
 						}
 					});
+				}
 				},
 				error: function (error) {
 					console.log(error);
@@ -195,6 +199,7 @@ var listMessenger = new Vue({
 				url: url,
 				dataType: 'json',
 				success: function (result) {
+					if(result.status == 'success'){
 					self.items = result.data;
 					//phan trang
 					$('.bb-pagination.image').doPagination(10, url, 2, function (res) {
@@ -203,6 +208,7 @@ var listMessenger = new Vue({
 							this.items = self.loadItems;
 						}
 					});
+				}
 				},
 				error: function (error) {
 					console.log(error);
@@ -237,6 +243,7 @@ var listNotifiction = new Vue({
 				url: url,
 				dataType: 'json',
 				success: function (result) {
+					if(result.status == 'success'){
 					self.items = result.data;
 					//phan trang
 					$('.bb-pagination.image').doPagination(10, url, 2, function (res) {
@@ -245,6 +252,7 @@ var listNotifiction = new Vue({
 							this.items = self.loadItems;
 						}
 					});
+				}
 				},
 				error: function (error) {
 					console.log(error);

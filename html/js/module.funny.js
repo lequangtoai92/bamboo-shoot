@@ -32,6 +32,7 @@ var funnyView = new Vue({
           url: url,
           dataType: 'json',
           success: function (result) {
+            if(result.status == 'success'){
             console.log(result);
             self.items = result.data;
             //phan trang
@@ -41,6 +42,7 @@ var funnyView = new Vue({
             //     this.items = self.loadItems;
             //   }
             // });
+            }
           },
           error: function (error) {
             console.log(error);

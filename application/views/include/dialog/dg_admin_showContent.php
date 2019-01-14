@@ -6,22 +6,29 @@
       <div class="tab-content">
         <div class="tab-pane fade in active show">
           <div class="modal-body">
-            <div class="header">
-                <h2 id="title_name"></h2>
-            </div>
-            <div class="body">
-                <!-- <div class="img-first"><img src="<?= base_url(); ?>images/image.jpg"/></div> -->
-                <p id="content_main"></p>
+            <div class="content-sup col-md-9" v-for="item in itemShow">
+              <div class="header">
+                <h2>{{item.BV150}}</h2>
+              </div>
+              <div class="body">
+                <label>Mô tả</label>
+                <p>{{item.BV153}}</p>
+                <label>Đức tính</label>
+                <p>{{item.BV158}}</p>
+                <label>Lứa tuổi</label>
+                <p>{{render_age(item.BV157)}}</p>
+                <label>Nội dung</label>
+                <p v-html="item.ND150"></p>
                 <div class="author">
-                    <span id="name_author"></span>
+                  <span>{{item.BV154}} - {{item.BV156}}</span>
                 </div>
+              </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default btn-close" data-dismiss="modal">Đóng</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-close" data-dismiss="modal">Đóng</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>

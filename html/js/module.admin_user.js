@@ -69,6 +69,7 @@ var viewStory = new Vue({
         url: url,
         dataType: 'json',
         success: function (result) {
+          if(result.status == 'success'){
           self.items = result.data;
           //phan trang
           $('.bb-pagination.image').doPagination(result.data[0].ROWS, url, 15, function (res) {
@@ -77,6 +78,7 @@ var viewStory = new Vue({
               this.items = self.loadItems;
             }
           });
+        }
         },
         error: function (error) {
           console.log(error);

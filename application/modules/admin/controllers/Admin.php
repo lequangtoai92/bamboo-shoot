@@ -15,6 +15,7 @@ class Admin extends History {
     $this->lang->load('history');
     $this->load->library('session');
     $this->load->model('G100_models', 'G100_MODELS');
+    $this->load->model('B100_models', 'B100_MODELS');
     $this->load->model('ADM_models', 'ADM_MODELS');
   }
 
@@ -317,7 +318,7 @@ class Admin extends History {
     $data = array(
       'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
     );
-    return $this->ADM_MODELS->a2018_listOfTopic_BV100($data);
+    return $this->B100_MODELS->b2018_story_all($data);
   }
   
 }

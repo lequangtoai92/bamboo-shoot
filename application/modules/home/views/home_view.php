@@ -10,7 +10,7 @@
       ?>">
       <div class="item" v-for="item in items">
         <div class="avatar">
-          <a v-bind:href="'/account/user?userName=' + {{item.TK100}}">
+          <a v-bind:href="'/account/user?userName=1'">
             <img src="https://viblo.asia/images/mm.png">
           </a>
           <div class="bottom-avatar">
@@ -23,7 +23,7 @@
         <div class="info">
           <div class="meta-info">
             <div class="meta-info-name">
-              <a v-bind:href="'/account/user?userName=' + {{item.TK100}}">{{item.BV154}}</a>
+              <a v-bind:href="'/account/user?userName=1'">{{item.BV154}}</a>
             </div>
             <div class="meta-info-time">
               <span>{{render_ddMMyyyy  (item.BV155)}}</span>

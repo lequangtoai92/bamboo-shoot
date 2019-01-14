@@ -5,24 +5,25 @@
                 <h2>{{item.BV150}}</h2>
             </div>
             <div class="body">
-                <div class="img-first"><img src="<?= base_url(); ?>images/image.jpg"/></div>
+                <div class="img-first"><img src="<?= base_url(); ?>images/image.jpg" /></div>
                 <p v-html="item.ND150"></p>
                 <div class="author">
                     <span>{{item.BV154}} - {{item.BV156}}</span>
                 </div>
             </div>
             <div class=row>
-            <div class="btn-to-fb col-md-6">
-            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-            </div>
-            <div class="btn-to-img col-md-6">
-                <button class="btn btn-success">Hay</button>
-                <button class="btn btn-warning">Chán</button>
-                <!-- <button class="btn btn-info">Hình ảnh trong bài</button> -->
-            </div>
+                <div class="btn-to-fb col-md-6">
+                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard"
+                        data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                </div>
+                <div class="btn-to-img col-md-6">
+                    <button class="btn btn-success">Hay</button>
+                    <button class="btn btn-warning">Chán</button>
+                    <!-- <button class="btn btn-info">Hình ảnh trong bài</button> -->
+                </div>
             </div>
             <hr>
-            <div class="question" >
+            <div class="question">
                 <h4>Các câu hỏi mẹ có thể hỏi và trả lời với con</h4>
                 <div class="auto-question" v-for="question in listQuestion">
                     <h6>{{question.CH150}}</h6>
@@ -38,7 +39,7 @@
                 </div> -->
             </div>
             <hr>
-            <div class="footer" >
+            <div class="footer">
                 <h4>Bình luận</h4>
                 <div class="comment-send">
                     <textarea class="form-control" rows="2" v-model="comment" placeholder="Bình luận"></textarea>
@@ -67,6 +68,6 @@
         <div class="content-sub col-md-3">
             <p><img src="<?= base_url(); ?>images/image.jpg" height="310" width="255" alt="thẻ img" /></p>
         </div>
-           
+
     </div>
 </div>

@@ -243,15 +243,21 @@ class B100_models extends CI_Model {
     }
 
     public function b2018_story_all($data){
-        // $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100 AND KD100.KD151 = 0
-        //         AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
-        $sql = "SELECT * FROM BV100, ND100, DG100, KD100 
-                                       WHERE BV100.BV100 = '" . $data["BV100"] . "' 
-                                       AND ND100.ND100 = '" . $data["BV100"] . "';
-                                       AND DG100.DG100 = '" . $data["BV100"] . "';
-                                       AND KD100.KD100 = '" . $data["BV100"] . "'";
+        $sql = "SELECT * FROM BV100 b1 JOIN ND100 n1 ON n1.ND100 = b1.BV100 
+                                       JOIN DG100 d1 ON d1.DG100 = b1.BV100 
+                                       JOIN KD100 k1 ON k1.KD100 = b1.BV100 
+                                       WHERE b1.BV100 = '" . $data["BV100"] . "'";
         // die(json_encode($sql));
         $query = $this->db->query($sql);
+        // $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100 AND KD100.KD151 = 0
+        //         AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
+        // $sql = "SELECT * FROM BV100, ND100, DG100, KD100 
+        //                                WHERE BV100.BV100 = '" . $data["BV100"] . "' 
+        //                                AND ND100.ND100 = '" . $data["BV100"] . "';
+        //                                AND DG100.DG100 = '" . $data["BV100"] . "';
+        //                                AND KD100.KD100 = '" . $data["BV100"] . "'";
+        // die(json_encode($sql));
+        // $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();
             return $result;

@@ -6,6 +6,7 @@ var viewStory = new Vue({
     type : '',
     cause: '',
     select: 0,
+    itemShow: [],
   },
   watch: {
     loadItems: function () {
@@ -22,7 +23,10 @@ var viewStory = new Vue({
       var self = this;
       self.select = this.select;
       this.initdata();
+    },
 
+    render_age : function(data) {
+      return convert_age(data);
     },
 
     goToContent: function (data) {
@@ -39,7 +43,9 @@ var viewStory = new Vue({
         dataType: 'json',
         success: function (result) {
           console.log(result);
-          self.items = result.data;
+          self.itemShow = result.data;
+          $(".admin-modal-show-content").addClass("show");
+          $(".admin-modal-show-content").css("display", "block");
         },
         error: function (error) {
           console.log(error);
@@ -87,6 +93,8 @@ var viewStory = new Vue({
         url: url,
         dataType: 'json',
         success: function (result) {
+          if(result.status == 'success'){
+          console.log(result);
           self.items = result.data;
           //phan trang
           $('.bb-pagination.image').doPagination(result.data[0].ROWS, url, 15, function (res) {
@@ -95,6 +103,7 @@ var viewStory = new Vue({
               this.items = self.loadItems;
             }
           });
+        }
         },
         error: function (error) {
           console.log(error);

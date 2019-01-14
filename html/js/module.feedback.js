@@ -63,6 +63,7 @@ var feedback = new Vue({
         url: url,
         dataType: 'json',
         success: function (result) {
+          if(result.status == 'success'){
           self.items = result.data;
           $("#id_feedback .content-feedback-result").show();
           //phan trang
@@ -72,6 +73,7 @@ var feedback = new Vue({
               this.items = self.loadItems;
             }
           });
+        }
         },
         error: function (error) {
           console.log(error);

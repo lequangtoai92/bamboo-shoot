@@ -51,6 +51,7 @@ var firstTable = new Vue({
         url: url,
         dataType: 'json',
         success: function (result) {
+          if(result.status == 'success'){
           console.log(result);
           $("#firstTable .item").show();
           self.items = result.data;
@@ -61,6 +62,7 @@ var firstTable = new Vue({
               this.items = self.loadItems;
             }
           });
+        }
         },
         error: function (error) {
           console.log(error);
