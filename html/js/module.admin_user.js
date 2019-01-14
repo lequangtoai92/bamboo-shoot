@@ -1,5 +1,5 @@
 var viewStory = new Vue({
-  el: '#admin_saga_view',
+  el: '#admin_account_view',
   data: {
     items: [],
     loadItems: [],
@@ -24,27 +24,9 @@ var viewStory = new Vue({
       this.initdata();
 
     },
-
-    goToContent: function (data) {
+    toAccount: function (data) {
       console.log(data);
-      document.location.href = '/content?storyId=' + data;
-    },
-
-    showContent : function (data) {
-      var self = this;
-      var url = "/admin/get_storyAll?storyId=" + data;
-      $.ajax({
-        type: "GET",
-        url: url,
-        dataType: 'json',
-        success: function (result) {
-          console.log(result);
-          self.items = result.data;
-        },
-        error: function (error) {
-          console.log(error);
-        }
-      });
+      // document.location.href = '/content?storyId=' + data;
     },
 
     render_ddMMyyyy: function (data) {
@@ -58,14 +40,14 @@ var viewStory = new Vue({
     confirmation: function(data) {
       var self = this;
       var dataPost = {
-        KD100: data,
-        KD150: self.cause,
-        KD151: self.type
+        TK100: data,
+        // KD150: self.cause,
+        TK159: self.type
       }
       console.log(dataPost);
       $.ajax({
         type: "POST",
-        url: '/admin/a2018_updateKD100',
+        url: '/admin/a2018UpdateTK100',
         data: dataPost,  
         dataType: 'json',
         success: function (result) {
@@ -81,7 +63,7 @@ var viewStory = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/admin/get_listBambo?BV151=1&type=" + self.select;
+      var url = "/admin/get_listAccount?type=" + self.select;
       $.ajax({
         type: "GET",
         url: url,
@@ -103,8 +85,3 @@ var viewStory = new Vue({
     }
   }
 });
-
-$(".btn-close").click(function () {
-  $(".admin-modal-show-content").removeClass("show");
-  $(".admin-modal-show-content").css("display", "");
-})

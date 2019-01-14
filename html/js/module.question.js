@@ -22,8 +22,8 @@ var question = new Vue({
     methods: {
       selectType: function () {
         var self = this;
-        self.select = this.select;
-        initdata();
+        self.selected = this.selected;
+        this.initdata();
   
       },
 
@@ -74,7 +74,7 @@ var question = new Vue({
 
       initdata: function () {
         var self = this;
-        var url = "/question/get_question?limit=15"
+        var url = "/question/get_question?type=" + self.selected;
         $.ajax({
           type: "GET",
           url: url,

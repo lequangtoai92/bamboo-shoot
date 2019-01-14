@@ -30,7 +30,7 @@ class Account extends History {
   }
 
   public function user(){
-    $modules = array( 'module.account');
+    $modules = array( 'module.account_user');
     $stylesheet = 'account';
     $data['title'] = 'Hello world';
     $this->renderTemplate('Tác giả', 'info_view', $stylesheet, $modules, $data);
@@ -140,15 +140,25 @@ class Account extends History {
   /*     * **************************************************************** */
 
   private function getInfoAccount($get) {
+    if(isset($data["userName"])){
+      $TK100 = $data["userName"];
+    }else{
+      $TK100 = $this->session->userdata('B_LOGIN')['TK100'];
+    }
     $data = array(
-      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+      'TK100' => $TK100,//id nguoi tao
     );
     return $this->A100_MODELS->a2018_get_account($data);
   }
 
   private function getListStory($get) {
+    if(isset($data["userName"])){
+      $TK100 = $data["userName"];
+    }else{
+      $TK100 = $this->session->userdata('B_LOGIN')['TK100'];
+    }
     $data = array(
-      'TK100' => $this->session->userdata('B_LOGIN')['TK100'],//id nguoi tao
+      'TK100' => $TK100,//id nguoi tao
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );

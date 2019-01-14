@@ -242,4 +242,22 @@ class B100_models extends CI_Model {
         }
     }
 
+    public function b2018_story_all($data){
+        // $sql = "SELECT * FROM BV100, ND100, DG100, KD100 WHERE ND100.ND100 = BV100.BV100 AND DG100.DG100 = BV100.BV100 AND KD100.KD100 = BV100.BV100 AND KD100.KD151 = 0
+        //         AND BV151 = '" . $data["BV151"] . "' ORDER BY BV155 DESC LIMIT " . $data["LIMIT"] . " OFFSET " . $data["START"];
+        $sql = "SELECT * FROM BV100, ND100, DG100, KD100 
+                                       WHERE BV100.BV100 = '" . $data["BV100"] . "' 
+                                       AND ND100.ND100 = '" . $data["BV100"] . "';
+                                       AND DG100.DG100 = '" . $data["BV100"] . "';
+                                       AND KD100.KD100 = '" . $data["BV100"] . "'";
+        // die(json_encode($sql));
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            $result = $query->result_array();
+            return $result;
+        } else {
+            return false;
+        }
+    }
+
 }

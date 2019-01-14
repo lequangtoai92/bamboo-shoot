@@ -37,7 +37,7 @@ class Admin extends History {
   }
 
   public function account() {
-    $modules = array( 'module.account_user');
+    $modules = array( 'module.admin_user');
     $stylesheet = 'admin';
     $data['title'] = 'Hello world';
     $this->loadTemplateAdmin('ADMIN', 'admin_account_view', $stylesheet, $modules, $data);
@@ -210,6 +210,18 @@ class Admin extends History {
     echo json_encode($res);
   }
 
+  public function get_storyAll() {
+    $get = $_GET;
+    $res = array('status' => 'error', 'message' => '');
+    $arrayRS = $this->getStoryAll ($get);
+    if ($arrayRS != false) {
+        $res['status'] = 'success';
+        $res['data'] = $arrayRS;
+        $res['message'] = '';
+    };
+    echo json_encode($res);
+  }
+
   /*     * **************************************************************** */
   /*     * ****************************[PRIVATE]*************************** */
   /*     * **************************************************************** */
@@ -299,6 +311,13 @@ class Admin extends History {
       'TN150' => isset($post['TN150']) ? $post['TN150'] : 0,
     );
     return  $this->ADM_MODELS->a2018_send_messenger($data);
+  }
+
+  private function getStoryAll($get) {
+    $data = array(
+      'BV100' => isset($get['storyId']) ? $get['storyId'] : 0,
+    );
+    return $this->ADM_MODELS->a2018_listOfTopic_BV100($data);
   }
   
 }

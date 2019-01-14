@@ -20,7 +20,7 @@
                 <h2>Liên hệ</h2>
                 <ul class="list-group">
                     <li class="li-footer">0927628492</li>
-                    <li class="li-footer">toailq92@gmail.com</li>
+                    <li class="li-footer">toailq9229@gmail.com</li>
                 </ul>
             </div>
             <div class="col-3 footer-col footer-four">
@@ -31,9 +31,9 @@
                 </ul>
             </div>
             <div class="address">
-                <p>CÔNG TY TNHH CHỢ TỐT - Địa chỉ: Phòng 1808, Tầng 18, Mê Linh Point Tower, 02 Ngô Đức Kế, Phường Bến Nghé, Quận 1, TP Hồ Chí Minh </p>
-                <p>Giấy chứng nhận đăng ký doanh nghiệp số 0312120782 do Sở Kế Hoạch và Đầu Tư TPHCM cấp ngày 11/01/2013 </p>
-                <p>Email: trogiup@chotot.vn - Đường dây nóng: (028)38664041</p>
+                <p></p>
+                <p></p>
+                <p></p>
             </div>
         </div>
     </div>

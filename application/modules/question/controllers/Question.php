@@ -94,7 +94,7 @@ class Question extends History {
 
   private function getQuestion($get) {
     $data = array(
-      'BV100' => isset($post['TK100']) ? $post['BV100'] : 0,
+      'BV100' => isset($post['type']) ? $post['type'] : 0,
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
