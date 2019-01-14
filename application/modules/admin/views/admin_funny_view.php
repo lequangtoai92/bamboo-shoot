@@ -51,6 +51,7 @@
           </tr>
         </tbody>
       </table>
+      <?php echo $this->load->view('include/dialog/dg_admin_showContent'); ?>
     </div>
   </div>
 </div>

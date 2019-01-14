@@ -81,9 +81,9 @@ class ADM_models extends CI_Model {
 
     public function a2018_listOfTopic_BV100($data){//BV151 the loai
         if($data['BV151'] == 1){
-            $sql = "SELECT *, (SELECT COUNT(*) FROM BV100, DG100 WHERE BV151 > 0 AND BV151 < 5 AND KD100.KD100 = BV100.BV100 AND KD151 = '" . $data["KD151"] . "') AS ROWS FROM BV100, DG100 WHERE BV151 > 0 AND BV151 < 5 AND KD100.KD100 = BV100.BV100 AND KD151 = '" . $data["KD151"] . "' ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+            $sql = "SELECT *, (SELECT COUNT(*) FROM BV100, KD100 WHERE BV151 > 0 AND BV151 < 5 AND KD100.KD100 = BV100.BV100 AND KD151 = '" . $data["KD151"] . "') AS ROWS FROM BV100, KD100 WHERE BV151 > 0 AND BV151 < 5 AND KD100.KD100 = BV100.BV100 AND KD151 = '" . $data["KD151"] . "' ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         } else {
-            $sql = "SELECT *, (SELECT COUNT(*) FROM BV100, DG100 WHERE BV151 ='" . $data["BV151"] . "' AND KD100.KD100 = BV100.BV100 AND KD151 = '" . $data["KD151"] . "') AS ROWS FROM BV100, DG100 WHERE BV151 ='" . $data["BV151"] . "' AND KD100.KD100 = BV100.BV100 AND KD151 = '" . $data["KD151"] . "' ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+            $sql = "SELECT *, (SELECT COUNT(*) FROM BV100, KD100 WHERE BV151 ='" . $data["BV151"] . "' AND KD100.KD100 = BV100.BV100 AND KD151 = '" . $data["KD151"] . "') AS ROWS FROM BV100, KD100 WHERE BV151 ='" . $data["BV151"] . "' AND KD100.KD100 = BV100.BV100 AND KD151 = '" . $data["KD151"] . "' ORDER BY BV155 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         }
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {

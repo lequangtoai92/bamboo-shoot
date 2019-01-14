@@ -4,7 +4,7 @@ var question = new Vue({
       items: [],
       loadItems: [],
       listStory: [],
-      selected: '',
+      selected: 0,
       question: '',
       answer: ''
     },
@@ -20,6 +20,13 @@ var question = new Vue({
     },
   
     methods: {
+      selectType: function () {
+        var self = this;
+        self.select = this.select;
+        initdata();
+  
+      },
+
       sendQuestion: function () {
         var self = this;
         if (!checkNull(self.question)){return;}

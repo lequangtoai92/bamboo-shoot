@@ -30,6 +30,10 @@ var viewStory = new Vue({
       document.location.href = '/content?storyId=' + data;
     },
 
+    showContent : function (data) {
+
+    },
+
     render_ddMMyyyy: function (data) {
       return get_ddMMyyyy(data);
     },
@@ -86,3 +90,8 @@ var viewStory = new Vue({
     }
   }
 });
+
+$(".btn-close").click(function () {
+  $(".admin-modal-show-content").removeClass("show");
+  $(".admin-modal-show-content").css("display", "");
+})

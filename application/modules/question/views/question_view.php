@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="content-left ">
 			<div class="form-group col-5 conten-select">
-				<select class="form-control select-option" v-model="selected">
+				<select class="form-control select-option" v-model="selected" v-on:change="selectType()">
 					<option v-for="story in listStory" v-bind:value="story.BV100">
 						{{ story.BV150 }}
 					</option>

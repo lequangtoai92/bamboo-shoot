@@ -21,7 +21,7 @@ var viewStory = new Vue({
     selectType: function () {
       var self = this;
       self.select = this.select;
-      initdata();
+      this.initdata();
 
     },
     toAccount: function (data) {
