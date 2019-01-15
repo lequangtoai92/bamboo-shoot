@@ -17,6 +17,9 @@ class Admin extends History {
     $this->load->model('G100_models', 'G100_MODELS');
     $this->load->model('B100_models', 'B100_MODELS');
     $this->load->model('ADM_models', 'ADM_MODELS');
+    if (!isset($this->session->userdata('B_LOGIN')['LI152']) || $this->session->userdata('B_LOGIN')['LI152'] != 0){
+      redirect('/home');
+    }
   }
 
   /*   * **************************************************************** */

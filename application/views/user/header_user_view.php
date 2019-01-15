@@ -41,9 +41,15 @@ if (isset($stylesheet)) {
                         <!-- <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Bài viết</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Tin nhắn</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông báo</a> -->
+                        <?php if ($this->session->userdata('B_USER')['author'] != 6): ?>
                         <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'creatOther' ?>">Viết khác</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'question' ?>">Câu hỏi</a>
+                        <?php else: ?>
+                        <a class="dropdown-item" href="#" onclick="notLogin()">Viết bài</a>
+                        <a class="dropdown-item" href="#" onclick="notLogin()">Viết khác</a>
+                        <a class="dropdown-item" href="#" onclick="notLogin()">Câu hỏi</a>
+                        <?php endif;?>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#md_modify_pass">Đổi mật khẩu</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
                     </div>

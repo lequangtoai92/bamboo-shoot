@@ -56,3 +56,7 @@ function hideLoading() {
     $('.lg-login').removeClass('invisible');
     $('.img-loading').addClass('d-none');
 }
+
+function notLogin(){
+    alert("Hãy bổ sung thông tin để sử dụng chức năng này");
+}
