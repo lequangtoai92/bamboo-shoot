@@ -13,7 +13,8 @@
             </div>
             <div class=row>
                 <div class="btn-to-fb col-md-6">
-                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard"
+                    <!-- <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" -->
+                    <div class="fb-like" data-href="https://docsach.000webhostapp.com/content?storyId=16" data-layout="standard"
                         data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                 </div>
                 <div class="btn-to-img col-md-6">
@@ -64,6 +65,8 @@
                     <p>Bài viết được </p>
                 </div> -->
             </div>
+            <div class="fb-comments" data-href="https://docsach.000webhostapp.com/content?storyId=16" data-numposts="8"></div>
+            <!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="8"></div> -->
         </div>
         <div class="content-sub col-md-3">
             <p><img src="<?= base_url(); ?>images/image.jpg" height="310" width="255" alt="thẻ img" /></p>

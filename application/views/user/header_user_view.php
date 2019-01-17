@@ -41,7 +41,7 @@ if (isset($stylesheet)) {
                         <!-- <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Bài viết</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Tin nhắn</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'account' ?>">Thông báo</a> -->
-                        <?php if ($this->session->userdata('B_USER')['author'] != 6): ?>
+                        <?php if ($this->session->userdata('B_USER')['author'] == 6): ?>
                         <a class="dropdown-item" href="<?php echo base_url() . 'creat' ?>">Viết bài</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'creatOther' ?>">Viết khác</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'question' ?>">Câu hỏi</a>
