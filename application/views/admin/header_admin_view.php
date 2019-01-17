@@ -36,6 +36,7 @@
                     </a>
                     <div class="dropdown-menu menu_name" aria-labelledby="navbarDropdownMenuInfo">
                         <a class="dropdown-item" href="#">Quản lý</a>
+                        <a class="dropdown-item" href="<?php echo base_url() . 'question' ?>">Câu hỏi</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#md_modify_pass">Đổi mật khẩu</a>
                         <a class="dropdown-item" href="<?php echo base_url() . 'logout' ?>">Đăng xuất</a>
                     </div>
