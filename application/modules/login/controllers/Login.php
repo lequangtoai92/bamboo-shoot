@@ -146,7 +146,7 @@ class Login extends CI_Controller
             'LI152' => '5',
         );
         if(isset($post['email'])){
-            $TK159 = 1;
+            $TK159 = 6;
         }
         $dataInfoUser = array(
             'TK151' => isset($post['name']) ? $post['name'] : '',
@@ -156,7 +156,7 @@ class Login extends CI_Controller
             'TK155' => isset($post['phone']) ? $post['phone'] : '',
             'TK156' => isset($post['email']) ? $post['email'] : '',
             'TK157' => isset($post['nickname']) ? $post['nickname'] : '',
-            'TK159' => isset($TK159) ? $TK159 : '0',
+            'TK159' => isset($TK159) ? $TK159 : '5',
         );
         $result = $this->LOGIN_MODELS->registration_insert($data);
         if ($result == true) {

@@ -13,11 +13,6 @@ class Intro extends History {
   public function __construct() {
     parent::__construct();
     $this->lang->load('history');
-    $this->load->helper('url');
-    // Load form helper library
-    $this->load->helper('form');
-    // Load form validation library
-    $this->load->library('form_validation');
     // Load session library
     $this->load->library('session');
     $this->load->model('CH100_models', 'CH100_MODELS');
@@ -28,16 +23,16 @@ class Intro extends History {
   /*   * **************************************************************** */
 
   public function index() {
-    $modules = array( 'module.question');
-    $stylesheet = 'question';
+    $modules = array( 'module.intro');
+    $stylesheet = 'intro';
     $data['title'] = 'Hello world';
-    $this->renderTemplate('Tài khoản', 'question_view', $stylesheet, $modules, $data);
+    $this->renderTemplate('Tài khoản', 'intro_view', $stylesheet, $modules, $data);
   }
 
-  public function send_question() {
+  public function creat_intro() {
     $post = $_POST;
     $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
-    $arrayRS = $this->sendQuestion($post);
+    $arrayRS = $this->creatIntro($post);
     if ($arrayRS > 0) {
         $res['status'] = 'success';
         $res['data'] = $arrayRS;
@@ -46,10 +41,10 @@ class Intro extends History {
     echo json_encode($res);
   }
 
-  public function update_question() {
+  public function update_intro() {
     $post = $_POST;
     $res = array('status' => 'error', 'message' => 'Gửi dữ liệu không thành công!');
-    $arrayRS = $this->updateQuestion($post);
+    $arrayRS = $this->updateIntro($post);
     if ($arrayRS > 0) {
         $res['status'] = 'success';
         $res['data'] = $arrayRS;
@@ -58,10 +53,10 @@ class Intro extends History {
     echo json_encode($res);
   }
 
-  public function get_question() {
+  public function get_intro() {
     $get = $_GET;
     $res = array('status' => 'error', 'message' => '');
-    $arrayRS = $this->getQuestion ($get);
+    $arrayRS = $this->getIntro ($get);
     if ($arrayRS != false) {
         $res['status'] = 'success';
         $res['data'] = $arrayRS;
@@ -74,7 +69,7 @@ class Intro extends History {
   /*     * ****************************[PRIVATE]*************************** */
   /*     * **************************************************************** */
 
-  private function sendQuestion($post)/*     * : array */ {
+  private function creatIntro($post)/*     * : array */ {
     $data = array(
       'BV100' => isset($post['BV100']) ? $post['BV100'] : 0,
       'CH150' => isset($post['contentQuestion']) ? $post['contentQuestion'] : NULL,
@@ -84,7 +79,7 @@ class Intro extends History {
     return  $this->CH100_MODELS->ch2018_insert_question($data);
   }
 
-  private function updateQuestion($post)/*     * : array */ {
+  private function updateIntro($post)/*     * : array */ {
     $data = array(
       'CH152' => isset($post['CH152']) ? $post['CH152'] : 0,
       'CH152' => isset($post['contentAnswer']) ? $post['contentAnswer'] : 0,
@@ -92,7 +87,7 @@ class Intro extends History {
     return  $this->CH100_MODELS->ch2018_update_question($data);
   }
 
-  private function getQuestion($get) {
+  private function getIntro($get) {
     $data = array(
       'BV100' => isset($post['type']) ? $post['type'] : 0,
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
