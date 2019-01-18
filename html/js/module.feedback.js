@@ -84,7 +84,7 @@ var feedback = new Vue({
         },
         error: function (error) {
           console.log(error);
-        }
+        },
       });
     }
   }

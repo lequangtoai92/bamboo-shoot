@@ -80,6 +80,7 @@ var viewStory = new Vue({
             }
           });
         }
+        hideLoading();
         },
         error: function (error) {
           console.log(error);

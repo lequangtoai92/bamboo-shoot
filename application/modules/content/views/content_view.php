@@ -1,6 +1,7 @@
 <div class="content-body container">
     <div class="row" id="content_item">
-        <div class="content-sup col-md-9 item-in-here" v-for="item in items">
+    <div class="item-in-here  col-md-9">
+        <div class="content-sup" v-for="item in items">
             <div class="header">
                 <h2>{{item.BV150}}</h2>
             </div>
@@ -42,12 +43,14 @@
             <hr>
             <div class="footer">
                 <h4>Bình luận</h4>
+                <?php if (isset($this->session->userdata('B_LOGIN')['LI152'])): ?>
                 <div class="comment-send">
                     <textarea class="form-control" rows="2" v-model="comment" placeholder="Bình luận"></textarea>
                     <div class="button">
                         <button class="btn btn-primary" v-on:click="sendComment">Gửi</button>
                     </div>
                 </div>
+                <?php endif;?>
                 <div class="comment" v-for="comment in listComment">
                     <h6>{{comment.TK151}}</h6>
                     <p>{{comment.BL150}}</p>
@@ -67,6 +70,7 @@
             </div>
             <div class="fb-comments" data-href="https://docsach.000webhostapp.com/content?storyId=16" data-numposts="8"></div>
             <!-- <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="8"></div> -->
+        </div>
         </div>
         <div class="content-sub col-md-3">
             <p><img src="<?= base_url(); ?>images/image.jpg" height="310" width="255" alt="thẻ img" /></p>

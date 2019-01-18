@@ -52,13 +52,14 @@ var infoAccount = new Vue({
 						$("#update_info").removeAttr("disabled");
 					}, 15000);
 					$('#content_feedback').val("");
-
+					showAlert(2);
 					// self.items.push(dataPost);
 					// console.log(self.items);
 				},
 				error: function (result) {
 					console.log('error', result);
 					$("#update_info").removeAttr("disabled");
+					showAlert(4);
 				},
 				complete: function () {
 
@@ -253,6 +254,7 @@ var listNotifiction = new Vue({
 						}
 					});
 				}
+				hideLoading();
 				},
 				error: function (error) {
 					console.log(error);

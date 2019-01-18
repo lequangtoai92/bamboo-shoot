@@ -11,6 +11,7 @@ var creatBamboo = new Vue({
   },
 
   mounted: function () {
+    hideLoading();
     tinymce.remove();
     tinymce.init({
       height: 500,

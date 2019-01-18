@@ -104,6 +104,7 @@ var viewStory = new Vue({
             }
           });
         }
+        hideLoading();
         },
         error: function (error) {
           console.log(error);
@@ -113,7 +114,7 @@ var viewStory = new Vue({
   }
 });
 
-$(".btn-close").click(function () {
+$(".btn-close-admin-modal").click(function () {
   $(".admin-modal-show-content").removeClass("show");
   $(".admin-modal-show-content").css("display", "");
 })

@@ -63,6 +63,7 @@ var firstTable = new Vue({
             }
           });
         }
+        hideLoading();
         },
         error: function (error) {
           console.log(error);

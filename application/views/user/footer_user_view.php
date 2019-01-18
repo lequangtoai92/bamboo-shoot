@@ -1,4 +1,3 @@
-    
     <div class="content-footer">
         <div class="row">
             <div class="col-3 footer-col footer-one">

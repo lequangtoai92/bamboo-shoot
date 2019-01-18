@@ -69,8 +69,8 @@
     </div>
   </div>
 
-  <div id="list_story" class="tabcontent">
-    <div class="list-story item-in-here" v-for="item in items">
+  <div id="list_story" class="tabcontent item-in-here">
+    <div class="list-story" v-for="item in items">
       <div class="info">
         <div class="meta-info">
           <div class="meta-info-name">

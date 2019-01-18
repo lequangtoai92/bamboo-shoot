@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in items" class="td-hover item-in-here">
+          <tr v-for="item in items" class="td-hover">
             <td class="td-1" v-on:click="toAccount(item.TK100)">{{item.TK151}}</td>
             <td class="td-2" v-on:click="toAccount(item.TK100)">{{(item.BV158)}}</td>
             <td class="td-3">{{(item.TK156)}}</td>

@@ -59,6 +59,7 @@ var content = new Vue({
           console.log(result);
           self.items = result.data;
           // $('#inset_content').html(result.data[0].ND150);
+          hideLoading();
         },
         error: function (error) {
           console.log(error);

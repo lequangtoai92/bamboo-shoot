@@ -90,6 +90,7 @@ var question = new Vue({
               }
             });
           }
+          hideLoading();
           },
           error: function (error) {
             console.log(error);

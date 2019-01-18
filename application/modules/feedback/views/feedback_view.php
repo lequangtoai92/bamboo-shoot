@@ -13,10 +13,12 @@
 		</div>
 	</div>
 	<hr>
-	<div v-for="item in items" class="content-feedback-result item-in-here">
-		<p>{{item.GY150}}</p>
-		<div class="daytime">
-			<span>{{render_ddMMyyyy(item.GY151)}}</span>
+	<div class="item-in-here">
+		<div v-for="item in items" class="content-feedback-result">
+			<p>{{item.GY150}}</p>
+			<div class="daytime">
+				<span>{{render_ddMMyyyy(item.GY151)}}</span>
+			</div>
 		</div>
 	</div>
 	<?php echo $this->load->view('include/paging'); ?>

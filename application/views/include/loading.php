@@ -142,8 +142,8 @@
       right: 0; */
       background: rgba(0, 0, 0, 0.7);
       /* transition: opacity 500ms; */
-      visibility: hidden;
-      /* visibility: visible; */
+      /* visibility: hidden; */
+      visibility: visible;
       z-index: 9998;
     }
 
@@ -154,7 +154,7 @@
       color: #ffe4e1;
       height: 200px;
       left: 50%;
-      margin-left: -150px;
+      margin-left: -100px;
       margin-top: -100px;
       position: fixed;
       top: 50%;
@@ -281,6 +281,18 @@
     .car-detail.wheel2 {
       left: 82px;
     }
+
+    .alert-boostrap{
+      top: 130px;
+      position: fixed;
+      right: 50px;
+      z-index: 99;
+      visibility: hidden;
+    }
+    .close-alert-boostrap{
+      font-size: 1rem;
+      font-weight: 500;
+    }
   </style>
 
 <div class="box-loading">
@@ -305,3 +317,28 @@
     </div>
   </div>
 </div>
+
+  <div class="alert alert-success alert-success-update alert-boostrap alert-dismissible">
+    <a href="#" class="close close-alert-boostrap" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Thành công!</strong> Cập nhật thành công.
+  </div>
+  <div class="alert alert-success alert-success-creat alert-boostrap alert-dismissible">
+    <a href="#" class="close close-alert-boostrap" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Thành công!</strong> Tạo mới thành công.
+  </div>
+  <div class="alert alert-success alert-success-creat alert-boostrap alert-dismissible">
+    <a href="#" class="close close-alert-boostrap" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Thành công!</strong> Tạo mới thành công.
+  </div>
+  <div class="alert alert-info alert-boostrap alert-dismissible">
+    <a href="#" class="close close-alert-boostrap" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Thông tin!</strong> This alert box could indicate a neutral informative change or action.
+  </div>
+  <div class="alert alert-warning alert-boostrap alert-dismissible">
+    <a href="#" class="close close-alert-boostrap" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Cảnh báo!</strong> This alert box could indicate a warning that might need attention.
+  </div>
+  <div class="alert alert-danger alert-boostrap alert-dismissible">
+    <a href="#" class="close close-alert-boostrap" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Thất bại!</strong> Hãy thử lại.
+  </div>

@@ -34,7 +34,8 @@ class A100_models extends CI_Model {
                     TK154 ='" . $data["TK154"] . "' ,
                     TK155 ='" . $data["TK155"] . "' ,
                     TK156 ='" . $data["TK156"] . "' ,
-                    TK157 ='" . $data["TK157"] . "'
+                    TK157 ='" . $data["TK157"] . "' ,
+                    TK159 ='" . $data["TK159"] . "'
                  WHERE TK100 = " . $data['TK100'];
         if ($this->db->query($sql) === TRUE) {
             return 1;
@@ -64,7 +65,7 @@ class A100_models extends CI_Model {
     }
 
     public function a2018_get_notifiction($data){
-        $sql = "SELECT * ,(SELECT COUNT(*) FROM TB100 WHERE TK101 = '" . $data["TK100"] . "') AS ROWS FROM TB100 WHERE TK100 = '" . $data["TK100"] . "' ORDER BY TB151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
+        $sql = "SELECT * ,(SELECT COUNT(*) FROM TB100 WHERE TK100 = '" . $data["TK100"] . "') AS ROWS FROM TB100 WHERE TK100 = '" . $data["TK100"] . "' ORDER BY TB151 DESC LIMIT " . $data['LIMIT'] . " OFFSET " . $data['START'];
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             $result = $query->result_array();

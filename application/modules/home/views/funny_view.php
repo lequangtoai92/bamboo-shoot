@@ -6,7 +6,8 @@
           echo $data['type_story'];
         }
       ?>">
-      <div class="item item-in-here" v-for="item in items">
+      <div class="item-in-here">
+      <div class="item" v-for="item in items">
         <div class="avatar">
           <a href="/u/nhantambin">
             <img src="https://viblo.asia/images/mm.png">
@@ -65,6 +66,7 @@
           </div>
         </div>
         <hr class="hr-end">
+      </div>
       </div>
     </div>
     <div class="content-sub col-md-3">

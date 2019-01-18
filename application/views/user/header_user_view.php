@@ -25,7 +25,7 @@ if (isset($stylesheet)) {
   js = d.createElement(s); js.id = id;
   js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=2062243393798931&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));</script>
     <?php echo $this->load->view('include/loading'); ?>
     <div class="container">
         <nav class="navbar navbar-light justify-content-between navbar-one" style="background-color: #e3f2fd;">

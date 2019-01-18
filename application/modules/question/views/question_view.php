@@ -19,9 +19,11 @@
 			</div>
 		</div>
 		<hr>
-		<div v-for="item in items" class="content-question-result">
-			<h6>{{item.CH150}}</h6>
-			<p>{{item.CH151}}</p>
+		<div class="question item-in-here">
+			<div v-for="item in items" class="content-question-result">
+				<h6>{{item.CH150}}</h6>
+				<p>{{item.CH151}}</p>
+			</div>
 		</div>
 		<?php echo $this->load->view('include/paging'); ?>
 	</div>

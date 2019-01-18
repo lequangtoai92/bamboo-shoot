@@ -76,14 +76,14 @@ $.fn.doPagination = function (total_row, url, limit, callback) {
         else
             $container.find('.spn.last').addClass('hidden');
         //7. fire ajax get target page data
-        // showLoading();
+        showLoading();    
         $.ajax({
             type: "GET",
             url: $self.attr('lang'),
             data: {},
             dataType: 'json',
             success: function (res) {
-                // hideLoading();
+                hideLoading();
                 if (res.status === 'success') {
                     //                            $container.prev().html(res.html);
                     callback(res, pgNo);

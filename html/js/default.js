@@ -53,7 +53,45 @@ function hideLoading() {
     $(".box-loading").css('visibility', 'hidden');
     $(".item-in-here").css('visibility', 'visible');
 }
+function showAlert(data) {
+    if(data == 2) {
+        $(".alert-success-update").css('visibility', 'visible');
+        $(".alert-success-update").fadeTo(2000, 500).slideUp(500, function(){
+            $(".alert-success-update").slideUp(500);
+        });
+    } else if(data == 1) {
+        $(".alert-success-creat").css('visibility', 'visible');
+        $(".alert-success-creat").fadeTo(2000, 500).slideUp(500, function(){
+            $(".alert-success-creat").slideUp(500);
+        });
+    } else if(data == 3) {
+        $(".alert-success-delete").css('visibility', 'visible');
+        $(".alert-success-delete").fadeTo(2000, 500).slideUp(500, function(){
+            $(".alert-success-delete").slideUp(500);
+        });
+    } else if(data == 'I') {
+        $(".success-info").css('visibility', 'visible');
+        $(".success-info").fadeTo(2000, 500).slideUp(500, function(){
+            $(".success-info").slideUp(500);
+        });
+    } else if(data == 'W') {
+        $(".success-warning").css('visibility', 'visible');
+        $(".success-warning").fadeTo(2000, 500).slideUp(500, function(){
+            $(".success-warning").slideUp(500);
+        });
+    } else if(data == 4) {
+        $(".success-danger").css('visibility', 'visible');
+        $(".success-danger").fadeTo(2000, 500).slideUp(500, function(){
+            $(".success-danger").slideUp(500);
+        });
+    }
+}
 
 function notLogin() {
     alert("Hãy bổ sung thông tin để sử dụng chức năng này");
 }
+
+$(".btn-close-admin-modal").click(function () {
+    $(".admin-modal-show-content").removeClass("show");
+    $(".admin-modal-show-content").css("display", "");
+})

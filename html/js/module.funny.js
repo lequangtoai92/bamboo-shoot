@@ -43,6 +43,7 @@ var funnyView = new Vue({
             //   }
             // });
             }
+            hideLoading();
           },
           error: function (error) {
             console.log(error);

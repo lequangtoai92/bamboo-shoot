@@ -55,6 +55,7 @@ var infoAccount = new Vue({
 							this.items = this.loadItems;
 						}
 					});
+					hideLoading();
 					}
 				},
 				error: function (error) {

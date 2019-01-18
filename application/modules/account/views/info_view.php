@@ -31,7 +31,7 @@
 				</div>
 			</div>
 			<hr>
-			<div class="question">
+			<div class="question item-in-here">
 				<h4>Các bài viết</h4>
 				<div class="list-story" v-for="item in items">
 					<div class="info">
