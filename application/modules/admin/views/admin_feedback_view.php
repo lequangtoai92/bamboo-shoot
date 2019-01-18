@@ -20,7 +20,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in items" class="td-hover">
+          <tr v-for="item in items" class="td-hover item-in-here">
             <td class="td-1" v-on:click="openPopup(item.GY100)">{{item.TK100}}</td>
             <td class="td-2" v-on:click="openPopup(item.GY100)">{{(item.GY150)}}</td>
             <td class="td-3">{{(item.GY154)}}</td>

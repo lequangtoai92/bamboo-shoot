@@ -23,7 +23,7 @@ function getUrlParameter(sParam) {
 
 //input: Date object -> dd-MM-yyyy
 function get_ddMMyyyy(value) {
-    if (value == 'now'){
+    if (value == 'now') {
         return 'Mới xong';
     } else if (value !== null) {
         var date = value.substr(0, 10).split("-");
@@ -31,11 +31,11 @@ function get_ddMMyyyy(value) {
     }
 }
 
-function convert_age(data){
-    if (!!data){
-        if (data == 1){
+function convert_age(data) {
+    if (!!data) {
+        if (data == 1) {
             return 'Mần';
-        } else if (data == 2){
+        } else if (data == 2) {
             return 'Chồi';
         } else if (data == 3) {
             return 'Lá';
@@ -46,17 +46,14 @@ function convert_age(data){
 }
 
 function showLoading() {
-    $(".table-striped").click(function(){
-        $(".box-loading").css('visibility', 'visible');
-      });
+    $(".box-loading").css('visibility', 'visible');
 }
 
 function hideLoading() {
-    $(".car").click(function(){
-        $(".box-loading").css('visibility', 'hidden');
-      })
+    $(".box-loading").css('visibility', 'hidden');
+    $(".item-in-here").css('visibility', 'visible');
 }
 
-function notLogin(){
+function notLogin() {
     alert("Hãy bổ sung thông tin để sử dụng chức năng này");
 }

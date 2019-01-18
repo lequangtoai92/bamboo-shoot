@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<hr>
-	<div v-for="item in items" class="content-feedback-result">
+	<div v-for="item in items" class="content-feedback-result item-in-here">
 		<p>{{item.GY150}}</p>
 		<div class="daytime">
 			<span>{{render_ddMMyyyy(item.GY151)}}</span>

@@ -8,7 +8,7 @@
           echo 0;
         }
       ?>">
-      <div class="item" v-for="item in items">
+      <div class="item item-in-here" v-for="item in items">
         <div class="avatar">
           <a v-bind:href="'/account/user?userName=1'">
             <img src="https://viblo.asia/images/mm.png">

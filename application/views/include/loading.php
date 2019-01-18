@@ -136,13 +136,15 @@
       position: fixed;
       width: 100%;
       height: 100%;
-      top: 0;
+      /* top: 0;
       bottom: 0;
       left: 0;
-      right: 0;
+      right: 0; */
       background: rgba(0, 0, 0, 0.7);
-      transition: opacity 500ms;
+      /* transition: opacity 500ms; */
       visibility: hidden;
+      /* visibility: visible; */
+      z-index: 9998;
     }
 
     .loading-window {
@@ -157,7 +159,7 @@
       position: fixed;
       top: 50%;
       width: 200px;
-      z-index: 99;
+      z-index: 9999;
     }
 
     .loading-window .text {

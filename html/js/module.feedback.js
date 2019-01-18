@@ -31,7 +31,10 @@ var feedback = new Vue({
       var dataPost = {
         contentFeedback: self.feedback
       }
-      var item = {GY150: self.feedback, GY151: 'now'}
+      var item = {
+        GY150: self.feedback,
+        GY151: 'now'
+      }
       $.ajax({
         type: "POST",
         url: '/feedback/send_feedback',
@@ -47,7 +50,10 @@ var feedback = new Vue({
           self.loadItems.unshift(item);
           this.items = self.loadItems;
         },
-        error: function (result) { console.log('error', result); $(".save-content").removeAttr("disabled"); },
+        error: function (result) {
+          console.log('error', result);
+          $(".save-content").removeAttr("disabled");
+        },
         complete: function () {
 
         }
@@ -63,17 +69,18 @@ var feedback = new Vue({
         url: url,
         dataType: 'json',
         success: function (result) {
-          if(result.status == 'success'){
-          self.items = result.data;
-          $("#id_feedback .content-feedback-result").show();
-          //phan trang
-          $('.bb-pagination.image').doPagination(result.data[0].ROWS, url, 15, function (res) {
-            if (res.status === 'success') {
-              self.loadItems = res.data;
-              this.items = self.loadItems;
-            }
-          });
-        }
+          if (result.status == 'success') {
+            self.items = result.data;
+            $("#id_feedback .content-feedback-result").show();
+            //phan trang
+            $('.bb-pagination.image').doPagination(result.data[0].ROWS, url, 15, function (res) {
+              if (res.status === 'success') {
+                self.loadItems = res.data;
+                this.items = self.loadItems;
+              }
+            });
+          }
+          hideLoading();
         },
         error: function (error) {
           console.log(error);

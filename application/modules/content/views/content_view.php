@@ -1,6 +1,6 @@
 <div class="content-body container">
     <div class="row" id="content_item">
-        <div class="content-sup col-md-9" v-for="item in items">
+        <div class="content-sup col-md-9 item-in-here" v-for="item in items">
             <div class="header">
                 <h2>{{item.BV150}}</h2>
             </div>
