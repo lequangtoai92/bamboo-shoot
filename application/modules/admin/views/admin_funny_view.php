@@ -15,7 +15,7 @@
         <thead>
           <tr>
             <th class="th-1">Tên truyện</th>
-            <!-- <th class="th-2">Mô tả</th> -->
+            <th class="th-2">Nội dung</th>
             <!-- <th class="th-3">Đức tính</th> -->
             <!-- <th class="th-4">Tuổi</th> -->
             <th class="th-5">Tác giả</th>
@@ -29,7 +29,7 @@
         <tbody>
           <tr v-for="item in items" class="td-hover">
             <td class="td-1" v-on:click="goToContent(item.BV100)">{{item.BV150}}</td>
-            <!-- <td class="td-2" v-on:click="goToContent(item.BV100)">{{(item.BV153)}}</td> -->
+            <td class="td-2" v-on:click="showContent(item.BV100)">{{(item.BV153)}}</td>
             <!-- <td>{{(item.BV158)}}</td> -->
             <!-- <td class="td-4">{{render_age(item.BV157)}}</td> -->
             <td class="td-5">{{item.BV154}}</td>

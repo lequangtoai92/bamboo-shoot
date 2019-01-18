@@ -26,7 +26,8 @@ LI152 = 6 => user confirmed
 LI152 = 5 => user not confirmed
 
 -------------TK100------------
-TK159 = 0 => nguoi dung binh thuong
+TK159 = 0 => nguoi dung chua xac nhan
+TK159 = 1 => nguoi dung da xac nhan
 TK159 = 8 => nguoi dung bi khoa
 TK159 = 9 => nguoi dung bi xoa
 

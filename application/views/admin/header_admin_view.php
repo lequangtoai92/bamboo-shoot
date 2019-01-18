@@ -24,6 +24,7 @@
   js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=2062243393798931&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+    <?php echo $this->load->view('include/loading'); ?>
     <div class="container">
         <nav class="navbar navbar-light justify-content-between navbar-one" style="background-color: #e3f2fd;">
             <a class="navbar-brand title-name" href="<?php echo base_url() . 'home' ?>">MĂNG NON</a>

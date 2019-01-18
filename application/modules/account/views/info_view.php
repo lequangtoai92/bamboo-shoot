@@ -33,7 +33,7 @@
 			<hr>
 			<div class="question">
 				<h4>Các bài viết</h4>
-				<div class="list-story">
+				<div class="list-story" v-for="item in items">
 					<div class="info">
 						<div class="meta-info">
 							<div class="meta-info-name">

@@ -27,8 +27,8 @@ var infoAccount = new Vue({
 				url: url,
 				dataType: 'json',
 				success: function (result) {
-					console.log( result.data[0]);
-					self.items = result.data[0];
+					// console.log( result.data[0]);
+					// self.items = result.data[0];
 				},
 				error: function (error) {
 					console.log(error);
@@ -49,12 +49,12 @@ var infoAccount = new Vue({
 					console.log( result.data[0]);
 					self.items = result.data;
 					//phan trang
-					// $('.bb-pagination.image').doPagination(10, url, 2, function (res) {
-					// 	if (res.status === 'success') {
-					// 		this.loadItems = res.data;
-					// 		this.items = this.loadItems;
-					// 	}
-					// });
+					$('.bb-pagination.image').doPagination(10, url, 2, function (res) {
+						if (res.status === 'success') {
+							this.loadItems = res.data;
+							this.items = this.loadItems;
+						}
+					});
 					}
 				},
 				error: function (error) {

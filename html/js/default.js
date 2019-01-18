@@ -46,15 +46,15 @@ function convert_age(data){
 }
 
 function showLoading() {
-    $('.faci-loading').addClass('open');
-    $('.lg-login').addClass('invisible');
-    $('.img-loading').removeClass('d-none');
+    $(".table-striped").click(function(){
+        $(".box-loading").css('visibility', 'visible');
+      });
 }
 
 function hideLoading() {
-    $('.faci-loading').removeClass('open');
-    $('.lg-login').removeClass('invisible');
-    $('.img-loading').addClass('d-none');
+    $(".car").click(function(){
+        $(".box-loading").css('visibility', 'hidden');
+      })
 }
 
 function notLogin(){

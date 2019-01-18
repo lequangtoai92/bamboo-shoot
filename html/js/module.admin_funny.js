@@ -30,6 +30,25 @@ var viewStory = new Vue({
         console.log(data);
         document.location.href = '/content?storyId=' + data;
       },
+
+      showContent : function (data) {
+        var self = this;
+        var url = "/admin/get_storyAll?storyId=" + data;
+        $.ajax({
+          type: "GET",
+          url: url,
+          dataType: 'json',
+          success: function (result) {
+            console.log(result);
+            self.itemShow = result.data;
+            $(".admin-modal-show-content").addClass("show");
+            $(".admin-modal-show-content").css("display", "block");
+          },
+          error: function (error) {
+            console.log(error);
+          }
+        });
+      },
   
       render_ddMMyyyy: function (data) {
         return get_ddMMyyyy(data);
