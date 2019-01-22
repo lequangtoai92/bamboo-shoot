@@ -1,39 +1,11 @@
     
     <div class="content-footer">
         <div class="row">
-            <div class="col-3 footer-col footer-one">
-                <h2>Liên kết</h2>
-                <ul class="list-group">
-                    <li class="li-footer">Facebook</li>
-                    <li class="li-footer">Google</li>
-                    <li class="li-footer">Youtube</li>
-                </ul>
+            <div class="col-8 footer-col footer-one">
+                <p>Liên hệ: toailq9229@gmail.com - 0927628492</p>
             </div>
-            <div class="col-3 footer-col footer-two">
-                <h2>Bản di động</h2>
-                <ul class="list-group">
-                    <li class="li-footer">Androi</li>
-                    <li class="li-footer">IOS</li>
-                </ul>
-            </div>
-            <div class="col-3 footer-col footer-three">
-                <h2>Liên hệ</h2>
-                <ul class="list-group">
-                    <li class="li-footer">0927628492</li>
-                    <li class="li-footer">toailq9229@gmail.com</li>
-                </ul>
-            </div>
-            <div class="col-3 footer-col footer-four">
-                <h2>Phản hồi</h2>
-                <ul class="list-group">
-                    <li class="li-footer">Phản hồi chất lượng</li>
-                    <li class="li-footer">Góp ý - đánh giá</li>
-                </ul>
-            </div>
-            <div class="address">
-                <p></p>
-                <p></p>
-                <p></p>
+            <div class="col-2 footer-col footer-two">
+                <h2 href="<?php echo base_url() . 'intro' ?>">Giới thiệu</h2>
             </div>
         </div>
     </div>

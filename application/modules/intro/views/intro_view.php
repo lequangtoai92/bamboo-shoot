@@ -1,6 +1,6 @@
 <div class="content-body container">
   <div class="row">
-    <div class="content-sup col-md-9" id="firstTable">
+    <div class="content-sup col-md-9" id="introView">
       <input hidden id="input_type" v-model="input_type" value="<?php 
         if (isset($data['type_story'])){
           echo $data['type_story'];
