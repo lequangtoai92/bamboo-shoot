@@ -17,7 +17,7 @@ var funnyView = new Vue({
     methods: {
       goToContent: function (data) {
         console.log(data);
-        document.location.href = '/content?storyId=' + data;
+        document.location.href = "/bamboo-shoot/content?storyId=" + data;
       },
   
       render_ddMMyyyy: function (data) {
@@ -26,7 +26,7 @@ var funnyView = new Vue({
   
       initdata: function () {
         var self = this;
-        var url = "/home/get_list_story?limit=15"
+        var url = "/bamboo-shoot/home/get_list_story?limit=15"
         $.ajax({
           type: "GET",
           url: url,

@@ -40,12 +40,14 @@ $(document).ready(function () {
 			console.log('data', data);
 			$.ajax({
 				type: "POST",
-				url: '/login/user_login',
+				url: "/bamboo-shoot/login/user_login",
 				data: data,
 				dataType: 'json',
 				success: function (response) {
 					console.log('success', response);
-					location.reload();
+					if (response.status == 'success'){
+						location.reload();
+					}
 				},
 				error: function (response) {
 					console.log('error', response);
@@ -77,12 +79,14 @@ $(document).ready(function () {
 			console.log('data', data);
 			$.ajax({
 				type: "POST",
-				url: '/login/user_register',
+				url: "/bamboo-shoot/login/user_register",
 				data: data,
 				dataType: 'json',
 				success: function (response) {
 					console.log('success', response);
-					location.reload();
+					if (response.status == 'success'){
+						location.reload();
+					}
 				},
 				error: function (response) {
 					console.log('error', response);
@@ -104,7 +108,7 @@ $(document).ready(function () {
 			console.log('data', data);
 			$.ajax({
 				type: "POST",
-				url: '/login/user_register',
+				url: "/bamboo-shoot/login/user_register",
 				data: data,
 				dataType: 'json',
 				success: function (response) {

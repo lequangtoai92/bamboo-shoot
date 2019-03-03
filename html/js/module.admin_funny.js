@@ -29,12 +29,12 @@ var viewStory = new Vue({
 
       goToContent: function (data) {
         console.log(data);
-        document.location.href = '/content?storyId=' + data;
+        document.location.href = "/bamboo-shoot/content?storyId=" + data;
       },
 
       showContent : function (data) {
         var self = this;
-        var url = "/admin/get_storyAll?storyId=" + data;
+        var url = "/bamboo-shoot/admin/get_storyAll?storyId=" + data;
         $.ajax({
           type: "GET",
           url: url,
@@ -69,7 +69,7 @@ var viewStory = new Vue({
         console.log(dataPost);
         $.ajax({
           type: "POST",
-          url: '/admin/a2018_updateKD100',
+          url: "/bamboo-shoot/admin/a2018_updateKD100",
           data: dataPost,  
           dataType: 'json',
           success: function (result) {
@@ -85,7 +85,7 @@ var viewStory = new Vue({
   
       initdata: function () {
         var self = this;
-        var url = "/admin/get_listBambo?BV151=" + self.input_type + "&type=" + self.select;
+        var url = "/bamboo-shoot/admin/get_listBambo?BV151=" + self.input_type + "&type=" + self.select;
         $.ajax({
           type: "GET",
           url: url,

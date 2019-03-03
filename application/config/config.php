@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = 'https://docsach.000webhostapp.com';
-$config['base_url'] = 'http://docsach.com';
+// $config['base_url'] = 'https://docsach.000webhostapp.com'; //000webhostapp
+$config['base_url'] = 'http://localhost/bamboo-shoot';
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +36,8 @@ $config['base_url'] = 'http://docsach.com';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = ''; //000webhostapp
+// $config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +54,9 @@ $config['index_page'] = '';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']	= 'AUTO';
+$config['uri_protocol']	= 'AUTO'; // web
+// $config['uri_protocol']	= 'REQUEST_URI'; 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +68,8 @@ $config['uri_protocol']	= 'AUTO';
 |
 | https://codeigniter.com/user_guide/general/urls.html
 */
-$config['url_suffix'] = '.html';
+$config['url_suffix'] = '.html'; // web
+// $config['url_suffix'] = '';
 
 /*
 |--------------------------------------------------------------------------

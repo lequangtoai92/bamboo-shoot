@@ -8,7 +8,8 @@
     <title><?= isset($title) ? $title : 'Facilio'; ?></title>
     <link rel="stylesheet" href="<?= base_url(); ?>html/dist/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>html/css/style.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="<?=base_url();?>html/css/fontawesome.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"/> -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"> -->
     <?php
       if (isset($stylesheet))
         echo '<link rel="stylesheet" href="' . base_url() . 'html/css/' . $stylesheet . '.css" />'
@@ -17,14 +18,14 @@
 </head>
 
 <body>
-<div id="fb-root"></div>
+<!-- <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=2062243393798931&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));</script> -->
     <?php echo $this->load->view('include/loading'); ?>
     <div class="container">
         <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,7 +45,7 @@
                 </ul>
             </div>
         </nav> -->
-        <nav class="navbar navbar-light justify-content-between navbar-one" style="background-color: #e3f2fd;">
+        <nav class="navbar navbar-light justify-content-between navbar-one">
             <a class="navbar-brand title-name" href="<?php echo base_url() . 'home' ?>">MĂNG NON</a>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -54,8 +55,7 @@
                 </div>
             </form>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-two">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-two">
+        <nav class="navbar navbar-expand-lg navbar-two">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown3" aria-controls="navbarNavDropdown"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

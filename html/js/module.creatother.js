@@ -57,7 +57,7 @@ var creatOther = new Vue({
         console.log(data_post);
         $.ajax({
           type: "POST",
-          url: '/creat/creat_bambo',
+          url: "/bamboo-shoot/creat/creat_bambo",
           data: data_post,
           dataType: 'json',
           success: function (result) {

@@ -9,26 +9,27 @@
         }
       ?>">
       <div class="item-in-here">
-      <div class="item" v-for="item in items">
-        <div class="avatar">
-          <a v-bind:href="'/account/user?userName=1'">
-            <img src="https://viblo.asia/images/mm.png">
+        <div class="item item-article" v-for="item in items">
+          <!-- <div class="avatar">
+          <a v-bind:href="'/bamboo-shoot/account/user?userName=1'">
+            <img src="<?=base_url();?>html/images/avatar/mm.png">
           </a>
           <div class="bottom-avatar">
             <span class="star">****</span>
             <span class="position">cu ly</span>
             <span class="posts">123</span>
           </div>
-        </div>
+        </div> -->
 
-        <div class="info">
+          <?php echo $this->load->view('include/article/article_home'); ?>
+
+          <!-- <div class="info">
           <div class="meta-info">
             <div class="meta-info-name">
-              <a v-bind:href="'/account/user?userName=1'">{{item.BV154}}</a>
+              <a v-bind:href="'/bamboo-shoot/account/user?userName=1'">{{item.BV154}}</a>
             </div>
             <div class="meta-info-time">
               <span>{{render_ddMMyyyy  (item.BV155)}}</span>
-              <!-- <span>{{item.BV155}}</span>setTime(item.BV155) -->
             </div>
           </div>
 
@@ -36,8 +37,6 @@
             <h4>{{item.BV150}}</h4>
             <div class="title-tag">
               <span>{{(item.BV158)}}</span>
-              <!-- <span>{{rendder_virtues(item.BV158)}}</span> -->
-              <!-- <span>thông minh</span> -->
             </div>
           </div>
 
@@ -72,28 +71,14 @@
               </i>(7)
             </span>
           </div>
+        </div> -->
+          <hr class="hr-end">
         </div>
-        <hr class="hr-end">
-      </div>
       </div>
 
     </div>
     <div class="content-sub col-md-3">
-      <div class="item-right">
-        <h4>Bảng vàng tác giả</h4>
-        <a href="#">Nhẫn tâm bin</a>
-        <a href="#">Mắt bão</a>
-        <a href="#">Bão ảnh</a>
-        <a href="#">Nanh trắng</a>
-      </div>
-      <p><img src="<?=base_url();?>html/images/image.jpg" height="310" width="255" alt="thẻ img" /></p>
-      <div class="item-right">
-          <h4>Bảng vàng tác phẩm</h4>
-          <a href="#">Đồi thông 2 mộ</a>
-          <a href="#">Đêm trong căn nhà hoang</a>
-          <a href="#">Chú mèo cô đơn</a>
-          <a href="#">2 con heo con</a>
-        </div>
+      <?php echo $this->load->view('include/article/item_right'); ?>
     </div>
 
   </div>

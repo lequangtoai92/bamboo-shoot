@@ -1,8 +1,13 @@
-@import "root.css";@import "util.css";body { background-color:var(--white-three); font-family: Verdana,Arial,sans-serif;; letter-spacing:-0.4px; font-size: 0.86rem; overflow-x: hidden; } 
+@import "root.css"; @import "util.css"; body { /*background-color:var(--white-three); */ font-family: Verdana,Arial,sans-serif;; letter-spacing:-0.4px; font-size: 0.86rem; overflow-x: hidden; } 
 
 /* @media (max-width: 768px) { font-size: 0.9rem } */
 
+body { background: url(../images/background/background5.jpg) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; } 
+
 nav .title-name { font-size:30px; cursor:pointer; font-weight:600; } 
+.navbar-two { padding: 0px; } 
+.navbar-two .navbar-collapse ul li { padding: 8px 0px; background-color: #e3007a; border-radius: 5px; margin-right: 5px} 
+.navbar-two .navbar-collapse ul li a{ color: white;} 
 
 
 /*------------------ NAV LOGIN------------------------*/
@@ -45,7 +50,7 @@ nav .title-name { font-size:30px; cursor:pointer; font-weight:600; }
 
 .item-in-here { visibility: hidden; } 
 
-.admin-modal-show-content label{ font-size: 0.9rem; font-weight: 600;} 
+.admin-modal-show-content label { font-size: 0.9rem; font-weight: 600; } 
 
 .bb-pagination { float:right; background:#fff; border-radius:20px; margin:0 0 3px 0; border: solid 1px #d8d8d8; padding: 3px 20px; } 
 .bb-pagination.left { float:left } 
@@ -58,3 +63,36 @@ nav .title-name { font-size:30px; cursor:pointer; font-weight:600; }
 .bb-pagination>a:hover { color:#ff2d55; cursor: pointer; } 
 .bb-pagination>.spn { margin:0 5px; } 
 .bb-pagination>.hidden { display: none !important; } 
+
+/* ----------------- INCLUDE ARTICLE STYLE ------------------- */
+.item-article { display: inline-flex; margin-top: 10px; margin-bottom: 10px; width: 100%; padding: 7px; background-color: #dae0e5; border-radius: 5px; } 
+.item-article .avatar { margin-right: 15px; } 
+.item-article .avatar .bottom-avatar { display: grid; margin-top: 5px; text-align: center; } 
+.item-article .avatar .bottom-avatar .star { height: 15px; } 
+.item-article .avatar a { width: 37px; height: 37px; border-radius: 18px; } 
+.item-article a img { width: 37px; height: 37px; border-radius: 18px; } 
+.item-article .info .meta-info .meta-info-time { margin-left: 5px; } 
+.item-article .info .meta-info { display: inline-flex; font-size: 0.8rem; } 
+.item-article .info .title-info h4 { margin: 0px; font-size: 1.1rem; cursor: pointer; } 
+.item-article .info .title-info .title-tag span { background-color: cornflowerblue; padding: 2px 5px 2px 5px; border-radius: 4px; font-size: 12px; cursor: pointer; } 
+.item-article .info .content-info { margin-top: 5px; cursor: pointer; } 
+.item-article .info .content-info p { font-style: italic; font-size: 0.85rem; margin-bottom: 5px; } 
+.item-article .info .comment-info span { margin-right: 5px; } 
+.item-article .info .comment-info .comment-item { font-size: 0.8em; color: #a0a1a1; } 
+.item-article .info .comment-info .item-tooltip:hover .tooltiptext { visibility: visible; } 
+.item-article .info .comment-info .item-tooltip { position: relative; display: inline-block; } 
+.item-article .info .comment-info .item-tooltip .tooltiptext { top: 10px; visibility: hidden; width: 80px; color: black; background-color: #83adf9; text-align: left; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; font-size: 1.1em; font-weight: 300; text-align: center; } 
+.item-article { padding-right: 0px; } 
+.item-article .item-right { display: grid; width: 100%; margin-top: 10px; margin-bottom: 10px; background-color: aliceblue; border-radius: 4px; padding: 5px 5px 5px 9px; } 
+.item-article .item-right h4 { font-size: 1.1rem; font-weight: 600; } 
+.item-article .item-right a { padding-bottom: 3px; color: black; } 
+
+@media (max-width: 768px){
+ .content-body .content-sup .item .info .meta-info { display: inline-flex; font-size: 0.85rem; } 
+ .content-body .content-sup .item .info .title-info h4 { margin: 0px; font-size: 1.15rem; cursor: pointer; } 
+ .content-body .content-sup .item .info .content-info p { font-style: italic; font-size: 0.9rem; margin-bottom: 5px; } 
+ .content-body .content-sub .item-right h4 { font-size: 1.15rem; font-weight: 600; } 
+
+ .content-body .content-sup { padding-left: 0px; padding-right: 0px; } 
+ .content-body .content-sub { padding-right: 0px; padding-left: 0px; } 
+ }

@@ -34,7 +34,7 @@ var content = new Vue({
         comment: self.comment}
       $.ajax({
         type: "POST",
-        url: '/content/creat_comment',
+        url: "/bamboo-shoot/content/creat_comment",
         data: dataPost,
         dataType: 'json',
         success: function (result) {
@@ -50,7 +50,7 @@ var content = new Vue({
     initdata: function () {
       var param =  getUrlParameter('storyId')
       var self = this;
-      var url = "/content/get_content?storyId=" + param;
+      var url = "/bamboo-shoot/content/get_content?storyId=" + param;
       $.ajax({
         type: "GET",
         url: url,
@@ -70,7 +70,7 @@ var content = new Vue({
     getListQuestion: function () {
       var param =  getUrlParameter('storyId')
       var self = this;
-      var url = "/content/get_question?storyId=" + param;
+      var url = "/bamboo-shoot/content/get_question?storyId=" + param;
       $.ajax({
         type: "GET",
         url: url,
@@ -89,7 +89,7 @@ var content = new Vue({
     getListComment: function () {
       var param =  getUrlParameter('storyId')
       var self = this;
-      var url = "/content/get_comment?storyId=" + param;
+      var url = "/bamboo-shoot/content/get_comment?storyId=" + param;
       $.ajax({
         type: "GET",
         url: url,

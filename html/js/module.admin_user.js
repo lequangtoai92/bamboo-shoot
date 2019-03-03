@@ -47,7 +47,7 @@ var viewStory = new Vue({
       console.log(dataPost);
       $.ajax({
         type: "POST",
-        url: '/admin/a2018UpdateTK100',
+        url: "/bamboo-shoot/admin/a2018UpdateTK100",
         data: dataPost,  
         dataType: 'json',
         success: function (result) {
@@ -63,7 +63,7 @@ var viewStory = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/admin/get_listAccount?type=" + self.select;
+      var url = "/bamboo-shoot/admin/get_listAccount?type=" + self.select;
       $.ajax({
         type: "GET",
         url: url,

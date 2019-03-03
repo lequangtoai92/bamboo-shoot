@@ -194,7 +194,7 @@ class Account extends History {
       'TK155' => isset($post['TK155']) ? $post['TK155'] : NULL,
       'TK156' => isset($post['TK156']) ? $post['TK156'] : NULL,
       'TK157' => isset($post['TK157']) ? $post['TK157'] : NULL,
-      'TK159' => 1,
+      'TK159' => 6,
     );
     return  $this->A100_MODELS->a2018_update_account($data);
   }

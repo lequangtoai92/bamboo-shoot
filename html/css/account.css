@@ -47,3 +47,11 @@
  #info_account .footer-info .button-form .btn { font-size: 0.9rem; } 
  #info_account .footer-info label { font-size: .9rem; } 
 }
+
+
+/* ********account_user*********** */
+#account_user .avatar .bottom-avatar{text-align: center}
+#account_user .biography h4{text-align: center}
+#account_user .avatar a{padding-left: 15px;}
+#account_user .avatar a .avatar_sup{width: 150px;}
+#account_user .header{padding-top: 15px;}

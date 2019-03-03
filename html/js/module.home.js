@@ -19,12 +19,12 @@ var firstTable = new Vue({
   methods: {
     goToContent: function (data) {
       console.log(data);
-      document.location.href = '/content?storyId=' + data;
+      document.location.href = "/bamboo-shoot/content?storyId=" + data;
     },
 
     goToUser: function (data) {
       console.log(data);
-      document.location.href = '/account_user?userId=' + data;
+      document.location.href = "/bamboo-shoot/account_user?userId=" + data;
     },
 
     render_ddMMyyyy: function (data) {
@@ -45,7 +45,7 @@ var firstTable = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/home/get_list_story?limit=15&type_story=" + self.input_type;
+      var url = "/bamboo-shoot/home/get_list_story?limit=15&type_story=" + self.input_type;
       $.ajax({
         type: "GET",
         url: url,

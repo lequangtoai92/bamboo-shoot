@@ -22,12 +22,13 @@ class Home extends History {
   /*   * **************************************************************** */
 
   public function index() {
-        $modules = array( 'module.home');
-        $stylesheet = 'home';
-        $data['title'] = 'Hello world';
-        $this->renderTemplate('Trang chủ', 'home_view', $stylesheet, $modules, $data);
-        // echo json_encode($this->session->userdata('B_USER'));
-        // echo json_encode($this->session->userdata('B_LOGIN'));
+    
+    $modules = array( 'module.home');
+    $stylesheet = 'home';
+    $data['title'] = 'Hello world';
+    $this->renderTemplate('Trang chủ', 'home_view', $stylesheet, $modules, $data);
+    // echo json_encode($this->session->userdata('B_USER'));
+    // echo json_encode($this->session->userdata('B_LOGIN'));
   }
 
   public function man(){
@@ -109,6 +110,7 @@ class Home extends History {
   }
 
   public function get_list_story() {
+    // die('vao trang get_list_story');
     $get = $_GET;
     $res = array('status' => 'error', 'message' => '');
     $arrayRS = $this->getListALLStory ($get);

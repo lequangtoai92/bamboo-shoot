@@ -80,4 +80,6 @@ $route['admin_truyencuoi'] = 'admin/funny';
 $route['admin_gopy'] = 'admin/feedback';
 $route['admin_taomoi'] = 'admin/creat';
 
+$route['gioi_thieu'] = 'intro';
+
 // $route[$this->session->userdata('B_USER')['name']] = 'account/user?userName=' . $this->session->userdata('B_USER')['name'];

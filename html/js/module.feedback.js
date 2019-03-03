@@ -37,7 +37,7 @@ var feedback = new Vue({
       }
       $.ajax({
         type: "POST",
-        url: '/feedback/send_feedback',
+        url: "/bamboo-shoot/feedback/send_feedback",
         data: dataPost,
         dataType: 'json',
         success: function (result) {
@@ -63,7 +63,7 @@ var feedback = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/feedback/get_feedback?limit=15"
+      var url = "/bamboo-shoot/feedback/get_feedback?limit=15"
       $.ajax({
         type: "GET",
         url: url,

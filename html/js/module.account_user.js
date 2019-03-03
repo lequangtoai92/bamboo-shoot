@@ -17,11 +17,14 @@ var infoAccount = new Vue({
 	},
 
 	methods: {
+		render_ddMMyyyy: function (data) {
+			return get_ddMMyyyy(data);
+		  },
 
 		initdata: function () {
             var param =  getUrlParameter('userName')
 			var self = this;
-			var url = "/account/get_info_account?userName=" + param;
+			var url = "/bamboo-shoot/account/get_info_account?userName=" + param;
 			$.ajax({
 				type: "GET",
 				url: url,
@@ -39,7 +42,7 @@ var infoAccount = new Vue({
         initListStory: function () {
             var param =  getUrlParameter('userName')
 			var self = this;
-			var url = "/account/get_list_story?userName=" + param;
+			var url = "/bamboo-shoot/account/get_list_story?userName=" + param;
 			$.ajax({
 				type: "GET",
 				url: url,

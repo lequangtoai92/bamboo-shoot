@@ -1,21 +1,4 @@
-<div class="content-body container">
-  <div class="row">
-    <div class="content-sup col-md-9" id="introView">
-      <div class="item item-intro" v-for="item in items">
-        <div class="info">
-          <div class="title-info" v-on:click="goToContent(item.BV100)">
-            <h4>{{item.BV150}}</h4>
-          </div>
-
-          <div class="content-info">
-            <p>{{item.BV153}}</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <div class="content-sub col-md-3">
-      <div class="item-right">
+<div class="item-right">
         <h4>Bảng vàng tác giả</h4>
         <a href="#">Nhẫn tâm bin</a>
         <a href="#">Mắt bão</a>
@@ -30,7 +13,3 @@
           <a href="#">Chú mèo cô đơn</a>
           <a href="#">2 con heo con</a>
         </div>
-    </div>
-
-  </div>
-</div>

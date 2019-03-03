@@ -48,7 +48,7 @@ var viewStory = new Vue({
       console.log(dataPost);
       $.ajax({
         type: "POST",
-        url: '/admin/g2018_updateFeedback',
+        url: "/bamboo-shoot/admin/g2018_updateFeedback",
         data: dataPost,  
         dataType: 'json',
         success: function (result) {
@@ -64,7 +64,7 @@ var viewStory = new Vue({
 
     initdata: function () {
       var self = this;
-      var url = "/feedback/get_feedback?type=" + self.select;
+      var url = "/bamboo-shoot/feedback/get_feedback?type=" + self.select;
       $.ajax({
         type: "GET",
         url: url,

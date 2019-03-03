@@ -38,7 +38,7 @@ var question = new Vue({
         }
         $.ajax({
           type: "POST",
-          url: '/question/send_question',
+          url: "/bamboo-shoot/question/send_question",
           data: dataPost,
           dataType: 'json',
           success: function (result) {
@@ -58,7 +58,7 @@ var question = new Vue({
 
       initlistStory: function () {
         var self = this;
-        var url = "/account/get_list_story?limit=500"
+        var url = "/bamboo-shoot/account/get_list_story?limit=500"
         $.ajax({
           type: "GET",
           url: url,

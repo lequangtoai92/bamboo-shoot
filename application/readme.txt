@@ -38,3 +38,9 @@ GY152 = 2 => xóa
 GY152 = 3 => da lam xong
 GY152 = 4 => khong lam
 
+khi dua len host that thi xoa file index.php và file .htaccess
+chinh sua trong fodel config -> file config.php va database.php
+https://hocwebchuan.com/tutorial/php/xampp_config_virtual_host.php
+chinh linh url them /bamboo-shoot/
+thay avatar
+dong phan facebook

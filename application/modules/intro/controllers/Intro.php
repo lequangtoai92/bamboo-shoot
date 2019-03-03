@@ -16,6 +16,7 @@ class Intro extends History {
     // Load session library
     $this->load->library('session');
     $this->load->model('CH100_models', 'CH100_MODELS');
+    $this->load->model('B100_models', 'B100_MODELS');
   }
 
   /*   * **************************************************************** */
@@ -89,10 +90,10 @@ class Intro extends History {
 
   private function getIntro($get) {
     $data = array(
-      'BV100' => isset($post['type']) ? $post['type'] : 0,
+      'BV151' => isset($get['type_story']) ? $get['type_story'] : 0,
       'LIMIT' => isset($get['limit']) ? $get['limit'] : 15,
       'START' => isset($get['start']) ? $get['start'] : 0,
     );
-    return $this->CH100_MODELS->ch2018_get_question($data);
+    return $this->B100_MODELS->b2018_listAll_story($data);
   }
 }

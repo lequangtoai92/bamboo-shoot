@@ -20,7 +20,7 @@ var modifyPassword = new Vue({
               }
             $.ajax({
                 type: "POST",
-                url: '/account/update_pass',
+                url: "/bamboo-shoot/account/update_pass",
                 data: dataPost,
                 dataType: 'json',
                 success: function (result) {

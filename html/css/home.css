@@ -2,8 +2,8 @@
 .for-age { color: var(--scarlet); } 
 .content-body .row { margin: 0px; } 
 .content-body .content-sup { padding-left: 0px;} 
-.content-body .content-sup .item { display: inline-flex; margin-top: 10px; margin-bottom: 10px; width: 100%; padding: 7px; background-color: #dae0e5; border-radius: 5px; } 
-.content-body .content-sup .item .avatar { margin-right: 15px; } 
+/* .content-body .content-sup .item { display: inline-flex; margin-top: 10px; margin-bottom: 10px; width: 100%; padding: 7px; background-color: #dae0e5; border-radius: 5px; }  */
+/* .content-body .content-sup .item .avatar { margin-right: 15px; } 
 .content-body .content-sup .item .avatar .bottom-avatar { display: grid; margin-top: 5px; text-align: center; } 
 .content-body .content-sup .item .avatar .bottom-avatar .star { height: 15px; } 
 .content-body .content-sup .item .avatar a { width: 37px; height: 37px; border-radius: 18px; } 
@@ -34,4 +34,4 @@
 
     .content-body .content-sup { padding-left: 0px; padding-right: 0px;} 
     .content-body .content-sub { padding-right: 0px; padding-left: 0px;} 
-}
+} */

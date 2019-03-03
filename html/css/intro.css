@@ -1,0 +1,21 @@
+.item-intro { display: inline-flex; margin-top: 10px; margin-bottom: 10px; width: 100%; padding: 7px 7px 7px 15px; background-color: #dae0e5; border-radius: 5px; } 
+.item-intro .avatar { margin-right: 15px; } 
+.item-intro .avatar .bottom-avatar { display: grid; margin-top: 5px; text-align: center; } 
+.item-intro .avatar .bottom-avatar .star { height: 15px; } 
+.item-intro .avatar a { width: 37px; height: 37px; border-radius: 18px; } 
+.item-intro a img { width: 37px; height: 37px; border-radius: 18px; } 
+.item-intro .info .meta-info .meta-info-time { margin-left: 5px; } 
+.item-intro .info .meta-info { display: inline-flex; font-size: 0.8rem; } 
+.item-intro .info .title-info h4 { margin: 0px; font-size: 1.3rem; cursor: pointer;} 
+.item-intro .info .title-info .title-tag span { background-color: cornflowerblue; padding: 2px 5px 2px 5px; border-radius: 4px; font-size: 12px; cursor: pointer;} 
+.item-intro .info .content-info { margin-top: 5px; cursor: pointer;} 
+.item-intro .info .content-info p { font-style: italic; font-size: 0.85rem; margin-bottom: 5px; } 
+.item-intro .info .comment-info span { margin-right: 5px; } 
+.item-intro .info .comment-info .comment-item { font-size: 0.8em; color: #a0a1a1; } 
+.item-intro .info .comment-info .item-tooltip:hover .tooltiptext { visibility: visible; } 
+.item-intro .info .comment-info .item-tooltip { position: relative; display: inline-block; } 
+.item-intro .info .comment-info .item-tooltip .tooltiptext { top: 10px; visibility: hidden; width: 80px; color: black; background-color: #83adf9; text-align: left; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; font-size: 1.1em; font-weight: 300; text-align: center; } 
+.item-intro { padding-right: 0px; } 
+.item-intro .item-right { display: grid; width: 100%; margin-top: 10px; margin-bottom: 10px; background-color: aliceblue; border-radius: 4px; padding: 5px 5px 5px 9px;} 
+.item-intro .item-right h4 { font-size: 1.1rem; font-weight: 600; } 
+.item-intro .item-right a { padding-bottom: 3px; color: black; } 

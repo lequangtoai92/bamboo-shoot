@@ -43,7 +43,7 @@ var infoAccount = new Vue({
 			
 			$.ajax({
 				type: "POST",
-				url: '/account/update_info_account',
+				url: "/bamboo-shoot/account/update_info_account",
 				data: this.items,
 				dataType: 'json',
 				success: function (result) {
@@ -69,7 +69,7 @@ var infoAccount = new Vue({
 
 		initdata: function () {
 			var self = this;
-			var url = "/account/get_info_account"
+			var url = "/bamboo-shoot/account/get_info_account"
 			$.ajax({
 				type: "GET",
 				url: url,
@@ -125,7 +125,7 @@ var listStory = new Vue({
 			}
 			$.ajax({
 				type: "POST",
-				url: '/account/update_story',
+				url: "/bamboo-shoot/account/update_story",
 				data: dataPost,
 				dataType: 'json',
 				success: function (result) {
@@ -150,7 +150,7 @@ var listStory = new Vue({
 
 		initdata: function () {
 			var self = this;
-			var url = "/account/get_list_story?limit=2"
+			var url = "/bamboo-shoot/account/get_list_story?limit=2"
 			$.ajax({
 				type: "GET",
 				url: url,
@@ -194,7 +194,7 @@ var listMessenger = new Vue({
 	methods: {
 		initdata: function () {
 			var self = this;
-			var url = "/account/get_list_messenger?limit=2"
+			var url = "/bamboo-shoot/account/get_list_messenger?limit=2"
 			$.ajax({
 				type: "GET",
 				url: url,
@@ -238,7 +238,7 @@ var listNotifiction = new Vue({
 	methods: {
 		initdata: function () {
 			var self = this;
-			var url = "/account/get_list_notifiction?limit=2"
+			var url = "/bamboo-shoot/account/get_list_notifiction?limit=2"
 			$.ajax({
 				type: "GET",
 				url: url,
