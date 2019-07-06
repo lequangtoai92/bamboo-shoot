@@ -32,8 +32,6 @@
                 <option class="select-option" disabled value="">Duyệt</option>
                 <option class="select-option" value="1">Chấp nhận</option>
                 <option class="select-option" value="2">Xóa</option>
-                <!-- <option class="select-option" value="3">Để sau</option> -->
-                <!-- <option class="select-option" value="4">Bỏ qua</option> -->
               </select>
             </td>
             <td class="td-11">
